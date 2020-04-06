@@ -2,14 +2,35 @@ package es.aivm.sgpm;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import es.aivm.sgpm.adapter.AdapterProduct;
+import es.aivm.sgpm.model.ItemProduct;
+
 public class Products extends AppCompatActivity {
+
+    private RecyclerView mRecyclerView;
+    private AdapterProduct mAdapter;
+    private LinearLayoutManager mLayoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_products);
+
+        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        mLayoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+
+        mAdapter = new AdapterProduct(this);
+        mRecyclerView.setAdapter(mAdapter);
+
+        //Precarga de datos de ejemplo
+        for (int i = 0; i < 5; i++) {
+            mAdapter.add(new ItemProduct(getResources().getDrawable(R.mipmap.ic_launcher), "Texto: " +i));
+        }
 
         hideNavigationBar();
     }
