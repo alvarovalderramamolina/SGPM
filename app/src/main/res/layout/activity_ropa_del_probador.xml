@@ -6,4 +6,133 @@
     android:layout_height="match_parent"
     tools:context=".RopaDelProbador">
 
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="1307dp"
+        android:layout_height="181dp"
+        android:layout_marginBottom="673dp"
+        android:background="#202F3F "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="235dp"
+            android:layout_height="54dp"
+            android:layout_marginEnd="536dp"
+            android:layout_marginBottom="35dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/logo_blanco" />
+
+        <ImageButton
+            android:id="@+id/imageButton5"
+            android:layout_width="232dp"
+            android:layout_height="73dp"
+            android:layout_marginEnd="217dp"
+            android:layout_marginBottom="35dp"
+            android:background="#00FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageView9"
+            app:srcCompat="@drawable/boton_volver" />
+    </android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="303dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="20dp"
+        android:text="Probador 3"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="173dp"
+        android:layout_height="156dp"
+        android:layout_marginStart="98dp"
+        android:layout_marginBottom="441dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/sudadera1" />
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/boton_cesta_activo"
+        tools:layout_editor_absoluteX="1184dp"
+        tools:layout_editor_absoluteY="137dp" />
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/boton_probador"
+        tools:layout_editor_absoluteX="1102dp"
+        tools:layout_editor_absoluteY="137dp" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="575dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="94dp"
+        android:layout_marginEnd="340dp"
+        android:layout_marginBottom="20dp"
+        android:text=" Sudadera con Capucha Champion Marino"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView13" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="146dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="93dp"
+        android:layout_marginEnd="724dp"
+        android:text="Champion"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        app:layout_constraintEnd_toStartOf="@+id/textView13"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView13"
+        tools:layout_editor_absoluteY="281dp" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="116dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginBottom="452dp"
+        android:text="Talla:    XL"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView13" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="168dp"
+        android:layout_height="26dp"
+        android:text="Color:   azul marino"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        tools:layout_editor_absoluteX="518dp"
+        tools:layout_editor_absoluteY="322dp" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="119dp"
+        android:layout_height="29dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginBottom="492dp"
+        android:text="29.90 €"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </android.support.constraint.ConstraintLayout>
