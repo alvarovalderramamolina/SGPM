@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#202F3F "
+    tools:context=".NuevoRegistro">
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="290dp"
+        android:layout_height="110dp"
+        android:layout_marginEnd="944dp"
+        android:layout_marginBottom="560dp"
+        android:adjustViewBounds="true"
+        android:background="#00FFFFFF"
+        android:cropToPadding="true"
+        android:tint="#FFFFFF"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/boton_volver" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="561dp"
+        android:layout_height="99dp"
+        android:layout_marginStart="360dp"
+        android:layout_marginEnd="359dp"
+        android:layout_marginBottom="68dp"
+        android:autoText="false"
+        android:background="#F79C33"
+        android:clickable="true"
+        android:text="Registrarse"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="#202F3F "
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Registrarse" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="561dp"
+        android:layout_height="99dp"
+        android:layout_marginStart="360dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="359dp"
+        android:layout_marginBottom="192dp"
+        android:background="#FFFFFF"
+        android:clickable="false"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:text="Contraseña"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="#6E6E6E"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText4" />
+
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="561dp"
+        android:layout_height="99dp"
+        android:layout_marginStart="360dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="359dp"
+        android:layout_marginBottom="308dp"
+        android:background="#FFFFFF"
+        android:clickable="false"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:text="Correo electrónico"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="#6E6E6E"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText5"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="561dp"
+        android:layout_height="99dp"
+        android:layout_marginStart="360dp"
+        android:layout_marginEnd="359dp"
+        android:layout_marginBottom="432dp"
+        android:background="#FFFFFF"
+        android:clickable="false"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:text="Nombre"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="#6E6E6E"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="313dp"
+        android:layout_height="133dp"
+        android:layout_marginEnd="480dp"
+        android:layout_marginBottom="564dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/logo_blanco" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="68dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="473dp"
+        android:layout_marginBottom="29dp"
+        android:tint="#6E6E6E"
+        app:layout_constraintBottom_toBottomOf="@+id/editText4"
+        app:layout_constraintEnd_toEndOf="@+id/editText4"
+        app:srcCompat="@android:drawable/ic_dialog_email" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="63dp"
+        android:layout_height="66dp"
+        android:layout_marginEnd="474dp"
+        android:layout_marginBottom="16dp"
+        android:tint="#6E6E6E"
+        app:layout_constraintBottom_toBottomOf="@+id/editText5"
+        app:layout_constraintEnd_toEndOf="@+id/editText5"
+        app:srcCompat="@drawable/icono_invitado" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="66dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="472dp"
+        android:layout_marginBottom="18dp"
+        android:tint="#6E6E6E"
+        app:layout_constraintBottom_toBottomOf="@+id/editText3"
+        app:layout_constraintEnd_toEndOf="@+id/editText3"
+        app:srcCompat="@android:drawable/ic_lock_lock" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="327dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="459dp"
+        android:layout_marginBottom="16dp"
+        android:text="*Todos los campos son obligatorios"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
