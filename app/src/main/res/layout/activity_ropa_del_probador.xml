@@ -64,65 +64,77 @@
         android:id="@+id/imageView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/boton_cesta_activo"
-        tools:layout_editor_absoluteX="1184dp"
-        tools:layout_editor_absoluteY="137dp" />
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+        app:srcCompat="@drawable/boton_cesta_activo" />
 
     <ImageView
         android:id="@+id/imageView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/boton_probador"
-        tools:layout_editor_absoluteX="1102dp"
-        tools:layout_editor_absoluteY="137dp" />
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageView14"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+        app:srcCompat="@drawable/boton_probador" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="575dp"
         android:layout_height="45dp"
-        android:layout_marginStart="94dp"
-        android:layout_marginEnd="340dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="412dp"
+        android:layout_marginBottom="12dp"
+        android:gravity="center"
         android:text=" Sudadera con Capucha Champion Marino"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/textView9"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView13" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/textView9"
-        android:layout_width="146dp"
-        android:layout_height="26dp"
+        android:layout_width="171dp"
+        android:layout_height="27dp"
         android:layout_marginStart="93dp"
         android:layout_marginEnd="724dp"
+        android:layout_marginBottom="17dp"
+        android:gravity="center"
         android:text="Champion"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#606060"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toTopOf="@+id/textView10"
         app:layout_constraintEnd_toStartOf="@+id/textView13"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView13"
-        tools:layout_editor_absoluteY="281dp" />
+        app:layout_constraintHorizontal_bias="0.44"
+        app:layout_constraintStart_toEndOf="@+id/imageView13" />
 
     <TextView
         android:id="@+id/textView10"
-        android:layout_width="116dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="92dp"
-        android:layout_marginBottom="452dp"
+        android:layout_width="171dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="448dp"
+        android:gravity="center"
         android:text="Talla:    XL"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView13" />
 
     <TextView
         android:id="@+id/textView11"
-        android:layout_width="168dp"
-        android:layout_height="26dp"
+        android:layout_width="171dp"
+        android:layout_height="27dp"
+        android:layout_marginBottom="448dp"
+        android:gravity="center"
         android:text="Color:   azul marino"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        tools:layout_editor_absoluteX="518dp"
-        tools:layout_editor_absoluteY="322dp" />
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView19" />
 
     <TextView
         android:id="@+id/textView13"
@@ -134,5 +146,15 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView19"
+        android:layout_width="30dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="586dp"
+        android:layout_marginBottom="448dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/color_azul_marino" />
 
 </android.support.constraint.ConstraintLayout>
