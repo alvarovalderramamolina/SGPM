@@ -1,10 +1,13 @@
 package es.aivm.sgpm;
 
+import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -13,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
         hideNavigationBar();
     }
+
     private void hideNavigationBar(){
         this.getWindow().getDecorView().setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_FULLSCREEN |

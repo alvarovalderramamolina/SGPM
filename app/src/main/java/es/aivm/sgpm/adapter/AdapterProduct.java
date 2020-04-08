@@ -51,8 +51,8 @@ public class AdapterProduct extends RecyclerView.Adapter<AdapterProduct.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolderProduct holder, int position) {
         final ItemProduct item = (ItemProduct) mDataset.get(position);
-        holder.imageView.setImageDrawable(item.getImageSrc());
-        holder.mTextView.setText(item.getName());
+        //holder.imageView.setImageDrawable(item.getImageSrc());
+        //holder.mTextView.setText(item.getName());
 
         holder.mTextView.setOnClickListener(new View.OnClickListener() {
             @Override
