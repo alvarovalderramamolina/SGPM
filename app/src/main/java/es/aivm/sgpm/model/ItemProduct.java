@@ -1,5 +1,6 @@
 package es.aivm.sgpm.model;
 
+import android.content.Context;
 import android.graphics.drawable.Drawable;
 
 public class ItemProduct {
@@ -32,7 +33,9 @@ public class ItemProduct {
     private Color color;
     private Drawable imagen;
 
-    public ItemProduct(String nombre, String marca, int valoracionMedia, int numValoraciones, float precio, boolean disponible, Drawable imagen) {
+
+    public ItemProduct(int id, String nombre, String marca, int valoracionMedia, int numValoraciones, double precio, boolean disponible, Drawable imagen) {
+        this.id = id;
         this.nombre = nombre;
         this.marca = marca;
         this.valoracionMedia = valoracionMedia;
@@ -86,7 +89,8 @@ public class ItemProduct {
         return precio;
     }
 
-    public void setPrecio(float precio) {
+
+    public void setPrecio(double precio) {
         this.precio = precio;
     }
 

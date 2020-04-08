@@ -23,6 +23,7 @@
             <action android:name="android.intent.action.MAIN" />
         </intent-filter>
         </activity>
+        <activity android:name=".SolicitudProbador"/>
         <activity android:name=".Category" />
         <activity android:name=".RopaDelProbador" />
         <activity android:name=".ProbadoresUso" />
