@@ -13,26 +13,73 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center">
+        android:gravity="center_vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Zapatos"
+            android:textSize="30dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="30dp"/>
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="5"
+            android:rowCount="1"
+            android:useDefaultMargins="true">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="2"
-            android:background="@color/solidRed"
-            android:src="@drawable/abrigos" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icono_buscar"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="30dp"/>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="2"
-            android:background="@color/solidBlue"
-            android:src="@drawable/boton_activar_promocion"/>
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="2"
-            android:background="@color/solidOrange"
-            android:src="@drawable/boton_continuar"/>
+            <EditText
+                android:hint="Buscar por nombre de procducto o marca"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_row="0"
+                android:layout_column="1"/>
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Más destacado"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:layout_marginLeft="300dp"
+                android:layout_row="0"
+                android:layout_column="2"/>
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Mejor valorado"
+                android:textColor="@color/solidBlue"
+                android:textSize="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_row="0"
+                android:layout_column="3"/>
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Menor a mayor precio"
+                android:textColor="@color/solidBlue"
+                android:textSize="15dp"
+                android:layout_row="0"
+                android:layout_column="4"
+                android:layout_marginLeft="15dp"/>
+        </GridLayout>
     </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="90dp"/>
 </LinearLayout>

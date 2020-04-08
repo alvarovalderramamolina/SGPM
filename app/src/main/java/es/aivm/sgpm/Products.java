@@ -20,7 +20,7 @@ public class Products extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_products);
 
-        //mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
@@ -28,9 +28,7 @@ public class Products extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
 
         //Precarga de datos de ejemplo
-        for (int i = 0; i < 5; i++) {
-            mAdapter.add(new ItemProduct(getResources().getDrawable(R.mipmap.ic_launcher), "Texto: " +i));
-        }
+        mAdapter.add(new ItemProduct("Abrigo guapo", "Levis", 3,20,30,true,getResources().getDrawable(R.drawable.abrigos)));
 
         hideNavigationBar();
     }
