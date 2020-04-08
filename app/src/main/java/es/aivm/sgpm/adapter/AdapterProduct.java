@@ -75,7 +75,7 @@ public class AdapterProduct extends RecyclerView.Adapter<AdapterProduct.ViewHold
         public ViewHolderProduct(View v) {
             super(v);
             imageView = (ImageView) v.findViewById(R.id.ivItem);
-            mTextView = (TextView) v.findViewById(R.id.tvItem);
+            //mTextView = (TextView) v.findViewById(R.id.tvItem);
         }
     }
 }

@@ -5,4 +5,6 @@
     <color name="solidBlue">#202F3F</color>
     <color name="solidGreen">#00A848</color>
     <color name="solidRed">#ED0327</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
 </resources>

@@ -1,19 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal" android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center_vertical">
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/ivItem"
-        android:src="@mipmap/ic_launcher" />
 
-    <TextView
+    <ImageView
+        android:id="@+id/ivItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
-        android:id="@+id/tvItem" />
+        android:src="@drawable/zapatos"
+        android:layout_marginRight="20dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:columnCount="1"
+                android:rowCount="2"
+                android:useDefaultMargins="true"
+                android:layout_gravity="center_vertical">
+                <TextView
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:text="Zapatos cuero marrones"
+                    android:textSize="35sp"
+                    android:textColor="@color/black"
+                    />
+                <TextView
+                    android:layout_row="1"
+                    android:layout_column="0"
+                    android:text="Martinelli"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    />
+            </GridLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:rating="4"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="531 valoraciones en Amazon.com"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="70,00€"
+                    android:textSize="30sp"
+                    android:textColor="@color/black"
+                    android:layout_marginRight="@dimen/default_gap"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Disponible"
+                    android:textColor="@color/solidGreen"
+                    android:textSize="18sp"/>
+        </LinearLayout>
+    </LinearLayout>
 
 </LinearLayout>
