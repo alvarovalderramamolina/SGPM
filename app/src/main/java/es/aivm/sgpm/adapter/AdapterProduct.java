@@ -55,7 +55,7 @@ public class AdapterProduct extends RecyclerView.Adapter<AdapterProduct.ViewHold
         holder.productImage.setImageDrawable(item.getImagen());
         holder.name.setText(item.getNombre());
         holder.brand.setText(item.getMarca());
-        holder.rating.setNumStars(item.getValoracionMedia());
+        holder.rating.setRating(item.getValoracionMedia());
         holder.amountRating.setText(item.getNumValoraciones() + " valoraciones en Amazon.com");
         holder.price.setText(item.getPrecio() + "€");
         if (item.isDisponible())
