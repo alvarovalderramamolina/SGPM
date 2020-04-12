@@ -1,12 +1,15 @@
 package es.aivm.sgpm;
 
+import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ImageView;
 
 import es.aivm.sgpm.adapter.AdapterProduct;
+import es.aivm.sgpm.model.DataModel;
 import es.aivm.sgpm.model.ItemProduct;
 
 public class Products extends AppCompatActivity {
@@ -28,10 +31,9 @@ public class Products extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
 
         //Precarga de datos de ejemplo
-        for (int i = 0; i < 5; i++) {
-            mAdapter.add(new ItemProduct(getResources().getDrawable(R.mipmap.ic_launcher), "Texto: " +i));
+        for (ItemProduct item : DataModel.pantalones(this) ) {
+            mAdapter.add(item);
         }
-
         hideNavigationBar();
     }
     private void hideNavigationBar() {

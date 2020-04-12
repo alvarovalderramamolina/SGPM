@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -51,15 +52,23 @@ public class AdapterProduct extends RecyclerView.Adapter<AdapterProduct.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolderProduct holder, int position) {
         final ItemProduct item = (ItemProduct) mDataset.get(position);
-        holder.imageView.setImageDrawable(item.getImageSrc());
-        holder.mTextView.setText(item.getName());
+        holder.productImage.setImageDrawable(item.getImagen());
+        holder.name.setText(item.getNombre());
+        holder.brand.setText(item.getMarca());
+        holder.rating.setRating(item.getValoracionMedia());
+        holder.amountRating.setText(item.getNumValoraciones() + " valoraciones en Amazon.com");
+        holder.price.setText(item.getPrecio() + "€");
+        if (item.isDisponible())
+            holder.availability.setText("Disponible");
+        else
+            holder.availability.setText("No disponible");
 
-        holder.mTextView.setOnClickListener(new View.OnClickListener() {
+        /*holder.mTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 remove(item);
             }
-        });
+        });*/
     }
 
     @Override
@@ -69,13 +78,24 @@ public class AdapterProduct extends RecyclerView.Adapter<AdapterProduct.ViewHold
 
     public static class ViewHolderProduct extends RecyclerView.ViewHolder {
 
-        protected ImageView imageView;
-        protected TextView mTextView;
+        protected ImageView productImage;
+        protected TextView name;
+        protected TextView brand;
+        protected RatingBar rating;
+        protected TextView amountRating;
+        protected TextView price;
+        protected TextView availability;
+
 
         public ViewHolderProduct(View v) {
             super(v);
-            imageView = (ImageView) v.findViewById(R.id.ivItem);
-            mTextView = (TextView) v.findViewById(R.id.tvItem);
+            productImage = (ImageView) v.findViewById(R.id.ivItem);
+            name = (TextView) v.findViewById(R.id.name_item);
+            brand = (TextView) v.findViewById(R.id.brand_item);
+            rating = (RatingBar) v.findViewById(R.id.rating_item);
+            amountRating = (TextView) v.findViewById(R.id.rating_amount_item);
+            price = (TextView) v.findViewById(R.id.price_item);
+            availability = (TextView) v.findViewById(R.id.availability_item);
         }
     }
 }
