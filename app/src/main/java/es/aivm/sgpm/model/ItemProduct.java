@@ -3,9 +3,6 @@ package es.aivm.sgpm.model;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 
-/**
- * Created by AIVM on 06/04/2020.
- */
 public class ItemProduct {
     public enum Talla {
         S,
@@ -35,6 +32,7 @@ public class ItemProduct {
     private Talla talla;
     private Color color;
     private Drawable imagen;
+
 
     public ItemProduct(int id, String nombre, String marca, int valoracionMedia, int numValoraciones, double precio, boolean disponible, Drawable imagen) {
         this.id = id;
@@ -90,6 +88,7 @@ public class ItemProduct {
     public double getPrecio() {
         return precio;
     }
+
 
     public void setPrecio(double precio) {
         this.precio = precio;
