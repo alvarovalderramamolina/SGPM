@@ -1,13 +1,11 @@
 package es.aivm.sgpm.model;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import es.aivm.sgpm.R;
 
@@ -26,7 +24,9 @@ public class DataModel {
       "Alain Aspect", "David Baltimore", "Allen Bard", "Timothy Berners-Lee", "Dennis Bray", "Elon Musk", "Jeff Bezos",
       "Mark Zuckerberg", "Tim Cook", "Sundar Pichai"
     };
-    public List<UserModel> usuariosActivos = new ArrayList<>();
+    // Promociones es la lista de descuentos a las que opta el usuario fidelizado.
+    // El usuario no fidelizado no opta a ellas. No debe de aparecerle esa pantalla.
+    public List<PromocionModel> promociones = new ArrayList<>();
 
     public List<ItemProduct> pantalones = new ArrayList<ItemProduct>();
     public List<ItemProduct> jerseys = new ArrayList<ItemProduct>();
@@ -40,6 +40,7 @@ public class DataModel {
 
         initProducts();
         initUsuarios();
+        initPromociones();
     }
 
     public void signUp(String name, String email, String password) {
@@ -68,6 +69,26 @@ public class DataModel {
         }
         return false;
     }
+    public HashMap<String, Double> generarFactura(UserModel usuario) {
+        HashMap<String, Double> factura = new HashMap<>();
+        List<ItemProduct> cesta = usuario.getCesta();
+        List<PromocionModel> promocionesActivadas = usuario.getPromocionesActivadas();
+        int puntos = usuario.getPuntosUsados();
+        double total = 0, discount = 0;
+        for(int i=0; i<cesta.size(); i++) {
+            total += cesta.get(i).getPrecio();
+        }
+        for(int i=0; i<promocionesActivadas.size(); i++) {
+            discount += promocionesActivadas.get(i).getDiscount();
+        }
+
+        total = total - total*discount - puntos*0.01;
+
+        factura.put("Discount", discount);
+        factura.put("Total", total);
+
+        return factura;
+    }
     public void finalizarCompra(UserModel user) {
         for(int i = 0; i<usuarios.size(); i++) {
             UserModel u = usuarios.get(i);
@@ -77,6 +98,7 @@ public class DataModel {
             }
         }
     }
+
 
     /**
      * Funciones auxiliares: No cambiar el alcance de estas funciones
@@ -95,6 +117,13 @@ public class DataModel {
     }
     private void eliminarProbador(int i) {
         probadores.remove(i);
+    }
+    private void initPromociones() {
+        PromocionModel promoNuevaTemp = new PromocionModel("Ahorra 30%", context.getResources().getDrawable(R.drawable.promo1), "Aprovecha esta promoción de nueva temporada", 0.3);
+        PromocionModel promoBadDays = new PromocionModel("Hasta 30%", context.getResources().getDrawable(R.drawable.promo2), "Este es un mal día, solo puedes ahorrar 15%", 0.15);
+
+        promociones.add(promoNuevaTemp);
+        promociones.add(promoBadDays);
     }
     private void initProducts() {
         ItemProduct levisSkinny = new ItemProduct(0, "Chino de hombre regular", "Calvin Klein", 5, 300, 89.99, true, context.getResources().getDrawable(R.drawable.skinny_jeans));
