@@ -18,20 +18,20 @@
         android:theme="@style/AppTheme">
         <activity android:name=".CardPayment"/>
         <activity android:name=".Gratitude" />
-        <activity android:name=".Products">
-        <intent-filter>
-            <category android:name="android.intent.category.LAUNCHER" />
-
-            <action android:name="android.intent.action.MAIN" />
-        </intent-filter>
-        </activity>
+        <activity android:name=".Products"/>
         <activity android:name=".SolicitudProbador" />
         <activity android:name=".Category" />
         <activity android:name=".RopaDelProbador" />
         <activity android:name=".ProbadoresUso" />
         <activity android:name=".Registro" />
         <activity android:name=".InitSesion" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity" >
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

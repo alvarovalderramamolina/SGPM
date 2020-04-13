@@ -10,7 +10,7 @@ import es.aivm.sgpm.model.DataModel;
 
 public class MainActivity extends AppCompatActivity {
     static boolean first = true;
-
+    //find by id get text
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
