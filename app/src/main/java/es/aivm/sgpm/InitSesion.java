@@ -3,9 +3,11 @@ package es.aivm.sgpm;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 
 public class InitSesion extends AppCompatActivity {
-
+    //EditText text = (EditText)findViewById(R.id.vnosEmaila);
+    //String value = text.getText().toString();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
