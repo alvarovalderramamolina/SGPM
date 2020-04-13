@@ -20,9 +20,10 @@ public class Products extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_products);
 
+        super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.activity_products);
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
@@ -30,8 +31,7 @@ public class Products extends AppCompatActivity {
         mAdapter = new AdapterProduct(this);
         mRecyclerView.setAdapter(mAdapter);
 
-        //Precarga de datos de ejemplo
-        for (ItemProduct item : DataModel.pantalones(this) ) {
+        for (ItemProduct item : DataModel.database.pantalones ) {
             mAdapter.add(item);
         }
         hideNavigationBar();

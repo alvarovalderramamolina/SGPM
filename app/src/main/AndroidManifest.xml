@@ -16,15 +16,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CardPayment">
-            <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
-
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".CardPayment"/>
         <activity android:name=".Gratitude" />
-        <activity android:name=".Products"/>
+        <activity android:name=".Products">
+        <intent-filter>
+            <category android:name="android.intent.category.LAUNCHER" />
+
+            <action android:name="android.intent.action.MAIN" />
+        </intent-filter>
+        </activity>
         <activity android:name=".SolicitudProbador" />
         <activity android:name=".Category" />
         <activity android:name=".RopaDelProbador" />

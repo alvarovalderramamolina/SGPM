@@ -6,14 +6,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-public class MainActivity extends AppCompatActivity {
+import es.aivm.sgpm.model.DataModel;
 
+public class MainActivity extends AppCompatActivity {
+    static boolean first = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        if (first){
+            DataModel.database = new DataModel(this);
+            first = false;
+        }
         hideNavigationBar();
     }
 

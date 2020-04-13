@@ -35,6 +35,8 @@ public class DataModel {
     public List<ItemProduct> accesorios = new ArrayList<ItemProduct>();
     public List<ItemProduct> ofertas = new ArrayList<ItemProduct>();
 
+    public static DataModel database;
+
     public DataModel(Context context) {
         this.context = context;
 
@@ -172,11 +174,11 @@ public class DataModel {
         abrigos.add(hellyabrigos);
         abrigos.add(blackabrigos);
         abrigos.add(bolfabrigos);
-        calzado.add(levisSkinny);
-        calzado.add(chandalJeans);
-        calzado.add(chinoSupreme);
-        calzado.add(chinoAlpha);
-        calzado.add(cargo_de_hombre);
+        calzado.add(adidascalzado);
+        calzado.add(columbiacalzado);
+        calzado.add(pumacalzado);
+        calzado.add(salomoncalzado);
+        calzado.add(clarkscalzado);
         accesorios.add(levisSkinnyaccesorios);
         accesorios.add(chandalJeansaccesorios);
         accesorios.add(chinoSupremeaccesorios);
