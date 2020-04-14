@@ -53,17 +53,15 @@
 
                 </ImageButton>
             </GridLayout>
-        </LinearLayout>>
+        </LinearLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view_probador"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="90dp"
+            android:layout_marginBottom="8dp">
 
-
+        </android.support.v7.widget.RecyclerView>
     </LinearLayout>
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view_probador"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="90dp"
-        android:layout_marginBottom="8dp">
-
-    </android.support.v7.widget.RecyclerView>
 </android.widget.LinearLayout>

@@ -22,10 +22,10 @@ public class RopaDelProbador extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_ropa_del_probador);
-        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view_probador);
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
-
+        DataModel.database = new DataModel(this);
         mAdapter= new AdapterRopaProbada(this);
         mRecyclerView.setAdapter(this.mAdapter);
 
