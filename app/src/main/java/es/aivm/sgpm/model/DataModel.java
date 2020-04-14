@@ -36,6 +36,7 @@ public class DataModel {
     public List<ItemProduct> ofertas = new ArrayList<ItemProduct>();
 
     public static DataModel database;
+    public static UserModel currentUser;
 
     public DataModel(Context context) {
         this.context = context;
@@ -52,7 +53,7 @@ public class DataModel {
     public UserModel logInUsuario(String email, String password) {
         for (int i=0; i<usuarios.size(); i++) {
             UserModel u = this.usuarios.get(i);
-            if(u.getEmail() == email && u.getPassword() == password) {
+            if(u.getEmail().equals(email) && u.getPassword().equals(password)) {
                 u.logIn();
                 crearProbador(i);
                 return u;
@@ -63,7 +64,7 @@ public class DataModel {
     public boolean logInAdmin(String email, String password) {
         for (int i=0; i<admins.size(); i++) {
             UserModel u = this.admins.get(i);
-            if(u.getEmail() == email && u.getPassword() == password) {
+            if(u.getEmail().equals(email) && u.getPassword().equals(password)) {
                 u.logIn();
 
                 return true;
@@ -107,7 +108,8 @@ public class DataModel {
      *
      */
     private void crearProbador(int i) {
-        String nombreImagen = "probador" + i + ".jpg";
+        String nombreImagen = "probador" + i;
+        System.out.println(nombreImagen);
         final int resourceId = context.
                 getResources().
                 getIdentifier(nombreImagen,

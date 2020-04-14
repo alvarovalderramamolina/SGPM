@@ -9,15 +9,45 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import es.aivm.sgpm.model.DataModel;
+import es.aivm.sgpm.model.UserModel;
 
 public class MainActivity extends AppCompatActivity {
     static boolean first = true;
 
     private void setListeners() {
-        final Button button = findViewById(R.id.zonaClientesButton);
-        button.setOnClickListener(new View.OnClickListener() {
+        final Button clienteButton = findViewById(R.id.zonaClientesButton);
+        clienteButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent (getApplicationContext(), InitSesion.class);
+                intent.putExtra("usuario", "cliente");
+                startActivity(intent);
+            }
+        });
+
+        final Button invitadoButton = findViewById(R.id.invitadoButton);
+        invitadoButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                UserModel u = new UserModel();
+                DataModel.currentUser = u;
+
+                Intent intent = new Intent (getApplicationContext(), Category.class);
+                startActivity(intent);
+            }
+        });
+
+        final Button adminButton = findViewById(R.id.accesoPersonalButton);
+        adminButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent (getApplicationContext(), InitSesion.class);
+                intent.putExtra("usuario", "personal");
+                startActivity(intent);
+            }
+        });
+
+        final Button crearCuentaButton = findViewById(R.id.crearCuentaButton);
+        crearCuentaButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent (getApplicationContext(), Registro.class);
                 startActivity(intent);
             }
         });
