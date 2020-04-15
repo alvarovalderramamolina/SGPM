@@ -25,6 +25,7 @@ public class UserModel {
         this.guest = true;
         this.active = true;
     }
+
     public UserModel(String name, String email, String password) {
         this.name = name;
         this.email = email;
