@@ -16,12 +16,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".CardPayment"/>
         <activity android:name=".Gratitude" />
-        <activity android:name=".Products"/>
+        <activity android:name=".Products">
         <activity android:name=".SolicitudProbador" />
+        <activity android:name=".SolicitudFacturaPersonal"/>
+
         <activity android:name=".Category" />
-        <activity android:name=".RopaDelProbador" />
+        <activity android:name=".RopaDelProbador">
+        </activity>
         <activity android:name=".ProbadoresUso" />
         <activity android:name=".Registro" />
         <activity android:name=".InitSesion" />

@@ -27,7 +27,7 @@ public class Products extends AppCompatActivity {
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
-
+        DataModel.database = new DataModel(this);
         mAdapter = new AdapterProduct(this);
         mRecyclerView.setAdapter(mAdapter);
 

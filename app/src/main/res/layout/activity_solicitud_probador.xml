@@ -1,90 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<android.widget.LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#202F3F"
-    tools:context=".SolicitudProbador">
+    tools:context=".SolicitudProbador"
+    android:orientation="vertical">
 
     <ImageView
-        android:id="@+id/imageView17"
-        android:layout_width="173dp"
-        android:layout_height="156dp"
-        android:layout_marginStart="184dp"
-        android:layout_marginBottom="304dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/sudadera1" />
-
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="119dp"
-        android:layout_height="29dp"
-        android:text="29.90 €"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="435dp" />
-
-    <TextView
-        android:id="@+id/textView16"
-        android:layout_width="116dp"
-        android:layout_height="26dp"
-        android:text="Talla:    XL"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        tools:layout_editor_absoluteX="407dp"
-        tools:layout_editor_absoluteY="451dp" />
-
-    <TextView
-        android:id="@+id/textView17"
-        android:layout_width="168dp"
-        android:layout_height="26dp"
-        android:text="Color:   azul marino"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        tools:layout_editor_absoluteX="656dp"
-        tools:layout_editor_absoluteY="451dp" />
-
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="575dp"
-        android:layout_height="45dp"
-        android:text=" Sudadera con Capucha Champion Marino"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp"
-        tools:layout_editor_absoluteX="407dp"
-        tools:layout_editor_absoluteY="340dp" />
-
-    <TextView
-        android:id="@+id/textView19"
-        android:layout_width="146dp"
-        android:layout_height="26dp"
-        android:text="Champion"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        tools:layout_editor_absoluteX="407dp"
-        tools:layout_editor_absoluteY="409dp" />
-
-    <ImageView
-        android:id="@+id/imageView16"
-        android:layout_width="wrap_content"
+        android:id="@+id/imagenCampana"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="536dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/icono_notificacion" />
+        android:src="@drawable/icono_notificacion"
+        android:layout_marginTop="30dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:textSize="40sp"
+        android:text="Probador3 quiere probrar"
+        android:textColor="#FFFFFFFF"
+        android:gravity="center"/>
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
 
     <TextView
-        android:id="@+id/textView12"
-        android:layout_width="612dp"
-        android:layout_height="75dp"
-        android:fontFamily="sans-serif"
-        android:gravity="center"
-        android:text="TextView"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_gravity="center"
+        android:text="Introduzca el tiempo estimado de espera (en minutos):"
+        android:textSize="20sp"
         android:textColor="#FFFFFF"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="334dp"
-        tools:layout_editor_absoluteY="247dp"
-        tools:text="Dennys Bray quiere probar" />
-</android.support.constraint.ConstraintLayout>
+        android:gravity="center"
+        />
+    <LinearLayout
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            android:layout_marginRight="20dp"
+            android:text="2:30"
+            android:textSize="50sp"
+            android:textColor="@color/solidGrey"
+            android:gravity="center"
+            android:layout_weight="3"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_weight="0"
+            android:layout_height="wrap_content"
+            android:src="@drawable/boton_enviar"
+            android:padding="0dp"/>
+    </LinearLayout>
+</android.widget.LinearLayout>
