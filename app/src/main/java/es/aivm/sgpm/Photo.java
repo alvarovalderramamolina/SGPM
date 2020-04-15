@@ -1,28 +1,18 @@
 package es.aivm.sgpm;
 
-import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
 
-import es.aivm.sgpm.model.DataModel;
-
-public class MainActivity extends AppCompatActivity {
-    static boolean first = true;
+public class Photo extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        if (first){
-            DataModel.database = new DataModel(this);
-            first = false;
-        }
+        setContentView(R.layout.activity_photo);
         hideNavigationBar();
     }
-
-    private void hideNavigationBar(){
+    private void hideNavigationBar() {
         this.getWindow().getDecorView().setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_FULLSCREEN |
                         View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |

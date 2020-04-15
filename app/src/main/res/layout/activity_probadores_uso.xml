@@ -123,7 +123,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:srcCompat="@drawable/probador2" />
+        app:srcCompat="@drawable/probador5" />
 
     <ImageButton
         android:id="@+id/imageButton7"
@@ -137,7 +137,7 @@
         app:layout_constraintBottom_toTopOf="@+id/textView7"
         app:layout_constraintEnd_toStartOf="@+id/textView4"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/probador6" />
+        app:srcCompat="@drawable/probador9" />
 
     <ImageButton
         android:id="@+id/imageButton8"
@@ -151,7 +151,7 @@
         android:visibility="visible"
         app:layout_constraintEnd_toStartOf="@+id/imageButton9"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        app:srcCompat="@drawable/probador7" />
+        app:srcCompat="@drawable/probador10" />
 
     <ImageButton
         android:id="@+id/imageButton9"
@@ -163,6 +163,6 @@
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        app:srcCompat="@drawable/probadores8" />
+        app:srcCompat="@drawable/probadores11" />
 
 </android.support.constraint.ConstraintLayout>
