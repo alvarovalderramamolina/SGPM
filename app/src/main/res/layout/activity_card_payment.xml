@@ -142,11 +142,12 @@
             android:layout_height="wrap_content"
             android:text="Guardar forma de pago para futuras compras"/>
     </LinearLayout>
+
     <ImageButton
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/boton_realizar_pago"
-        android:background="@color/white"
+        android:layout_height="47dp"
         android:layout_gravity="center"
-        android:layout_marginTop="45dp"/>
+        android:layout_marginTop="45dp"
+        android:background="@color/white"
+        android:src="@drawable/boton_realizar_pago" />
 </LinearLayout>
