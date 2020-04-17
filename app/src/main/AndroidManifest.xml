@@ -19,7 +19,7 @@
 
         <activity android:name=".CardPayment"/>
         <activity android:name=".Gratitude" />
-        <activity android:name=".Products">
+        <activity android:name=".Products"/>
         <activity android:name=".SolicitudProbador" />
         <activity android:name=".SolicitudFacturaPersonal"/>
 
