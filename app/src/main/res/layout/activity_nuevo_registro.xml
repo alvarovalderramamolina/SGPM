@@ -22,7 +22,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        android:focusableInTouchMode="true">
         <ImageView
             android:layout_width="255dp"
             android:layout_height="119dp"
