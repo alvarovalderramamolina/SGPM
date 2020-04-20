@@ -19,6 +19,7 @@
         android:background="@android:color/transparent"
         android:gravity="left"
         android:tint="@color/solidBlue"
+
     />
 
 
@@ -37,6 +38,7 @@
         android:rowCount="2"
         android:useDefaultMargins="true"
         android:layout_gravity="center_vertical"
+        android:layout_marginRight="50dp"
         >
 
         <ImageView

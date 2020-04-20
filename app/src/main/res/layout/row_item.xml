@@ -6,13 +6,13 @@
     android:gravity="center_vertical">
 
     <ImageView
-        android:scaleType="centerCrop"
         android:id="@+id/ivItem"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:src="@drawable/zapatos"
+        android:layout_marginTop="@dimen/default_gap"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="@dimen/default_gap"/>
+        android:scaleType="centerCrop"
+        android:src="@drawable/zapatos" />
 
     <LinearLayout
         android:layout_width="wrap_content"
