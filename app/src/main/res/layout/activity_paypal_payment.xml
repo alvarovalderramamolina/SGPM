@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:gravity="center"
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:src="@drawable/paypal_logo"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Paga con PayPal"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            android:layout_marginTop="25dp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:background="#00457C"
+        android:paddingTop="25dp"
+        >
+
+        <EditText
+            android:id="@+id/emailInput"
+            android:layout_width="561dp"
+            android:layout_height="99dp"
+            android:background="#FFFFFF"
+            android:clickable="true"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:hint="Correo electrónico"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="#6E6E6E"
+            android:textSize="35sp"
+            android:drawablePadding="25dp"
+            android:paddingLeft="20dp"
+            android:layout_marginBottom="20dp"
+            />
+
+        <EditText
+            android:id="@+id/passwordInput"
+            android:layout_width="561dp"
+            android:layout_height="99dp"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:hint="Contraseña"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="#6E6E6E"
+            android:textIsSelectable="true"
+            android:textSize="35sp"
+            android:drawablePadding="25dp"
+            android:paddingLeft="20dp"
+            android:layout_marginBottom="20dp"/>
+
+
+        <Button
+            android:id="@+id/pagarPaypal"
+            android:layout_width="561dp"
+            android:layout_height="99dp"
+            android:background="@color/white"
+            android:text="Pagar"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textColor="#00457C"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:shadowColor="@android:color/transparent"
+            />
+    </LinearLayout>
+
+</LinearLayout>

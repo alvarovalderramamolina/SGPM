@@ -1,176 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Category">
-
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
     <include
         layout="@layout/header_toolbar"
-        android:id="@+id/gridLayout"
-    />
-
-    <Button
-        android:id="@+id/button10"
-        android:layout_width="146dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="22dp"
-        android:layout_marginEnd="139dp"
-        android:background="#FFFFFF"
-        android:text="Ofertas"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView13" />
-
-    <Button
-        android:id="@+id/button9"
-        android:layout_width="146dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="352dp"
-        android:layout_marginBottom="21dp"
-        android:background="#FFFFFF"
-        android:text="Accesorios"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button10"
-        app:layout_constraintTop_toBottomOf="@+id/imageView12" />
-
-    <Button
-        android:id="@+id/button8"
-        android:layout_width="146dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="65dp"
-        android:layout_marginBottom="21dp"
-        android:background="#FFFFFF"
-        android:text="Zapatos"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="146dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="139dp"
-        android:layout_marginBottom="42dp"
-        android:background="#FFFFFF"
-        android:text="Abrigos"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        app:layout_constraintBottom_toTopOf="@+id/imageView13"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView10" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="146dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="269dp"
-        android:layout_marginBottom="19dp"
-        android:background="#FFFFFF"
-        android:text="Jerseys"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        app:layout_constraintBottom_toTopOf="@+id/imageView12"
-        app:layout_constraintStart_toEndOf="@+id/imageView8"
-        app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+        android:id="@+id/toolbar_products"
+        />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="166dp"
         android:layout_height="43dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="1098dp"
-        android:layout_marginBottom="21dp"
         android:text="Categorías"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="#000000"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
-
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="212dp"
-        android:layout_height="209dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="19dp"
-        android:layout_marginEnd="199dp"
-        android:layout_marginBottom="3dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toStartOf="@+id/imageView9"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:srcCompat="@drawable/straight_fit_vaqueros_levis" />
-
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="325dp"
-        android:layout_height="213dp"
-        android:layout_marginTop="93dp"
-        android:layout_marginEnd="137dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageView10"
-        app:layout_constraintTop_toBottomOf="@+id/gridLayout"
-        app:srcCompat="@drawable/jerseys" />
-
-    <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="343dp"
-        android:layout_height="194dp"
-        android:layout_marginTop="104dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/button7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gridLayout"
-        app:srcCompat="@drawable/abrigos" />
-
-
-
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="261dp"
-        android:layout_height="242dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/button8"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:srcCompat="@drawable/zapatos" />
-
-    <ImageView
-        android:id="@+id/imageView12"
-        android:layout_width="290dp"
-        android:layout_height="249dp"
-        android:layout_marginTop="19dp"
-        android:layout_marginEnd="175dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageView13"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
-        app:srcCompat="@drawable/accesorios" />
-
-    <ImageView
-        android:id="@+id/imageView13"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"/>
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="38dp"
-        android:layout_marginEnd="38dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button7"
-        app:srcCompat="@drawable/oferta_especial" />
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="215dp"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/straight_fit_vaqueros_levis" />
+            <Button
+                android:id="@+id/button"
+                android:layout_width="146dp"
+                android:layout_height="52dp"
+                android:background="#FFFFFF"
+                android:text="Pantalones"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="20dp"/>
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/zapatos" />
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="146dp"
+                android:layout_height="52dp"
+                android:background="#FFFFFF"
+                android:text="Zapatos"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:layout_marginTop="5dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="50dp"
+            android:gravity="center"
+            android:layout_marginRight="215dp">
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/jerseys" />
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="146dp"
+                android:layout_height="52dp"
+                android:background="#FFFFFF"
+                android:text="Jerseys"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="20dp"/>
+            <ImageView
+                android:id="@+id/imageView12"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/accesorios" />
+            <Button
+                android:id="@+id/button9"
+                android:layout_width="146dp"
+                android:layout_height="52dp"
+                android:background="#FFFFFF"
+                android:text="Accesorios"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:layout_marginTop="5dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="50dp"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/abrigos" />
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="146dp"
+                android:layout_height="52dp"
+                android:background="#FFFFFF"
+                android:text="Abrigos"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="20dp"/>
+            <ImageView
+                android:id="@+id/imageView13"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/oferta_especial" />
+            <Button
+                android:id="@+id/button10"
+                android:layout_width="146dp"
+                android:layout_height="52dp"
+                android:background="#FFFFFF"
+                android:text="Ofertas"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:layout_marginTop="5dp"  />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="146dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="56dp"
-        android:background="#FFFFFF"
-        android:text="Pantalones"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
-
-</android.support.constraint.ConstraintLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
