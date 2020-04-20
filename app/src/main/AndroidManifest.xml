@@ -47,11 +47,6 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".Registro" />
-        <activity android:name=".InitSesion" />
-        <activity android:name=".MainActivity">
-
-        </activity>
     </application>
 
 </manifest>
