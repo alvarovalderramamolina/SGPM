@@ -44,9 +44,9 @@ public class DataModel {
         initProducts();
         initUsuarios();
         initPromociones();
-       crearProbador(0);
-       crearProbador(1);
-       crearProbador(2);
+        crearProbador(0);
+        crearProbador(1);
+        crearProbador(2);
         crearProbador(3);
         crearProbador(4);
 
