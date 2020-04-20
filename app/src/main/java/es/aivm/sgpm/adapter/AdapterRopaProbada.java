@@ -72,6 +72,7 @@ public class AdapterRopaProbada extends RecyclerView.Adapter<AdapterRopaProbada.
         protected TextView name;
         protected TextView brand;
         protected TextView price;
+        protected TextView color;
 
 
         public ViewHolderProduct(View v) {
@@ -80,6 +81,7 @@ public class AdapterRopaProbada extends RecyclerView.Adapter<AdapterRopaProbada.
             name = (TextView) v.findViewById(R.id.name_item);
             brand = (TextView) v.findViewById(R.id.brand_item);
             price = (TextView) v.findViewById(R.id.price_item);
+            color= (TextView)  v.findViewById(R.id.color_prenda);
 
         }
     }
