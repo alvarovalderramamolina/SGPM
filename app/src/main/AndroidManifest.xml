@@ -34,7 +34,6 @@
         <activity android:name=".Category" />
         <activity android:name=".RopaDelProbador">
         </activity>
-
         <activity android:name=".ProbadoresUso" />
         <activity
             android:name=".Registro"
@@ -47,6 +46,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
+        </activity>
+        <activity android:name=".Registro" />
+        <activity android:name=".InitSesion" />
+        <activity android:name=".MainActivity">
+
         </activity>
     </application>
 
