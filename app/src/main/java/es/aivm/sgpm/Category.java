@@ -23,6 +23,12 @@ public class Category extends AppCompatActivity implements View.OnClickListener{
         Resources res = getResources(); /** from an Activity */
 
         image.setImageDrawable(res.getDrawable(R.drawable.boton_salir));
+        image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         hideNavigationBar();
 
