@@ -49,7 +49,7 @@ public class Registro extends AppCompatActivity {
                     Toast.makeText(context, "Debe introducir un email valido.", Toast.LENGTH_SHORT).show();
                 }else {
 
-                    if (!nameValue.equals("") && !emailValue.equals("") && !pwValue.equals("")) {
+                    if (!nameValue.equals("") && !pwValue.equals("")) {
                         DataModel.database.signUp(nameValue, emailValue, pwValue);
 
                         Toast.makeText(context, "Usuario creado correctamente.", Toast.LENGTH_SHORT).show();
