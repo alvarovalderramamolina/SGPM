@@ -22,13 +22,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ShoppingBasket">
-            <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
-
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".ShoppingBasket"/>
         <activity android:name=".Waiting" />
         <activity android:name=".Photo" />
         <activity
@@ -49,7 +43,11 @@
             android:name=".InitSesion"
             android:windowSoftInputMode="stateHidden" />
         <activity android:name=".MainActivity">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
 
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
         </activity>
     </application>
 
