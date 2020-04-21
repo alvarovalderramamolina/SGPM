@@ -45,15 +45,20 @@ public class Registro extends AppCompatActivity {
                 String emailValue = email.getText().toString();
                 String pwValue = pw.getText().toString();
 
-                if (!nameValue.equals("") && !emailValue.equals("") && !pwValue.equals("")){
-                    DataModel.database.signUp(nameValue, emailValue, pwValue);
+                if(!emailValue.contains("@")){
+                    Toast.makeText(context, "Debe introducir un email valido.", Toast.LENGTH_SHORT).show();
+                }else {
 
-                    Toast.makeText(context, "Usuario creado correctamente.", Toast.LENGTH_SHORT).show();
+                    if (!nameValue.equals("") && !emailValue.equals("") && !pwValue.equals("")) {
+                        DataModel.database.signUp(nameValue, emailValue, pwValue);
 
-                    Intent intent = new Intent (getApplicationContext(), MainActivity.class);
-                    startActivity(intent);
-                }else{
-                    Toast.makeText(context, "Todos los campos deben estar rellenos.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "Usuario creado correctamente.", Toast.LENGTH_SHORT).show();
+
+                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(context, "Todos los campos deben estar rellenos.", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });
