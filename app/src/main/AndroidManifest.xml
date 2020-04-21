@@ -23,11 +23,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ShoppingBasket">
-            <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
 
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
         </activity>
         <activity android:name=".Waiting" />
         <activity android:name=".Photo" />
@@ -35,21 +31,29 @@
             android:name=".CardPayment"
             android:windowSoftInputMode="stateHidden" />
         <activity android:name=".Gratitude" />
-        <activity android:name=".Products" />
+        <activity android:name=".Products"
+            android:windowSoftInputMode="stateHidden"/>
         <activity android:name=".Bill"/>
         <activity android:name=".SolicitudProbador" />
         <activity android:name=".SolicitudFacturaPersonal" />
         <activity android:name=".Category" />
         <activity android:name=".RopaDelProbador"></activity>
-        <activity android:name=".ProbadoresUso" />
+        <activity android:name=".ProbadoresUso">
+
+        </activity>
         <activity
             android:name=".Registro"
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".InitSesion"
-            android:windowSoftInputMode="stateHidden" />
+            android:windowSoftInputMode="stateHidden"
+            />
         <activity android:name=".MainActivity">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
 
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
         </activity>
     </application>
 

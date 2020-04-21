@@ -1,5 +1,10 @@
 package es.aivm.sgpm;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Color;
+import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayout;
@@ -7,7 +12,11 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.view.ViewManager;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import es.aivm.sgpm.adapter.AdapterProbador;
 import es.aivm.sgpm.adapter.AdapterProduct;
@@ -21,6 +30,7 @@ public class ProbadoresUso extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private AdapterProbador mAdapter;
     private GridLayoutManager gridLayoutManager;
+    @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +46,36 @@ public class ProbadoresUso extends AppCompatActivity {
         for(ProbadorModel item :database.probadores ){
             mAdapter.add(item);
         }
+
+
+
+        View v = (View) findViewById(R.id.boton_salir);
+        ((ViewManager)v.getParent()).removeView(v);
+
+        View v1 = (View) findViewById(R.id.iconos_cestas_probador);
+        v1.setVisibility(View.INVISIBLE);
+
+        ImageView image1  = (ImageView) findViewById(R.id.logo_amazon);
+        Resources res1 = getResources(); /** from an Activity */
+        image1.setImageDrawable(res1.getDrawable(R.drawable.logo_blanco));
+
+        ImageView image  = (ImageView) findViewById(R.id.boton_atras);
+        Resources res = getResources(); /** from an Activity */
+        image.setImageDrawable(res.getDrawable(R.drawable.boton_salir));
+
+        LinearLayout rl = (LinearLayout) findViewById(R.id.toolbar_products);
+            //aplicas color.
+        rl.setBackgroundResource(R.color.solidBlue);
+
+        ImageButton volverButton = findViewById(R.id.boton_atras);
+        volverButton.setColorFilter(Color.argb(255, 255, 255, 255));
+        volverButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(intent);
+            }
+        });
         
         hideNavigationBar();
 
