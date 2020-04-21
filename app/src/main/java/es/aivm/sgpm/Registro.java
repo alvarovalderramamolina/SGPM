@@ -48,6 +48,8 @@ public class Registro extends AppCompatActivity {
                 if (!nameValue.equals("") && !emailValue.equals("") && !pwValue.equals("")){
                     DataModel.database.signUp(nameValue, emailValue, pwValue);
 
+                    Toast.makeText(context, "Usuario creado correctamente.", Toast.LENGTH_SHORT).show();
+
                     Intent intent = new Intent (getApplicationContext(), MainActivity.class);
                     startActivity(intent);
                 }else{
