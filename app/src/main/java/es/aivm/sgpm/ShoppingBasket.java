@@ -1,5 +1,6 @@
 package es.aivm.sgpm;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.widget.LinearLayout;
 
 import es.aivm.sgpm.adapter.AdapterCesta;
 import es.aivm.sgpm.adapter.AdapterProduct;
+import es.aivm.sgpm.dialog.DialogPago;
 import es.aivm.sgpm.model.DataModel;
 
 public class ShoppingBasket extends AppCompatActivity {
@@ -34,8 +36,9 @@ public class ShoppingBasket extends AppCompatActivity {
         final ImageButton finalizarCompra = findViewById(R.id.boton_finalizar_compra);
         finalizarCompra.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                // Intent intent = new Intent (getApplicationContext(), Registro.class);
-                //startActivity(intent);
+                DialogPago cdd=new DialogPago(ShoppingBasket.this);
+                cdd.show();
+
             }
         });
 
