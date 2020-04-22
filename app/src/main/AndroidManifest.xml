@@ -8,6 +8,11 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <supports-screens
         android:largeScreens="true"
         android:normalScreens="false"
@@ -22,6 +27,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ChosenProduct"></activity>
+        <activity android:name=".FittingRoom"/>
         <activity android:name=".ShoppingBasket"/>
         <activity android:name=".Waiting" />
         <activity android:name=".Photo" />
@@ -29,19 +36,23 @@
             android:name=".CardPayment"
             android:windowSoftInputMode="stateHidden" />
         <activity android:name=".Gratitude" />
-        <activity android:name=".Products" />
+        <activity android:name=".Products"
+            android:windowSoftInputMode="stateHidden"/>
         <activity android:name=".Bill"/>
         <activity android:name=".SolicitudProbador" />
         <activity android:name=".SolicitudFacturaPersonal" />
         <activity android:name=".Category" />
         <activity android:name=".RopaDelProbador"></activity>
-        <activity android:name=".ProbadoresUso" />
+        <activity android:name=".ProbadoresUso">
+
+        </activity>
         <activity
             android:name=".Registro"
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".InitSesion"
-            android:windowSoftInputMode="stateHidden" />
+            android:windowSoftInputMode="stateHidden"
+            />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -49,6 +60,7 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

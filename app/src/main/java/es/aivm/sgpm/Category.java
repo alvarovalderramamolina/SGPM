@@ -6,7 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import es.aivm.sgpm.model.DataModel;
 
@@ -36,13 +38,21 @@ public class Category extends AppCompatActivity implements View.OnClickListener{
             DataModel.database = new DataModel(this);
             first = false;
         }
+      
+        ImageButton salirButton = findViewById(R.id.boton_atras);
+        salirButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
-        Button ofertasButton = findViewById(R.id.button10);
-        Button accesoriosButton = findViewById(R.id.button9);
-        Button zapatosButton = findViewById(R.id.button8);
-        Button abrigosButton = findViewById(R.id.button7);
-        Button jerseysButton = findViewById(R.id.button2);
-        Button pantalonesButton = findViewById(R.id.button);
+        TextView ofertasButton = findViewById(R.id.button10);
+        TextView accesoriosButton = findViewById(R.id.button9);
+        TextView zapatosButton = findViewById(R.id.button8);
+        TextView abrigosButton = findViewById(R.id.button7);
+        TextView jerseysButton = findViewById(R.id.button2);
+        TextView pantalonesButton = findViewById(R.id.button);
 
         ofertasButton.setOnClickListener(this);
         zapatosButton.setOnClickListener(this);

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+    <include
+        layout="@layout/header_toolbar"
+        android:id="@+id/toolbar_products"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Probador"
+        android:textSize="35dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view_fitt"
+        android:layout_width="1150dp"
+        android:layout_height="430dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="60dp"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="210dp">
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/boton_probar_ahora"
+            android:background="@color/white"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icono_camara"
+            android:layout_marginLeft="300dp"/>
+    </LinearLayout>
+
+</LinearLayout>
