@@ -28,7 +28,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ChosenProduct"></activity>
-        <activity android:name=".FittingRoom">
+        <activity android:name=".FittingRoom"/>
         <activity android:name=".ShoppingBasket"/>
         <activity android:name=".Waiting" />
         <activity android:name=".Photo" />
@@ -60,26 +60,7 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".Waiting"></activity>
-        <activity android:name=".Photo" />
-        <activity
-            android:name=".CardPayment"
-            android:windowSoftInputMode="stateHidden" />
-        <activity android:name=".Gratitude" />
-        <activity
-            android:name=".Products"
-            android:windowSoftInputMode="stateHidden" />
-        <activity android:name=".SolicitudProbador" />
-        <activity android:name=".Category" />
-        <activity android:name=".RopaDelProbador" />
-        <activity android:name=".ProbadoresUso" />
-        <activity
-            android:name=".Registro"
-            android:windowSoftInputMode="stateHidden" />
-        <activity
-            android:name=".InitSesion"
-            android:windowSoftInputMode="stateHidden" />
-        <activity android:name=".MainActivity" />
+
     </application>
 
 </manifest>
