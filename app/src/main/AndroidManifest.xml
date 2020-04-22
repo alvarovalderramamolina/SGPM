@@ -34,7 +34,13 @@
         <activity android:name=".Photo" />
         <activity
             android:name=".CardPayment"
-            android:windowSoftInputMode="stateHidden" />
+            android:windowSoftInputMode="stateHidden">
+                    <intent-filter>
+                        <category android:name="android.intent.category.LAUNCHER" />
+
+                        <action android:name="android.intent.action.MAIN" />
+                    </intent-filter>/>
+         </activity>
         <activity android:name=".Gratitude" />
         <activity android:name=".Products"
             android:windowSoftInputMode="stateHidden"/>
@@ -42,7 +48,9 @@
         <activity android:name=".SolicitudProbador" />
         <activity android:name=".SolicitudFacturaPersonal" />
         <activity android:name=".Category" />
-        <activity android:name=".RopaDelProbador"></activity>
+        <activity android:name=".RopaDelProbador">
+
+        </activity>
         <activity android:name=".ProbadoresUso">
 
         </activity>
@@ -54,11 +62,7 @@
             android:windowSoftInputMode="stateHidden"
             />
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
 
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
         </activity>
 
     </application>

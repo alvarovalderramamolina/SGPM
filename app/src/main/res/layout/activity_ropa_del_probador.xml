@@ -36,7 +36,13 @@
                 android:layout_height="match_parent"
                 android:layout_marginStart="800dp">
 
-
+                <ImageButton
+                    android:id="@+id/imageButton_probador"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/boton_probador">
+                </ImageButton>
                 <ImageButton
                     android:id="@+id/imageButton_cesta"
                     android:layout_width="100dp"
@@ -44,14 +50,7 @@
                     android:background="@android:color/transparent"
                     android:src="@drawable/boton_cesta_activo"></ImageButton>
 
-                <ImageButton
-                    android:id="@+id/imageButton_probador"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/boton_probador">
 
-                </ImageButton>
             </GridLayout>
         </LinearLayout>
         <android.support.v7.widget.RecyclerView

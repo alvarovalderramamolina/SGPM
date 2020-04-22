@@ -69,7 +69,7 @@ public class Products extends AppCompatActivity {
         }
 
         hideNavigationBar();
-        ImageButton volver = findViewById(R.id.boton_atras);
+        ImageButton volver = findViewById(R.id.boton_volver);
         volver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

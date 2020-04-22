@@ -21,7 +21,7 @@ public class Category extends AppCompatActivity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
 
-        ImageView image  = (ImageView) findViewById(R.id.boton_atras);
+        ImageView image  = (ImageView) findViewById(R.id.boton_volver);
         Resources res = getResources(); /** from an Activity */
 
         image.setImageDrawable(res.getDrawable(R.drawable.boton_salir));
@@ -33,7 +33,7 @@ public class Category extends AppCompatActivity implements View.OnClickListener{
             first = false;
         }
       
-        ImageButton salirButton = findViewById(R.id.boton_atras);
+        ImageButton salirButton = findViewById(R.id.boton_volver);
         salirButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
