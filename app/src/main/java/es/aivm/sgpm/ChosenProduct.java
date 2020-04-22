@@ -18,7 +18,6 @@ public class ChosenProduct extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chosen_product);
-
         final ImageView image = (ImageView) findViewById(R.id.imagen);
         image.setImageDrawable(DataModel.currentProduct.getImagen());
 
@@ -97,5 +96,6 @@ public class ChosenProduct extends AppCompatActivity {
                         View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION |
                         View.SYSTEM_UI_FLAG_LAYOUT_STABLE
         );
+
     }
 }

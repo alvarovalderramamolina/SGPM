@@ -34,7 +34,8 @@
         <activity android:name=".Photo" />
         <activity
             android:name=".CardPayment"
-            android:windowSoftInputMode="stateHidden" />
+            android:windowSoftInputMode="stateHidden">
+         </activity>
         <activity android:name=".Gratitude" />
         <activity android:name=".Products"
             android:windowSoftInputMode="stateHidden"/>
