@@ -4,7 +4,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/white">
+    android:background="@color/white"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".FittingRoom">
     <include
         layout="@layout/header_toolbar"
         android:id="@+id/toolbar_products"
@@ -32,11 +34,13 @@
         android:layout_marginTop="40dp"
         android:layout_marginLeft="210dp">
         <ImageButton
+            android:id="@+id/boton_probar_ahora"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/boton_probar_ahora"
             android:background="@color/white"/>
         <ImageButton
+            android:id="@+id/boton_camara"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/icono_camara"

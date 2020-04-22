@@ -16,6 +16,7 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 
 import es.aivm.sgpm.Bill;
+import es.aivm.sgpm.FittingRoom;
 import es.aivm.sgpm.R;
 import es.aivm.sgpm.ShoppingBasket;
 import es.aivm.sgpm.model.DataModel;
@@ -58,9 +59,13 @@ public class DialogPago extends Dialog implements android.view.View.OnClickListe
                 if (actionType.equals("GenerarFactura")) {
                     Intent intent = new Intent (c.getApplicationContext(), Bill.class);
                     c.startActivity(intent);
-                } else if (actionType.equals("EliminarProducto")) {
+                } else if (actionType.equals("EliminarProductoCesta")) {
                     DataModel.currentUser.removeProductFromCesta(position);
                     Intent intent = new Intent (c.getApplicationContext(), ShoppingBasket.class);
+                    c.startActivity(intent);
+                } else if (actionType.equals("EliminarProductoProbador")) {
+                    DataModel.currentUser.removeProductFromProbador(position);
+                    Intent intent = new Intent (c.getApplicationContext(), FittingRoom.class);
                     c.startActivity(intent);
                 }
                 break;

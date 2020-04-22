@@ -1,7 +1,6 @@
 package es.aivm.sgpm.adapter;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,21 +8,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RatingBar;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import es.aivm.sgpm.FittingRoom;
 import es.aivm.sgpm.R;
 import es.aivm.sgpm.ShoppingBasket;
 import es.aivm.sgpm.dialog.DialogPago;
 import es.aivm.sgpm.model.ItemProduct;
 
-import static es.aivm.sgpm.model.ItemProduct.Color.*;
-
-public class AdapterFittingRoom extends RecyclerView.Adapter<AdapterCesta.ViewHolderProduct> {
+public class AdapterFittingRoom extends RecyclerView.Adapter<AdapterFittingRoom.ViewHolderProduct> {
     private List mDataset;
     private Context context;
 
@@ -48,11 +44,10 @@ public class AdapterFittingRoom extends RecyclerView.Adapter<AdapterCesta.ViewHo
     @Override
     public ViewHolderProduct onCreateViewHolder(ViewGroup parent, int i) {
 
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout., parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.fitting_room_item, parent, false);
         ViewHolderProduct vh = new ViewHolderProduct(v);
         return vh;
     }
-
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolderProduct holder, final int position) {
@@ -87,7 +82,7 @@ public class AdapterFittingRoom extends RecyclerView.Adapter<AdapterCesta.ViewHo
 
         holder.papelera.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                DialogPago cdd = new DialogPago(((ShoppingBasket)context), "EliminarProducto","¿Estás seguro que quieres eliminar este producto de la cesta?");
+                DialogPago cdd = new DialogPago(((FittingRoom)context), "EliminarProductoProbador","¿Estás seguro que quieres eliminar este producto del probador?");
                 cdd.position = position;
                 cdd.show();
             }

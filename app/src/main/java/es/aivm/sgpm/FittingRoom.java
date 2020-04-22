@@ -23,7 +23,7 @@ import es.aivm.sgpm.model.UserModel;
 public class FittingRoom extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
-    private AdapterCesta mAdapter;
+    private AdapterFittingRoom mAdapter;
     private LinearLayoutManager mLayoutManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +51,7 @@ public class FittingRoom extends AppCompatActivity {
             }
         });
 
-        final ImageButton finalizarCompra = findViewById(R.id.boton_finalizar_compra);
+        final ImageButton finalizarCompra = findViewById(R.id.boton_probar_ahora);
         finalizarCompra.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 DialogPago cdd = new DialogPago(FittingRoom.this, "GenerarFactura","¿Estás seguro que quieres realizar el pago?");

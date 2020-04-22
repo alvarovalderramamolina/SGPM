@@ -87,7 +87,7 @@ public class AdapterCesta extends RecyclerView.Adapter<AdapterCesta.ViewHolderPr
 
         holder.papelera.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                DialogPago cdd = new DialogPago(((ShoppingBasket)context), "EliminarProducto","¿Estás seguro que quieres eliminar este producto de la cesta?");
+                DialogPago cdd = new DialogPago(((ShoppingBasket)context), "EliminarProductoCesta","¿Estás seguro que quieres eliminar este producto de la cesta?");
                 cdd.position = position;
                 cdd.show();
             }
