@@ -1,18 +1,24 @@
 package es.aivm.sgpm.adapter;
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Color;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import es.aivm.sgpm.ChosenProduct;
 import es.aivm.sgpm.R;
+import es.aivm.sgpm.model.DataModel;
 import es.aivm.sgpm.model.ItemProduct;
 
 /**
@@ -50,7 +56,7 @@ public class AdapterProduct extends RecyclerView.Adapter<AdapterProduct.ViewHold
 
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolderProduct holder, int position) {
+    public void onBindViewHolder(@NonNull final ViewHolderProduct holder, final int position) {
         final ItemProduct item = (ItemProduct) mDataset.get(position);
         holder.productImage.setImageDrawable(item.getImagen());
         holder.name.setText(item.getNombre());
@@ -60,15 +66,18 @@ public class AdapterProduct extends RecyclerView.Adapter<AdapterProduct.ViewHold
         holder.price.setText(item.getPrecio() + "€");
         if (item.isDisponible())
             holder.availability.setText("Disponible");
-        else
+        else{
             holder.availability.setText("No disponible");
-
-        /*holder.mTextView.setOnClickListener(new View.OnClickListener() {
+            holder.availability.setTextColor(Color.parseColor("#ED0327"));
+        }
+        holder.row.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                remove(item);
+                Intent intent = new Intent(v.getContext(), ChosenProduct.class);
+                DataModel.currentProduct=item;
+                context.startActivity(intent);
             }
-        });*/
+        });
     }
 
     @Override
@@ -85,6 +94,7 @@ public class AdapterProduct extends RecyclerView.Adapter<AdapterProduct.ViewHold
         protected TextView amountRating;
         protected TextView price;
         protected TextView availability;
+        protected LinearLayout row;
 
 
         public ViewHolderProduct(View v) {
@@ -96,6 +106,7 @@ public class AdapterProduct extends RecyclerView.Adapter<AdapterProduct.ViewHold
             amountRating = (TextView) v.findViewById(R.id.rating_amount_item);
             price = (TextView) v.findViewById(R.id.price_item);
             availability = (TextView) v.findViewById(R.id.availability_item);
+            row = (LinearLayout) v.findViewById(R.id.linear_elemento);
         }
     }
 }

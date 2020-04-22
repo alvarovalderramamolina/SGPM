@@ -2,15 +2,22 @@ package es.aivm.sgpm;
 
 import android.content.Intent;
 import android.content.res.Resources;
+import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import es.aivm.sgpm.model.DataModel;
+import es.aivm.sgpm.model.UserModel;
+
+import static es.aivm.sgpm.model.DataModel.currentUser;
 
 public class Category extends AppCompatActivity implements View.OnClickListener{
 
@@ -20,9 +27,6 @@ public class Category extends AppCompatActivity implements View.OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
-
-        ImageView image  = (ImageView) findViewById(R.id.boton_atras);
-        Resources res = getResources(); /** from an Activity */
 
         image.setImageDrawable(res.getDrawable(R.drawable.boton_salir));
         image.setOnClickListener(new View.OnClickListener() {
@@ -39,13 +43,44 @@ public class Category extends AppCompatActivity implements View.OnClickListener{
             first = false;
         }
       
-        ImageButton salirButton = findViewById(R.id.boton_atras);
+        ImageButton salirButton = findViewById(R.id.boton_salir);
         salirButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
+
+        View v= findViewById(R.id.boton_volver);
+        ((ViewManager)v.getParent()).removeView(v);
+
+        ImageButton cestaButton = findViewById(R.id.boton_cesta);
+        cestaButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),ShoppingBasket.class);
+                startActivity(intent);
+            }
+        });
+        ImageButton probadorButton= findViewById(R.id.boton_probador);
+        probadorButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),RopaDelProbador.class);
+                startActivity(intent);
+            }
+        });
+        UserModel  usu = currentUser;
+
+        System.out.println(usu.getCesta().size());
+
+        TextView contadorCesta =  findViewById(R.id.contador_cesta);
+        contadorCesta.setText(usu.getCesta().size()+"");
+
+        TextView contadorProbador = findViewById(R.id.contador_probador);
+        contadorProbador.setText(usu.getProbador().size()+"");
+
+
 
         TextView ofertasButton = findViewById(R.id.button10);
         TextView accesoriosButton = findViewById(R.id.button9);

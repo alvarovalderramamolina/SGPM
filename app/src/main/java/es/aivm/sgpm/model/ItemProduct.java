@@ -3,7 +3,9 @@ package es.aivm.sgpm.model;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 
-public class ItemProduct {
+import java.io.Serializable;
+
+public class ItemProduct implements Serializable {
     public enum Talla {
         S,
         M,

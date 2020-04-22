@@ -30,7 +30,7 @@ public class ProbadoresUso extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private AdapterProbador mAdapter;
     private GridLayoutManager gridLayoutManager;
-    @SuppressLint("ResourceAsColor")
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,15 +59,11 @@ public class ProbadoresUso extends AppCompatActivity {
         Resources res1 = getResources(); /** from an Activity */
         image1.setImageDrawable(res1.getDrawable(R.drawable.logo_blanco));
 
-        ImageView image  = (ImageView) findViewById(R.id.boton_atras);
-        Resources res = getResources(); /** from an Activity */
-        image.setImageDrawable(res.getDrawable(R.drawable.boton_salir));
-
         LinearLayout rl = (LinearLayout) findViewById(R.id.toolbar_products);
             //aplicas color.
         rl.setBackgroundResource(R.color.solidBlue);
 
-        ImageButton volverButton = findViewById(R.id.boton_atras);
+        ImageButton volverButton = findViewById(R.id.boton_salir);
         volverButton.setColorFilter(Color.argb(255, 255, 255, 255));
         volverButton.setOnClickListener(new View.OnClickListener() {
             @Override
