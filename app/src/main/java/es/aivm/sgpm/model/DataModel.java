@@ -19,7 +19,7 @@ public class DataModel {
 
     public List<UserModel> usuarios = new ArrayList<>();
     public List<UserModel> admins = new ArrayList<>();
-    public List<ProbadorModel> probadores = new ArrayList<>();
+    public List<ProbadorModel> probadores = new ArrayList<ProbadorModel>();
     public String[] nombres = new String[]{
       "Alain Aspect", "David Baltimore", "Allen Bard", "Timothy Berners-Lee", "Dennis Bray", "Elon Musk", "Jeff Bezos",
       "Mark Zuckerberg", "Tim Cook", "Sundar Pichai"
@@ -44,6 +44,16 @@ public class DataModel {
         initProducts();
         initUsuarios();
         initPromociones();
+        crearProbador(0);
+        crearProbador(1);
+        crearProbador(2);
+        crearProbador(3);
+        crearProbador(4);
+
+
+
+
+
     }
 
     public void signUp(String name, String email, String password) {
@@ -198,11 +208,14 @@ public class DataModel {
         UserModel w = new UserModel("Khalid", "kAlfozan@alumnos.upm.es", "abc789");
         UserModel x = new UserModel("Alonso", "a.dinavarro@alumnos.upm.es", "abc101");
         UserModel y = new UserModel("El Jefazo", "jefe@alumnos.upm.es", "tencuidado");
+        UserModel t = new UserModel("Alonso", "a.dinavarro@alumnos.upm.es", "abc101");
+
 
         usuarios.add(u);
         usuarios.add(v);
         usuarios.add(w);
         usuarios.add(x);
+        usuarios.add(t);
         admins.add(y);
     }
 }
