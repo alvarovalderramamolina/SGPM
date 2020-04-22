@@ -43,13 +43,8 @@
         <activity android:name=".SolicitudProbador" />
         <activity android:name=".SolicitudFacturaPersonal" />
         <activity android:name=".Category">
-            <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
-
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
         </activity>
-        <activity android:name=".RopaDelProbador"></activity>
+        <activity android:name=".RopaDelProbador"/>
         <activity android:name=".ProbadoresUso">
 
         </activity>
@@ -61,8 +56,11 @@
             android:windowSoftInputMode="stateHidden"
             />
         <activity android:name=".MainActivity">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
         </activity>
-
     </application>
-
 </manifest>
