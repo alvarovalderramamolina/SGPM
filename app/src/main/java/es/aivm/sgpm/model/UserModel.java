@@ -54,17 +54,23 @@ public class UserModel {
         puntos += 100;
     }
 
-    public void addProductToCesta(ItemProduct product) {
-        if (this.cesta.size() < 10)
+    public boolean addProductToCesta(ItemProduct product) {
+        if (this.cesta.size() < 10){
             this.cesta.add(product);
+            return true;
+        }
+        return false;
     }
     public void removeProductFromCesta(int index) {
         if (0 <= index && index <= 10)
             this.cesta.remove(index);
     }
-    public void addProductToProbador(ItemProduct product) {
-        if (this.cesta.size() < 10)
-            this.cesta.add(product);
+    public boolean addProductToProbador(ItemProduct product) {
+        if (this.probador.size() < 10){
+            this.probador.add(product);
+            return true;
+        }
+        return false;
     }
     public void removeProductFromProbador(int index) {
         if (0 <= index && index <= 10)

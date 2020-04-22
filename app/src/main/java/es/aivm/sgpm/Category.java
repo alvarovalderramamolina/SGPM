@@ -28,8 +28,6 @@ public class Category extends AppCompatActivity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
 
-
-
         hideNavigationBar();
 
         if (first){
@@ -60,7 +58,7 @@ public class Category extends AppCompatActivity implements View.OnClickListener{
         probadorButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),RopaDelProbador.class);
+                Intent intent = new Intent(getApplicationContext(),FittingRoom.class);
                 startActivity(intent);
             }
         });
@@ -73,8 +71,6 @@ public class Category extends AppCompatActivity implements View.OnClickListener{
 
         TextView contadorProbador = findViewById(R.id.contador_probador);
         contadorProbador.setText(usu.getProbador().size()+"");
-
-
 
         TextView ofertasButton = findViewById(R.id.button10);
         TextView accesoriosButton = findViewById(R.id.button9);

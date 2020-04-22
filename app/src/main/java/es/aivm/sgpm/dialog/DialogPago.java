@@ -10,21 +10,31 @@ import android.support.annotation.NonNull;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.TextView;
 
+
+import org.w3c.dom.Text;
 
 import es.aivm.sgpm.Bill;
 import es.aivm.sgpm.R;
 import es.aivm.sgpm.ShoppingBasket;
+import es.aivm.sgpm.model.DataModel;
 
 public class DialogPago extends Dialog implements android.view.View.OnClickListener {
     public Activity c;
     public Dialog d;
     public Button yes, no;
+    private String text;
+    public String actionType;
+    private TextView title;
+    public int position;
 
-    public DialogPago(Activity a) {
+    public DialogPago(Activity a, String actionType, String text) {
         super(a);
         // TODO Auto-generated constructor stub
         this.c = a;
+        this.text = text;
+        this.actionType = actionType;
     }
 
     @Override
@@ -34,9 +44,10 @@ public class DialogPago extends Dialog implements android.view.View.OnClickListe
         setContentView(R.layout.dialog);
         yes = (Button) findViewById(R.id.continuar);
         no = (Button) findViewById(R.id.cancelar);
+        title = (TextView) findViewById(R.id.my_dialog_text);
+        title.setText(this.text);
         yes.setOnClickListener(this);
         no.setOnClickListener(this);
-
     }
 
     @Override
@@ -44,12 +55,16 @@ public class DialogPago extends Dialog implements android.view.View.OnClickListe
 
         switch (v.getId()) {
             case R.id.continuar:
-                Intent intent = new Intent (c.getApplicationContext(), Bill.class);
-                c.startActivity(intent);
+                if (actionType.equals("GenerarFactura")) {
+                    Intent intent = new Intent (c.getApplicationContext(), Bill.class);
+                    c.startActivity(intent);
+                } else if (actionType.equals("EliminarProducto")) {
+                    DataModel.currentUser.removeProductFromCesta(position);
+                    Intent intent = new Intent (c.getApplicationContext(), ShoppingBasket.class);
+                    c.startActivity(intent);
+                }
                 break;
             case R.id.cancelar:
-                Intent intent1 = new Intent (c.getApplicationContext(), ShoppingBasket.class);
-                c.startActivity(intent1);
                 dismiss();
                 break;
             default:

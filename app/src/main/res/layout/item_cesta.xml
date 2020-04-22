@@ -13,6 +13,7 @@
         android:layout_marginLeft="20dp"
         android:background="@android:color/transparent"/>
     <ImageView
+        android:id="@+id/ivItem"
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_weight="0"
@@ -26,6 +27,7 @@
         android:layout_weight="1"
         android:orientation="vertical">
         <TextView
+            android:id="@+id/name_item"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Sudadera champion azul marino 2019"
@@ -33,7 +35,7 @@
             android:textColor="#000000"
             />
         <TextView
-            android:id="@+id/nombre_marca"
+            android:id="@+id/brand_item"
             android:layout_width="match_parent"
             android:layout_height="90dp"
             android:text="Champion"
@@ -45,41 +47,56 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Talla: "
+                android:textSize="27sp"
+                android:textColor="#000000"
+                />
+            <TextView
+                android:id="@+id/talla_prenda"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Talla: M"
+                android:text="M"
+                android:textStyle="bold"
                 android:textSize="27sp"
-
                 android:textColor="#000000"
                 />
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-
                 android:orientation="horizontal"
                 android:layout_weight="3">
                 <TextView
-                    android:id="@+id/color_prenda"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="Color: Azul marino"
+                    android:text="Color: "
                     android:textSize="27sp"
                     android:gravity="left"
                     android:textColor="#000000"/>
-
+                <TextView
+                    android:id="@+id/color_texto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Azul"
+                    android:textStyle="bold"
+                    android:textSize="27sp"
+                    android:gravity="left"
+                    android:textColor="#000000"/>
                 <ImageView
+                    android:id="@+id/color_cuadrado"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="20dp"
                     android:scaleType="center"
-                    android:src="@drawable/color_azul_marino"
-
+                    android:background="@color/solidBlue"
                     />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
     <TextView
+        android:id="@+id/price_item"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_weight="4"

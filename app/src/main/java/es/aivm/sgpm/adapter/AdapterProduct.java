@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -73,9 +74,16 @@ public class AdapterProduct extends RecyclerView.Adapter<AdapterProduct.ViewHold
         holder.row.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), ChosenProduct.class);
                 DataModel.currentProduct=item;
-                context.startActivity(intent);
+
+                if (DataModel.currentProduct.isDisponible()) {
+                    Intent intent = new Intent(v.getContext(), ChosenProduct.class);
+
+                    context.startActivity(intent);
+                } else {
+                    Toast.makeText(context, "Producto no disponible.", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
     }

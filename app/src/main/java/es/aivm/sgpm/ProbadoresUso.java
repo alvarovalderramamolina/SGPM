@@ -49,7 +49,7 @@ public class ProbadoresUso extends AppCompatActivity {
 
 
 
-        View v = (View) findViewById(R.id.boton_salir);
+        View v = (View) findViewById(R.id.boton_volver);
         ((ViewManager)v.getParent()).removeView(v);
 
         View v1 = (View) findViewById(R.id.iconos_cestas_probador);

@@ -5,7 +5,7 @@ import android.graphics.drawable.Drawable;
 
 import java.io.Serializable;
 
-public class ItemProduct implements Serializable {
+public class ItemProduct implements Cloneable {
     public enum Talla {
         S,
         M,
@@ -126,5 +126,11 @@ public class ItemProduct implements Serializable {
 
     public void setImagen(Drawable imagen) {
         this.imagen = imagen;
+    }
+
+    public Object clone() throws
+            CloneNotSupportedException
+    {
+        return super.clone();
     }
 }

@@ -13,22 +13,23 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="50dp"
+        android:orientation="vertical"
         android:layout_weight="1"
-        android:orientation="vertical">
+        >
         <TextView
-            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
             android:text="Cesta de compra"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:textSize="45sp"
-            android:textColor="#000000"/>
+            android:layout_marginBottom="25dp"
+            />
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_view_cesta"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"/>
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
     <ImageButton

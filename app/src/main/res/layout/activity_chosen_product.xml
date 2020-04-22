@@ -156,8 +156,8 @@
                         android:orientation="horizontal">
                         <LinearLayout
                             android:id="@+id/azul"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:orientation="vertical"
                             android:gravity="center"
                             android:layout_weight="1"
@@ -174,8 +174,8 @@
                         </LinearLayout>
                         <LinearLayout
                             android:id="@+id/negro"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:orientation="vertical"
                             android:gravity="center"
                             android:layout_weight="1"
@@ -192,8 +192,8 @@
                         </LinearLayout>
                         <LinearLayout
                             android:id="@+id/rojo"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:orientation="vertical"
                             android:gravity="center"
                             android:layout_weight="1"
@@ -210,8 +210,8 @@
                         </LinearLayout>
                         <LinearLayout
                             android:id="@+id/gris"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:orientation="vertical"
                             android:gravity="center"
                             android:layout_weight="1"
@@ -228,8 +228,8 @@
                         </LinearLayout>
                         <LinearLayout
                             android:id="@+id/naranja"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:orientation="vertical"
                             android:gravity="center"
                             android:layout_weight="1"
@@ -252,12 +252,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <ImageButton
+                    android:id="@+id/add_item_probador"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/boton_aniadir_probador"
                     android:background="@color/white"
                     android:layout_marginRight="50dp"/>
                 <ImageButton
+                    android:id="@+id/add_item_cesta"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/boton_aniadir_cesta"

@@ -16,6 +16,7 @@ import es.aivm.sgpm.adapter.AdapterCesta;
 import es.aivm.sgpm.adapter.AdapterProduct;
 import es.aivm.sgpm.dialog.DialogPago;
 import es.aivm.sgpm.model.DataModel;
+import es.aivm.sgpm.model.ItemProduct;
 import es.aivm.sgpm.model.UserModel;
 
 public class ShoppingBasket extends AppCompatActivity {
@@ -31,31 +32,44 @@ public class ShoppingBasket extends AppCompatActivity {
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view_cesta);
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
-        DataModel.database = new DataModel(this);
         mAdapter = new AdapterCesta(this);
         mRecyclerView.setAdapter(mAdapter);
+
+        final ImageButton atras = findViewById(R.id.boton_volver);
+        atras.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        final ImageButton apagar = findViewById(R.id.boton_salir);
+        apagar.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
         final ImageButton finalizarCompra = findViewById(R.id.boton_finalizar_compra);
         finalizarCompra.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                DialogPago cdd=new DialogPago(ShoppingBasket.this);
+                DialogPago cdd = new DialogPago(ShoppingBasket.this, "GenerarFactura","¿Estás seguro que quieres realizar el pago?");
                 cdd.show();
-
             }
         });
+
         ImageButton cestaButton = findViewById(R.id.boton_cesta);
         cestaButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),ShoppingBasket.class);
-                startActivity(intent);
+
             }
         });
         ImageButton probadorButton= findViewById(R.id.boton_probador);
         probadorButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),RopaDelProbador.class);
+                Intent intent = new Intent(getApplicationContext(),FittingRoom.class);
                 startActivity(intent);
             }
         });
@@ -67,6 +81,9 @@ public class ShoppingBasket extends AppCompatActivity {
         TextView contadorProbador = findViewById(R.id.contador_probador);
         contadorProbador.setText(usu.getProbador().size()+"");
         hideNavigationBar();
+
+        for (ItemProduct item : DataModel.currentUser.getCesta() )
+            mAdapter.add(item);
     }
     private void hideNavigationBar() {
         this.getWindow().getDecorView().setSystemUiVisibility(

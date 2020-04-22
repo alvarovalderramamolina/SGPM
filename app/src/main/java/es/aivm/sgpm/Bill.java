@@ -24,6 +24,23 @@ public class Bill extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+        final ImageButton atras = findViewById(R.id.boton_volver);
+        atras.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        final ImageButton apagar = findViewById(R.id.boton_salir);
+        apagar.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
         ImageButton probadorButton= findViewById(R.id.boton_probador);
         probadorButton.setOnClickListener(new View.OnClickListener() {
             @Override

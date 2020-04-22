@@ -86,7 +86,7 @@ public class RopaDelProbador extends AppCompatActivity {
         probadorButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),RopaDelProbador.class);
+                Intent intent = new Intent(getApplicationContext(),FittingRoom.class);
                 startActivity(intent);
             }
         });
