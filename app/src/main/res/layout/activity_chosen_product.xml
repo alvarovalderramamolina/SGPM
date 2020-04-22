@@ -16,6 +16,7 @@
         android:layout_marginTop="30dp"
         android:layout_marginLeft="30dp">
         <ImageView
+            android:id="@+id/imagen"
             android:layout_width="300dp"
             android:layout_height="400dp"
             android:scaleType="centerCrop"
@@ -26,6 +27,7 @@
             android:orientation="vertical"
             android:paddingLeft="50dp">
             <TextView
+                android:id="@+id/nombreprod"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Champion's Graphic Crew B Sudadera para Hombre"
@@ -33,6 +35,7 @@
                 android:textSize="30dp"
                 android:layout_marginBottom="15dp"/>
             <TextView
+                android:id="@+id/marcaprod"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Levis"
@@ -43,13 +46,16 @@
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
                 android:layout_marginBottom="15dp">
+
                 <RatingBar
+                    android:id="@+id/estrellasprod"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:numStars="5"
-                    android:rating="4"
+                    android:layout_marginRight="15dp"
                     android:isIndicator="true"
-                    android:layout_marginRight="15dp"/>
+                    android:numStars="5"
+                    android:rating="4" />
+
                 <TextView
                     android:id="@+id/rating_amount_item"
                     android:layout_width="wrap_content"
@@ -105,24 +111,28 @@
                         android:orientation="horizontal"
                         android:layout_marginBottom="15dp">
                         <TextView
+                            android:id="@+id/talla_S"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="S"
                             android:textColor="@color/black"
                             android:layout_marginRight="20dp"/>
                         <TextView
+                            android:id="@+id/talla_M"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="M"
                             android:textColor="@color/black"
                             android:layout_marginRight="20dp"/>
                         <TextView
+                            android:id="@+id/talla_L"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="L"
                             android:textColor="@color/black"
                             android:layout_marginRight="20dp"/>
                         <TextView
+                            android:id="@+id/talla_XL"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="XL"
@@ -145,6 +155,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
                         <LinearLayout
+                            android:id="@+id/azul"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
@@ -162,6 +173,7 @@
                                 android:textColor="@color/black"/>
                         </LinearLayout>
                         <LinearLayout
+                            android:id="@+id/negro"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
@@ -179,6 +191,7 @@
                                 android:textColor="@color/black"/>
                         </LinearLayout>
                         <LinearLayout
+                            android:id="@+id/rojo"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
@@ -196,6 +209,7 @@
                                 android:textColor="@color/black"/>
                         </LinearLayout>
                         <LinearLayout
+                            android:id="@+id/gris"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
@@ -213,6 +227,7 @@
                                 android:textColor="@color/black"/>
                         </LinearLayout>
                         <LinearLayout
+                            android:id="@+id/naranja"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
