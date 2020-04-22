@@ -46,7 +46,6 @@ public class DialogPago extends Dialog implements android.view.View.OnClickListe
             case R.id.continuar:
                 Intent intent = new Intent (c.getApplicationContext(), Bill.class);
                 c.startActivity(intent);
-                c.finish();
                 break;
             case R.id.cancelar:
                 Intent intent1 = new Intent (c.getApplicationContext(), ShoppingBasket.class);

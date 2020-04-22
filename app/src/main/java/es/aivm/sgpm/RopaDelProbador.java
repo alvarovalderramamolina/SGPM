@@ -12,11 +12,13 @@ import android.view.ViewManager;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import es.aivm.sgpm.adapter.AdapterRopaProbada;
 import es.aivm.sgpm.model.DataModel;
 import es.aivm.sgpm.model.ItemProduct;
 import es.aivm.sgpm.model.ItemsProbador;
+import es.aivm.sgpm.model.UserModel;
 
 public class RopaDelProbador extends AppCompatActivity {
     private RecyclerView mRecyclerView;
@@ -71,6 +73,30 @@ public class RopaDelProbador extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        ImageButton cestaButton = findViewById(R.id.boton_cesta);
+        cestaButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),ShoppingBasket.class);
+                startActivity(intent);
+            }
+        });
+        ImageButton probadorButton= findViewById(R.id.boton_probador);
+        probadorButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),RopaDelProbador.class);
+                startActivity(intent);
+            }
+        });
+        UserModel usu = DataModel.currentUser;
+
+        TextView contadorCesta = (TextView) findViewById(R.id.contador_cesta);
+        contadorCesta.setText(usu.getCesta().size()+"");
+
+        TextView contadorProbador = findViewById(R.id.contador_probador);
+        contadorProbador.setText(usu.getProbador().size()+"");
 
         hideNavigationBar();
     }

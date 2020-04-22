@@ -15,6 +15,7 @@ import android.widget.TextView;
 import es.aivm.sgpm.adapter.AdapterProduct;
 import es.aivm.sgpm.model.DataModel;
 import es.aivm.sgpm.model.ItemProduct;
+import es.aivm.sgpm.model.UserModel;
 
 public class Products extends AppCompatActivity {
 
@@ -34,6 +35,31 @@ public class Products extends AppCompatActivity {
         DataModel.database = new DataModel(this);
         mAdapter = new AdapterProduct(this);
         mRecyclerView.setAdapter(mAdapter);
+
+        ImageButton cestaButton = findViewById(R.id.boton_cesta);
+        cestaButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),ShoppingBasket.class);
+                startActivity(intent);
+            }
+        });
+        ImageButton probadorButton= findViewById(R.id.boton_probador);
+        probadorButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),RopaDelProbador.class);
+                startActivity(intent);
+            }
+        });
+        UserModel usu = DataModel.currentUser;
+
+        TextView contadorCesta = (TextView) findViewById(R.id.contador_cesta);
+        contadorCesta.setText(usu.getCesta().size()+"");
+
+        TextView contadorProbador = findViewById(R.id.contador_probador);
+        contadorProbador.setText(usu.getProbador().size()+"");
+
 
         final Intent intent = getIntent();
         String category = intent.getStringExtra("category");

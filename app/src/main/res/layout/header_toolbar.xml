@@ -59,8 +59,9 @@
         android:layout_marginRight="50dp"
         >
 
-        <ImageView
-            android:id="@+id/imageView6"
+        <ImageButton
+            android:background="@android:color/transparent"
+            android:id="@+id/boton_cesta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="0"
@@ -78,14 +79,16 @@
             android:layout_marginRight="@dimen/default_gap"/>
 
         <TextView
+            android:id="@+id/contador_cesta"
             android:layout_row="1"
             android:layout_column="1"
             android:text="0"
             android:textSize="25sp"
             android:textColor="@color/solidOrange"/>
 
-        <ImageView
-            android:id="@+id/imageView2"
+        <ImageButton
+            android:id="@+id/boton_probador"
+            android:background="@android:color/transparent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="0"
@@ -102,6 +105,7 @@
             android:textStyle="bold"/>
 
         <TextView
+            android:id="@+id/contador_probador"
             android:layout_row="1"
             android:layout_column="3"
             android:text="0"
