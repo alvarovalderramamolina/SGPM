@@ -28,14 +28,6 @@ public class Category extends AppCompatActivity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
 
-        image.setImageDrawable(res.getDrawable(R.drawable.boton_salir));
-        image.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-
         hideNavigationBar();
 
         if (first){
