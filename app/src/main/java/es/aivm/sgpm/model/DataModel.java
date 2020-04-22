@@ -38,6 +38,8 @@ public class DataModel {
     public static DataModel database;
     public static UserModel currentUser;
 
+    public static ItemProduct currentProduct;
+
     public DataModel(Context context) {
         this.context = context;
 
