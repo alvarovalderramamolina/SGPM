@@ -7,33 +7,50 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/solidGrey"
+
     android:gravity="center_vertical">
-
-
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="3"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+    <ImageButton
+        android:id="@+id/boton_salir"
+        android:layout_width="wrap_content"
+        android:background="@color/solidGrey"
+        android:tint="@color/solidRed"
+        android:scaleType="centerInside"
+        android:adjustViewBounds="true"
+        android:layout_height="60dp"
+        android:layout_marginLeft="30dp"
+        android:src="@drawable/boton_salir_pequenio"
+        android:layout_gravity="center"/>
     <ImageButton
         android:id="@+id/boton_atras"
         android:layout_height="wrap_content"
-        android:layout_width="0dp"
-        android:layout_weight="2"
+        android:layout_width="wrap_content"
         android:src="@drawable/boton_volver"
         android:background="@android:color/transparent"
-        android:gravity="left"
+        android:layout_marginLeft="50dp"
         android:tint="@color/solidBlue"
 
     />
+</LinearLayout>
 
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/logo_amazon"
         android:layout_height="wrap_content"
         android:layout_width="0dp"
-        android:layout_weight="3"
+        android:layout_weight="4"
         android:src="@drawable/logo_negro" />
 
     <GridLayout
+        android:id="@+id/iconos_cestas_probador"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="2"
+        android:layout_weight="3"
         android:columnCount="4"
         android:rowCount="2"
         android:useDefaultMargins="true"
