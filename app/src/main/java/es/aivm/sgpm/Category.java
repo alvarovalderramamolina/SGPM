@@ -31,6 +31,7 @@ public class Category extends AppCompatActivity implements View.OnClickListener{
             DataModel.database = new DataModel(this);
             first = false;
         }
+      
         ImageButton salirButton = findViewById(R.id.boton_atras);
         salirButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,7 +46,6 @@ public class Category extends AppCompatActivity implements View.OnClickListener{
         Button abrigosButton = findViewById(R.id.button7);
         Button jerseysButton = findViewById(R.id.button2);
         Button pantalonesButton = findViewById(R.id.button);
-
 
         ofertasButton.setOnClickListener(this);
         zapatosButton.setOnClickListener(this);
