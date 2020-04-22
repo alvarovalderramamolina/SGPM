@@ -34,7 +34,8 @@
         <activity android:name=".Photo" />
         <activity
             android:name=".CardPayment"
-            android:windowSoftInputMode="stateHidden" />
+            android:windowSoftInputMode="stateHidden">
+         </activity>
         <activity android:name=".Gratitude" />
         <activity android:name=".Products"
             android:windowSoftInputMode="stateHidden"/>
@@ -42,7 +43,9 @@
         <activity android:name=".SolicitudProbador" />
         <activity android:name=".SolicitudFacturaPersonal" />
         <activity android:name=".Category" />
-        <activity android:name=".RopaDelProbador"></activity>
+        <activity android:name=".RopaDelProbador">
+
+        </activity>
         <activity android:name=".ProbadoresUso">
 
         </activity>

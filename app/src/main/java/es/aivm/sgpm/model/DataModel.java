@@ -51,9 +51,6 @@ public class DataModel {
         crearProbador(4);
 
 
-
-
-
     }
 
     public void signUp(String name, String email, String password) {
