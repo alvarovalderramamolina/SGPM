@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -36,7 +37,8 @@
             android:orientation="horizontal"
 
             >
-            <TextView
+            <Button
+                android:id="@+id/cancelar"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="Cancelar"
@@ -48,19 +50,21 @@
                 android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:background="@color/solidOrange"
-                />
-            <TextView
+                tools:ignore="RtlCompat" />
+            <Button
+                android:id="@+id/continuar"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="Continuar"
+                android:gravity="center_vertical"
                 android:textAlignment="center"
                 android:textSize="30sp"
                 android:layout_gravity="center"
                 android:textColor="@color/solidBlue"
                 android:layout_weight="1"
-                android:gravity="center_vertical"
+
                 android:background="@color/solidGrey"
-                />
+                tools:ignore="RtlCompat" />
         </LinearLayout>
 
     </LinearLayout>
