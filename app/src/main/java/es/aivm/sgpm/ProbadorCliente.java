@@ -49,7 +49,7 @@ public class ProbadorCliente extends AppCompatActivity {
         final ImageButton finalizarCompra = findViewById(R.id.boton_probar_ahora);
         finalizarCompra.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Dialogo cdd = new Dialogo(ProbadorCliente.this, "GenerarFactura","¿Estás seguro que quieres realizar el pago?");
+                Dialogo cdd = new Dialogo(ProbadorCliente.this, "PedirProductos","¿Estás seguro que quieres probar los productos?");
                 cdd.show();
             }
         });

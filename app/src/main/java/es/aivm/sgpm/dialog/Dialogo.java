@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 
+import es.aivm.sgpm.Espera;
 import es.aivm.sgpm.Factura;
 import es.aivm.sgpm.ProbadorCliente;
 import es.aivm.sgpm.R;
@@ -53,6 +54,10 @@ public class Dialogo extends Dialog implements android.view.View.OnClickListener
             case R.id.continuar:
                 if (actionType.equals("GenerarFactura")) {
                     Intent intent = new Intent (c.getApplicationContext(), Factura.class);
+                    c.startActivity(intent);
+                } else if (actionType.equals("PedirProductos")) {
+                    DataModel.currentUser.removeProductFromCesta(position);
+                    Intent intent = new Intent(c.getApplicationContext(), Espera.class);
                     c.startActivity(intent);
                 } else if (actionType.equals("EliminarProductoCesta")) {
                     DataModel.currentUser.removeProductFromCesta(position);
