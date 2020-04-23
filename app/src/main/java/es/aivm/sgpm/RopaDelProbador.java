@@ -18,6 +18,7 @@ import es.aivm.sgpm.adapter.AdapterRopaProbada;
 import es.aivm.sgpm.model.DataModel;
 import es.aivm.sgpm.model.ItemProduct;
 import es.aivm.sgpm.model.ItemsProbador;
+import es.aivm.sgpm.model.ProbadorModel;
 import es.aivm.sgpm.model.UserModel;
 
 public class RopaDelProbador extends AppCompatActivity {
@@ -34,13 +35,29 @@ public class RopaDelProbador extends AppCompatActivity {
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view_probador);
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
-        DataModel.database = new DataModel(this);
-        mAdapter= new AdapterRopaProbada(this);
-        mRecyclerView.setAdapter(this.mAdapter);
 
-        for (ItemProduct item: DataModel.database.abrigos ) {
-            mAdapter.add(item);
+        mAdapter = new AdapterRopaProbada(this);
+        mRecyclerView.setAdapter(mAdapter);
+
+        final Intent intent = getIntent();
+        String probadorNombre = intent.getStringExtra("name");
+
+        System.out.println("------------------- PROBADORES: " + DataModel.database.probadores.size());
+
+        for (ProbadorModel probador : DataModel.database.probadores) {
+
+            System.out.println("------------------- PROBADOR NAME \"" + probador.getName() +"\"");
+            System.out.println("------------------- PROBADOR NAME INTENT \"" + probadorNombre +"\"");
+            if (probador.getName().equals(probadorNombre)) {
+                System.out.println("------------------- PRODUCTOS CESTA: " + probador.getUser().getCesta().size());
+                for (ItemProduct item : probador.getUser().getCesta()) {
+                    System.out.println("------------------- PRODUCTO PRICE: " + item.getPrecio());
+                    mAdapter.add(item);
+                }
+                break;
+            }
         }
+
 
         View v1 = (View) findViewById(R.id.iconos_cestas_probador);
         v1.setVisibility(View.INVISIBLE);
@@ -48,8 +65,6 @@ public class RopaDelProbador extends AppCompatActivity {
         ImageView image1  = (ImageView) findViewById(R.id.logo_amazon);
         Resources res1 = getResources(); /** from an Activity */
         image1.setImageDrawable(res1.getDrawable(R.drawable.logo_blanco));
-
-
 
         LinearLayout rl = (LinearLayout) findViewById(R.id.gridLayout);
         //aplicas color.
@@ -73,30 +88,6 @@ public class RopaDelProbador extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        ImageButton cestaButton = findViewById(R.id.boton_cesta);
-        cestaButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),ShoppingBasket.class);
-                startActivity(intent);
-            }
-        });
-        ImageButton probadorButton= findViewById(R.id.boton_probador);
-        probadorButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),FittingRoom.class);
-                startActivity(intent);
-            }
-        });
-        UserModel usu = DataModel.currentUser;
-
-        TextView contadorCesta = (TextView) findViewById(R.id.contador_cesta);
-        contadorCesta.setText(usu.getCesta().size()+"");
-
-        TextView contadorProbador = findViewById(R.id.contador_probador);
-        contadorProbador.setText(usu.getProbador().size()+"");
 
         hideNavigationBar();
     }

@@ -30,11 +30,11 @@
                 android:text="Probador 3"
                 android:textColor="#000000"
                 android:textSize="40sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_weight="1"/>
             <GridLayout
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginStart="800dp">
+                android:layout_height="match_parent">
 
                 <ImageButton
                     android:id="@+id/imageButton_probador"
@@ -56,11 +56,6 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_view_probador"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="90dp"
-            android:layout_marginBottom="8dp">
-
-        </android.support.v7.widget.RecyclerView>
+            android:layout_height="wrap_content"/>
     </LinearLayout>
 </android.widget.LinearLayout>

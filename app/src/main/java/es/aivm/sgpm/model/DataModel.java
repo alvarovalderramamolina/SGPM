@@ -17,6 +17,9 @@ public class DataModel {
      */
     private Context context;
 
+    public static boolean first = true;
+    public static boolean firstInvitee = true;
+
     public List<UserModel> usuarios = new ArrayList<>();
     public List<UserModel> admins = new ArrayList<>();
     public List<ProbadorModel> probadores = new ArrayList<ProbadorModel>();
@@ -46,13 +49,6 @@ public class DataModel {
         initProducts();
         initUsuarios();
         initPromociones();
-        crearProbador(0);
-        crearProbador(1);
-        crearProbador(2);
-        crearProbador(3);
-        crearProbador(4);
-
-
     }
 
     public void signUp(String name, String email, String password) {
@@ -116,7 +112,7 @@ public class DataModel {
      * Funciones auxiliares: No cambiar el alcance de estas funciones
      *
      */
-    private void crearProbador(int i) {
+    public void crearProbador(int i) {
         String nombreImagen = "probador" + i;
         System.out.println(nombreImagen);
         final int resourceId = context.

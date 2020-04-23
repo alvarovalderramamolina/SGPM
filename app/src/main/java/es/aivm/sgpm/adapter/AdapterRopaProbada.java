@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -52,14 +53,28 @@ public class AdapterRopaProbada extends RecyclerView.Adapter<AdapterRopaProbada.
         holder.name.setText(item.getNombre());
         holder.brand.setText(item.getMarca());
         holder.price.setText(item.getPrecio() + "€");
+        holder.color.setText(item.getColor().toString());
+        holder.talla.setText(item.getTalla().toString());
 
+        switch (item.getColor()) {
+            case AZUL:
+                holder.colorImagen.setBackground(context.getResources().getDrawable(R.color.solidBlue));
+                break;
+            case NEGRO:
+                holder.colorImagen.setBackground(context.getResources().getDrawable(R.color.black));
+                break;
+            case ROJO:
+                holder.colorImagen.setBackground(context.getResources().getDrawable(R.color.solidRed));
+                break;
+            case GRIS:
+                holder.colorImagen.setBackground(context.getResources().getDrawable(R.color.solidGrey));
+                break;
+            case NARANJA:
+                holder.colorImagen.setBackground(context.getResources().getDrawable(R.color.solidOrange));
+                break;
 
-        /*holder.mTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                remove(item);
-            }
-        });*/
+        }
+
     }
 
     @Override
@@ -72,8 +87,9 @@ public class AdapterRopaProbada extends RecyclerView.Adapter<AdapterRopaProbada.
         protected TextView name;
         protected TextView brand;
         protected TextView price;
+        protected TextView talla;
         protected TextView color;
-
+        protected ImageView colorImagen;
 
         public ViewHolderProduct(View v) {
             super(v);
@@ -81,7 +97,9 @@ public class AdapterRopaProbada extends RecyclerView.Adapter<AdapterRopaProbada.
             name = (TextView) v.findViewById(R.id.name_item);
             brand = (TextView) v.findViewById(R.id.brand_item);
             price = (TextView) v.findViewById(R.id.price_item);
-            color= (TextView)  v.findViewById(R.id.color_prenda);
+            talla = (TextView) v.findViewById(R.id.talla_prenda);
+            color = (TextView) v.findViewById(R.id.color_texto);
+            colorImagen = (ImageView) v.findViewById(R.id.color_cuadrado);
 
         }
     }

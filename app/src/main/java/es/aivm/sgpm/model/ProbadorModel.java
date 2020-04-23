@@ -8,6 +8,7 @@ public class ProbadorModel {
     private UserModel user;
 
     public ProbadorModel(String name, Drawable image, UserModel user) {
+        System.out.println("------------------- PROBADOR CREADO: " + name + " " + user.getCesta().size());
         this.name = name;
         this.image = image;
         this.user = user;

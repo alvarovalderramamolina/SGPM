@@ -30,16 +30,11 @@ public class Category extends AppCompatActivity implements View.OnClickListener{
 
         hideNavigationBar();
 
-        if (first){
-            DataModel.database = new DataModel(this);
-            first = false;
-        }
-      
-        ImageButton salirButton = findViewById(R.id.boton_salir);
-        salirButton.setOnClickListener(new View.OnClickListener() {
-            @Override
+        final ImageButton apagar = findViewById(R.id.boton_salir);
+        apagar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                finish();
+                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -62,6 +57,7 @@ public class Category extends AppCompatActivity implements View.OnClickListener{
                 startActivity(intent);
             }
         });
+
         UserModel  usu = currentUser;
 
         System.out.println(usu.getCesta().size());

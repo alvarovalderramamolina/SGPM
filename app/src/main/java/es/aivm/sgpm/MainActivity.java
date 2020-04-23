@@ -9,10 +9,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import es.aivm.sgpm.model.DataModel;
+import es.aivm.sgpm.model.ProbadorModel;
 import es.aivm.sgpm.model.UserModel;
 
 public class MainActivity extends AppCompatActivity {
-    static boolean first = true;
+
 
     private void setListeners() {
         final Button clienteButton = findViewById(R.id.zonaClientesButton);
@@ -30,6 +31,26 @@ public class MainActivity extends AppCompatActivity {
                 UserModel u = new UserModel();
                 DataModel.currentUser = u;
 
+                if (DataModel.firstInvitee) {
+                    DataModel.firstInvitee = false;
+                } else {
+                    for (int i=0; i<DataModel.database.usuarios.size(); i++) {
+                        UserModel user = DataModel.database.usuarios.get(i);
+                        if(user.isGuest()) {
+                            DataModel.database.usuarios.remove(i);
+                            break;
+                        }
+                    }
+                    for (int i=0; i<DataModel.database.probadores.size(); i++) {
+                        ProbadorModel prob = DataModel.database.probadores.get(i);
+                        if(prob.getUser().isGuest()) {
+                            DataModel.database.probadores.remove(i);
+                            break;
+                        }
+                    }
+                }
+                DataModel.database.usuarios.add(u);
+                DataModel.database.crearProbador(DataModel.database.usuarios.size()-1);
                 Intent intent = new Intent (getApplicationContext(), Category.class);
                 startActivity(intent);
             }
@@ -58,10 +79,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        if (first){
+        System.out.println("------------------- FIRST: " + DataModel.first);
+        if (DataModel.first){
             DataModel.database = new DataModel(this);
-            first = false;
+            DataModel.first = false;
         }
+        System.out.println("------------------- PROBADORES: " + DataModel.database.probadores.size());
         setListeners();
         hideNavigationBar();
     }

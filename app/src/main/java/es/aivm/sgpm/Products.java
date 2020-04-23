@@ -32,7 +32,7 @@ public class Products extends AppCompatActivity {
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
-        DataModel.database = new DataModel(this);
+
         mAdapter = new AdapterProduct(this);
         mRecyclerView.setAdapter(mAdapter);
 
@@ -111,13 +111,6 @@ public class Products extends AppCompatActivity {
         }
 
         hideNavigationBar();
-        ImageButton volver = findViewById(R.id.boton_volver);
-        volver.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
     }
     private void hideNavigationBar() {
         this.getWindow().getDecorView().setSystemUiVisibility(

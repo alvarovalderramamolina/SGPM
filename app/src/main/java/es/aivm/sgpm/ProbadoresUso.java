@@ -24,8 +24,6 @@ import es.aivm.sgpm.model.DataModel;
 import es.aivm.sgpm.model.ItemProduct;
 import es.aivm.sgpm.model.ProbadorModel;
 
-import static es.aivm.sgpm.model.DataModel.database;
-
 public class ProbadoresUso extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private AdapterProbador mAdapter;
@@ -39,15 +37,13 @@ public class ProbadoresUso extends AppCompatActivity {
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view_probadores);
         gridLayoutManager= new GridLayoutManager(getApplicationContext(),4);
         mRecyclerView.setLayoutManager(gridLayoutManager);
-        database = new DataModel(this);
         mAdapter = new AdapterProbador(this);
         mRecyclerView.setAdapter(mAdapter);
 
-        for(ProbadorModel item :database.probadores ){
+        for(ProbadorModel item : DataModel.database.probadores ){
+            System.out.println(item.getName());
             mAdapter.add(item);
         }
-
-
 
         View v = (View) findViewById(R.id.boton_volver);
         ((ViewManager)v.getParent()).removeView(v);
