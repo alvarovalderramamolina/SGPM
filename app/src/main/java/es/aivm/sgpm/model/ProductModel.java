@@ -5,7 +5,7 @@ import android.graphics.drawable.Drawable;
 
 import java.io.Serializable;
 
-public class ItemProduct implements Cloneable {
+public class ProductModel implements Cloneable {
     public enum Talla {
         S,
         M,
@@ -36,7 +36,7 @@ public class ItemProduct implements Cloneable {
     private Drawable imagen;
 
 
-    public ItemProduct(int id, String nombre, String marca, int valoracionMedia, int numValoraciones, double precio, boolean disponible, Drawable imagen) {
+    public ProductModel(int id, String nombre, String marca, int valoracionMedia, int numValoraciones, double precio, boolean disponible, Drawable imagen) {
         this.id = id;
         this.nombre = nombre;
         this.marca = marca;

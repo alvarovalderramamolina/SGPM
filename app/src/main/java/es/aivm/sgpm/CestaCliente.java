@@ -9,16 +9,16 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import es.aivm.sgpm.adapter.AdapterCesta;
-import es.aivm.sgpm.dialog.DialogPago;
+import es.aivm.sgpm.adapter.AdapterCestaCliente;
+import es.aivm.sgpm.dialog.Dialogo;
 import es.aivm.sgpm.model.DataModel;
-import es.aivm.sgpm.model.ItemProduct;
+import es.aivm.sgpm.model.ProductModel;
 import es.aivm.sgpm.model.UserModel;
 
 public class CestaCliente extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
-    private AdapterCesta mAdapter;
+    private AdapterCestaCliente mAdapter;
     private LinearLayoutManager mLayoutManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,7 @@ public class CestaCliente extends AppCompatActivity {
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view_cesta);
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
-        mAdapter = new AdapterCesta(this);
+        mAdapter = new AdapterCestaCliente(this);
         mRecyclerView.setAdapter(mAdapter);
 
         final ImageButton atras = findViewById(R.id.boton_volver);
@@ -49,7 +49,7 @@ public class CestaCliente extends AppCompatActivity {
         final ImageButton finalizarCompra = findViewById(R.id.boton_finalizar_compra);
         finalizarCompra.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                DialogPago cdd = new DialogPago(CestaCliente.this, "GenerarFactura","¿Estás seguro que quieres realizar el pago?");
+                Dialogo cdd = new Dialogo(CestaCliente.this, "GenerarFactura","¿Estás seguro que quieres realizar el pago?");
                 cdd.show();
             }
         });
@@ -78,7 +78,7 @@ public class CestaCliente extends AppCompatActivity {
         contadorProbador.setText(usu.getProbador().size()+"");
         hideNavigationBar();
 
-        for (ItemProduct item : DataModel.currentUser.getCesta() )
+        for (ProductModel item : DataModel.currentUser.getCesta() )
             mAdapter.add(item);
     }
     private void hideNavigationBar() {

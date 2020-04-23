@@ -16,7 +16,7 @@ import es.aivm.sgpm.R;
 import es.aivm.sgpm.CestaCliente;
 import es.aivm.sgpm.model.DataModel;
 
-public class DialogPago extends Dialog implements android.view.View.OnClickListener {
+public class Dialogo extends Dialog implements android.view.View.OnClickListener {
     public Activity c;
     public Dialog d;
     public Button yes, no;
@@ -25,7 +25,7 @@ public class DialogPago extends Dialog implements android.view.View.OnClickListe
     private TextView title;
     public int position;
 
-    public DialogPago(Activity a, String actionType, String text) {
+    public Dialogo(Activity a, String actionType, String text) {
         super(a);
         // TODO Auto-generated constructor stub
         this.c = a;

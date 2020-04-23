@@ -19,25 +19,25 @@ import java.util.List;
 import es.aivm.sgpm.Producto;
 import es.aivm.sgpm.R;
 import es.aivm.sgpm.model.DataModel;
-import es.aivm.sgpm.model.ItemProduct;
+import es.aivm.sgpm.model.ProductModel;
 
 /**
  * Created by AIVM on 06/04/2020.
  */
-public class AdapterProduct extends RecyclerView.Adapter<AdapterProduct.ViewHolderProduct> {
+public class AdapterProducto extends RecyclerView.Adapter<AdapterProducto.ViewHolderProduct> {
     private List mDataset;
     private Context context;
 
-    public AdapterProduct(Context c) {
+    public AdapterProducto(Context c) {
         this.context = c;
         mDataset = new ArrayList();
     }
 
-    public void add(ItemProduct product) {
+    public void add(ProductModel product) {
         mDataset.add(product);
         notifyItemInserted(mDataset.indexOf(product));
     }
-    public void remove(ItemProduct product) {
+    public void remove(ProductModel product) {
         int position = mDataset.indexOf(product);
 
         if(position != -1) {
@@ -57,7 +57,7 @@ public class AdapterProduct extends RecyclerView.Adapter<AdapterProduct.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolderProduct holder, final int position) {
-        final ItemProduct item = (ItemProduct) mDataset.get(position);
+        final ProductModel item = (ProductModel) mDataset.get(position);
         holder.productImage.setImageDrawable(item.getImagen());
         holder.name.setText(item.getNombre());
         holder.brand.setText(item.getMarca());

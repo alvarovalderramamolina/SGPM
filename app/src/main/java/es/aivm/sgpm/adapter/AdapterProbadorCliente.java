@@ -15,23 +15,23 @@ import java.util.List;
 
 import es.aivm.sgpm.ProbadorCliente;
 import es.aivm.sgpm.R;
-import es.aivm.sgpm.dialog.DialogPago;
-import es.aivm.sgpm.model.ItemProduct;
+import es.aivm.sgpm.dialog.Dialogo;
+import es.aivm.sgpm.model.ProductModel;
 
-public class AdapterFittingRoom extends RecyclerView.Adapter<AdapterFittingRoom.ViewHolderProduct> {
+public class AdapterProbadorCliente extends RecyclerView.Adapter<AdapterProbadorCliente.ViewHolderProduct> {
     private List mDataset;
     private Context context;
 
-    public AdapterFittingRoom(Context c) {
+    public AdapterProbadorCliente(Context c) {
         this.context = c;
         mDataset = new ArrayList();
     }
 
-    public void add(ItemProduct product) {
+    public void add(ProductModel product) {
         mDataset.add(product);
         notifyItemInserted(mDataset.indexOf(product));
     }
-    public void remove(ItemProduct product) {
+    public void remove(ProductModel product) {
         int position = mDataset.indexOf(product);
 
         if(position != -1) {
@@ -50,7 +50,7 @@ public class AdapterFittingRoom extends RecyclerView.Adapter<AdapterFittingRoom.
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolderProduct holder, final int position) {
-        final ItemProduct item = (ItemProduct) mDataset.get(position);
+        final ProductModel item = (ProductModel) mDataset.get(position);
         holder.productImage.setImageDrawable(item.getImagen());
         holder.name.setText(item.getNombre());
         holder.brand.setText(item.getMarca());
@@ -81,7 +81,7 @@ public class AdapterFittingRoom extends RecyclerView.Adapter<AdapterFittingRoom.
 
         holder.papelera.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                DialogPago cdd = new DialogPago(((ProbadorCliente)context), "EliminarProductoProbador","¿Estás seguro que quieres eliminar este producto del probador?");
+                Dialogo cdd = new Dialogo(((ProbadorCliente)context), "EliminarProductoProbador","¿Estás seguro que quieres eliminar este producto del probador?");
                 cdd.position = position;
                 cdd.show();
             }

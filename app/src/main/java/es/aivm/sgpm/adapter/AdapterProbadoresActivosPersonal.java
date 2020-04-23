@@ -18,12 +18,12 @@ import es.aivm.sgpm.R;
 import es.aivm.sgpm.ProbadorPersonal;
 import es.aivm.sgpm.model.ProbadorModel;
 
-public class AdapterProbador extends RecyclerView.Adapter<AdapterProbador.ViewHolderProbador> {
+public class AdapterProbadoresActivosPersonal extends RecyclerView.Adapter<AdapterProbadoresActivosPersonal.ViewHolderProbador> {
 
     private List mDataset;
     private Context context;
 
-    public AdapterProbador(Context c) {
+    public AdapterProbadoresActivosPersonal(Context c) {
         this.context = c;
         mDataset= new ArrayList<>();
     }

@@ -13,15 +13,15 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import es.aivm.sgpm.model.DataModel;
-import es.aivm.sgpm.model.ItemProduct;
+import es.aivm.sgpm.model.ProductModel;
 import es.aivm.sgpm.model.UserModel;
 
 import static es.aivm.sgpm.model.DataModel.currentUser;
 
 public class Producto extends AppCompatActivity {
 
-    private ItemProduct.Talla talla;
-    private ItemProduct.Color color;
+    private ProductModel.Talla talla;
+    private ProductModel.Color color;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,7 +109,7 @@ public class Producto extends AppCompatActivity {
         tallaS.setTextSize(25);
         tallaS.setTypeface(null, Typeface.BOLD);
 
-        talla = ItemProduct.Talla.S;
+        talla = ProductModel.Talla.S;
 
         tallaS.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,7 +124,7 @@ public class Producto extends AppCompatActivity {
                 tallaL.setTypeface(null, Typeface.NORMAL);
                 tallaXL.setTypeface(null, Typeface.NORMAL);
 
-                talla = ItemProduct.Talla.S;
+                talla = ProductModel.Talla.S;
             }
         });
         tallaM.setOnClickListener(new View.OnClickListener() {
@@ -140,7 +140,7 @@ public class Producto extends AppCompatActivity {
                 tallaL.setTypeface(null, Typeface.NORMAL);
                 tallaXL.setTypeface(null, Typeface.NORMAL);
 
-                talla = ItemProduct.Talla.M;
+                talla = ProductModel.Talla.M;
             }
         });
         tallaL.setOnClickListener(new View.OnClickListener() {
@@ -156,7 +156,7 @@ public class Producto extends AppCompatActivity {
                 tallaL.setTypeface(null, Typeface.BOLD);
                 tallaXL.setTypeface(null, Typeface.NORMAL);
 
-                talla = ItemProduct.Talla.L;
+                talla = ProductModel.Talla.L;
             }
         });
         tallaXL.setOnClickListener(new View.OnClickListener() {
@@ -172,7 +172,7 @@ public class Producto extends AppCompatActivity {
                 tallaL.setTypeface(null, Typeface.NORMAL);
                 tallaXL.setTypeface(null, Typeface.BOLD);
 
-                talla = ItemProduct.Talla.XL;
+                talla = ProductModel.Talla.XL;
             }
         });
 
@@ -183,7 +183,7 @@ public class Producto extends AppCompatActivity {
         final LinearLayout naranja = (LinearLayout)findViewById(R.id.naranja);
 
         azul.setBackgroundResource(R.color.solidGrey);
-        color = ItemProduct.Color.AZUL;
+        color = ProductModel.Color.AZUL;
 
         azul.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -194,7 +194,7 @@ public class Producto extends AppCompatActivity {
                 gris.setBackgroundResource(R.color.white);
                 naranja.setBackgroundResource(R.color.white);
 
-                color = ItemProduct.Color.AZUL;
+                color = ProductModel.Color.AZUL;
             }
         });
         negro.setOnClickListener(new View.OnClickListener() {
@@ -206,7 +206,7 @@ public class Producto extends AppCompatActivity {
                 gris.setBackgroundResource(R.color.white);
                 naranja.setBackgroundResource(R.color.white);
 
-                color = ItemProduct.Color.NEGRO;
+                color = ProductModel.Color.NEGRO;
             }
         });
         rojo.setOnClickListener(new View.OnClickListener() {
@@ -218,7 +218,7 @@ public class Producto extends AppCompatActivity {
                 gris.setBackgroundResource(R.color.white);
                 naranja.setBackgroundResource(R.color.white);
 
-                color = ItemProduct.Color.ROJO;
+                color = ProductModel.Color.ROJO;
             }
         });
         gris.setOnClickListener(new View.OnClickListener() {
@@ -230,7 +230,7 @@ public class Producto extends AppCompatActivity {
                 gris.setBackgroundResource(R.color.solidGrey);
                 naranja.setBackgroundResource(R.color.white);
 
-                color = ItemProduct.Color.GRIS;
+                color = ProductModel.Color.GRIS;
             }
         });
         naranja.setOnClickListener(new View.OnClickListener() {
@@ -242,7 +242,7 @@ public class Producto extends AppCompatActivity {
                 gris.setBackgroundResource(R.color.white);
                 naranja.setBackgroundResource(R.color.solidGrey);
 
-                color = ItemProduct.Color.NARANJA;
+                color = ProductModel.Color.NARANJA;
             }
         });
 
@@ -253,7 +253,7 @@ public class Producto extends AppCompatActivity {
                 DataModel.currentProduct.setColor(color);
                 DataModel.currentProduct.setTalla(talla);
                 try {
-                    ItemProduct copy = (ItemProduct) DataModel.currentProduct.clone();
+                    ProductModel copy = (ProductModel) DataModel.currentProduct.clone();
                     if(DataModel.currentUser.addProductToProbador(copy))
                         contadorProbador.setText(usu.getProbador().size()+"");
 
@@ -271,7 +271,7 @@ public class Producto extends AppCompatActivity {
                 DataModel.currentProduct.setColor(color);
                 DataModel.currentProduct.setTalla(talla);
                 try {
-                    ItemProduct copy = (ItemProduct) DataModel.currentProduct.clone();
+                    ProductModel copy = (ProductModel) DataModel.currentProduct.clone();
                     if(DataModel.currentUser.addProductToCesta(copy))
                         contadorCesta.setText(usu.getCesta().size()+"");
 

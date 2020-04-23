@@ -12,14 +12,14 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import es.aivm.sgpm.adapter.AdapterRopaProbada;
+import es.aivm.sgpm.adapter.AdapterProbadorPersonal;
 import es.aivm.sgpm.model.DataModel;
-import es.aivm.sgpm.model.ItemProduct;
+import es.aivm.sgpm.model.ProductModel;
 import es.aivm.sgpm.model.ProbadorModel;
 
 public class ProbadorPersonal extends AppCompatActivity {
     private RecyclerView mRecyclerView;
-    private AdapterRopaProbada mAdapter;
+    private AdapterProbadorPersonal mAdapter;
     private LinearLayoutManager mLayoutManager;
 
 
@@ -32,7 +32,7 @@ public class ProbadorPersonal extends AppCompatActivity {
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        mAdapter = new AdapterRopaProbada(this);
+        mAdapter = new AdapterProbadorPersonal(this);
         mRecyclerView.setAdapter(mAdapter);
 
         final Intent intent = getIntent();
@@ -46,7 +46,7 @@ public class ProbadorPersonal extends AppCompatActivity {
             System.out.println("------------------- PROBADOR NAME INTENT \"" + probadorNombre +"\"");
             if (probador.getName().equals(probadorNombre)) {
                 System.out.println("------------------- PRODUCTOS CESTA: " + probador.getUser().getCesta().size());
-                for (ItemProduct item : probador.getUser().getCesta()) {
+                for (ProductModel item : probador.getUser().getCesta()) {
                     System.out.println("------------------- PRODUCTO PRICE: " + item.getPrecio());
                     mAdapter.add(item);
                 }

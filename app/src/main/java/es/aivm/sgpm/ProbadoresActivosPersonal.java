@@ -13,13 +13,13 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import es.aivm.sgpm.adapter.AdapterProbador;
+import es.aivm.sgpm.adapter.AdapterProbadoresActivosPersonal;
 import es.aivm.sgpm.model.DataModel;
 import es.aivm.sgpm.model.ProbadorModel;
 
 public class ProbadoresActivosPersonal extends AppCompatActivity {
     private RecyclerView mRecyclerView;
-    private AdapterProbador mAdapter;
+    private AdapterProbadoresActivosPersonal mAdapter;
     private GridLayoutManager gridLayoutManager;
 
     @Override
@@ -30,7 +30,7 @@ public class ProbadoresActivosPersonal extends AppCompatActivity {
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view_probadores);
         gridLayoutManager= new GridLayoutManager(getApplicationContext(),4);
         mRecyclerView.setLayoutManager(gridLayoutManager);
-        mAdapter = new AdapterProbador(this);
+        mAdapter = new AdapterProbadoresActivosPersonal(this);
         mRecyclerView.setAdapter(mAdapter);
 
         for(ProbadorModel item : DataModel.database.probadores ){

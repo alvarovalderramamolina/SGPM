@@ -9,15 +9,15 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import es.aivm.sgpm.adapter.AdapterProduct;
+import es.aivm.sgpm.adapter.AdapterProducto;
 import es.aivm.sgpm.model.DataModel;
-import es.aivm.sgpm.model.ItemProduct;
+import es.aivm.sgpm.model.ProductModel;
 import es.aivm.sgpm.model.UserModel;
 
 public class ProductosCategoria extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
-    private AdapterProduct mAdapter;
+    private AdapterProducto mAdapter;
     private LinearLayoutManager mLayoutManager;
 
     @Override
@@ -30,7 +30,7 @@ public class ProductosCategoria extends AppCompatActivity {
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        mAdapter = new AdapterProduct(this);
+        mAdapter = new AdapterProducto(this);
         mRecyclerView.setAdapter(mAdapter);
 
 
@@ -82,27 +82,27 @@ public class ProductosCategoria extends AppCompatActivity {
 
         switch (category){
             case "Pantalones":
-                for (ItemProduct item : DataModel.database.pantalones )
+                for (ProductModel item : DataModel.database.pantalones )
                     mAdapter.add(item);
                 break;
             case "Ofertas":
-                for (ItemProduct item : DataModel.database.ofertas )
+                for (ProductModel item : DataModel.database.ofertas )
                     mAdapter.add(item);
                 break;
             case "Accesorios":
-                for (ItemProduct item : DataModel.database.accesorios )
+                for (ProductModel item : DataModel.database.accesorios )
                     mAdapter.add(item);
                 break;
             case "Zapatos":
-                for (ItemProduct item : DataModel.database.calzado)
+                for (ProductModel item : DataModel.database.calzado)
                     mAdapter.add(item);
                 break;
             case "Abrigos":
-                for (ItemProduct item : DataModel.database.abrigos)
+                for (ProductModel item : DataModel.database.abrigos)
                     mAdapter.add(item);
                 break;
             case "Jerseys":
-                for (ItemProduct item : DataModel.database.jerseys)
+                for (ProductModel item : DataModel.database.jerseys)
                     mAdapter.add(item);
                 break;
         }
