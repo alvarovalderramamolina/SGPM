@@ -154,6 +154,7 @@
                 android:layout_marginBottom="50dp"
                 >
                 <ImageButton
+                    android:id="@+id/pagarPaypal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/boton_pagar_paypal"
@@ -162,6 +163,7 @@
                     android:layout_gravity="center_horizontal"
                     />
                 <ImageButton
+                    android:id="@+id/pagar_tarjeta"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/boton_pagar_tarjeta"

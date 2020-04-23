@@ -198,7 +198,7 @@ public class DataModel {
         ofertas.add(cargo_de_hombreofertas);
     }
     private void initUsuarios() {
-        UserModel u = new UserModel("Mohammed", "m.makhfi@alumnos.upm.es", "abc123");
+        UserModel u = new UserModel("a", "a", "a");
         UserModel v = new UserModel("Álvaro", "aivm@alumnos.upm.es", "abc456");
         UserModel w = new UserModel("Khalid", "kAlfozan@alumnos.upm.es", "abc789");
         UserModel x = new UserModel("Alonso", "a.dinavarro@alumnos.upm.es", "abc101");

@@ -94,10 +94,32 @@ public class Factura extends AppCompatActivity {
             descuento *= total;
         }
 
-
+        double precio = Math.round((total-descuento) * 100.0) / 100.0;
+        double rebaja= Math.round((descuento) * 100.0)/100.0;
 
         TextView precio_total = findViewById(R.id.precio_total);
-        precio_total.setText((total-descuento) + "€");
+        precio_total.setText((precio) + "€");
+
+        TextView descuentoTotal = findViewById(R.id.descuento_total);
+        descuentoTotal.setText("-"+ (rebaja) + "€");
+
+        ImageButton creditoButton = findViewById(R.id.pagar_tarjeta);
+        creditoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MetodoPagoTarjeta.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton paypalButton = findViewById(R.id.pagarPaypal);
+        paypalButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MetodoPagoPaypal.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }
