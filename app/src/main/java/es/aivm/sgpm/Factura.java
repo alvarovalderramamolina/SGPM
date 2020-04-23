@@ -13,6 +13,7 @@ import es.aivm.sgpm.adapter.AdapterFactura;
 import es.aivm.sgpm.adapter.AdapterProbadorCliente;
 import es.aivm.sgpm.model.DataModel;
 import es.aivm.sgpm.model.ProductModel;
+import es.aivm.sgpm.model.PromocionModel;
 import es.aivm.sgpm.model.UserModel;
 
 public class Factura extends AppCompatActivity {
@@ -34,8 +35,13 @@ public class Factura extends AppCompatActivity {
 
         UserModel usu = DataModel.currentUser;
 
-        for (ProductModel item : DataModel.currentUser.getCesta() )
+        double total = 0;
+
+        for (ProductModel item : DataModel.currentUser.getCesta() ) {
+            total += item.getPrecio();
             mAdapter.add(item);
+        }
+
 
         ImageButton cestaButton = findViewById(R.id.boton_cesta);
         cestaButton.setOnClickListener(new View.OnClickListener() {
@@ -75,6 +81,23 @@ public class Factura extends AppCompatActivity {
 
         TextView contadorProbador = findViewById(R.id.contador_probador);
         contadorProbador.setText(usu.getProbador().size()+"");
+
+        double descuento = 0;
+
+        if (!DataModel.currentUser.isGuest()) {
+            for (PromocionModel promo : DataModel.currentUser.getPromocionesActivadas() ) {
+                descuento += promo.getDiscount();
+            }
+
+            descuento += (DataModel.currentUser.getPuntosUsados())*0.01;
+
+            descuento *= total;
+        }
+
+
+
+        TextView precio_total = findViewById(R.id.precio_total);
+        precio_total.setText((total-descuento) + "€");
 
     }
 }
