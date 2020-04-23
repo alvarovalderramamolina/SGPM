@@ -1,14 +1,14 @@
 package es.aivm.sgpm;
 
-public class YouTubeVideo {
+public class VideoEspera {
 
     String videoUrl;
 
-    public YouTubeVideo() {
+    public VideoEspera() {
 
     }
 
-    public YouTubeVideo(String videoUrl) {
+    public VideoEspera(String videoUrl) {
         this.videoUrl = videoUrl;
     }
 

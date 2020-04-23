@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".RopaDelProbador">
+    tools:context=".ProbadorPersonal">
 
 
     <include
         android:id="@+id/gridLayout"
-        layout="@layout/header_toolbar" />
+        layout="@layout/cabecera" />
 
     <LinearLayout
         android:layout_width="match_parent"

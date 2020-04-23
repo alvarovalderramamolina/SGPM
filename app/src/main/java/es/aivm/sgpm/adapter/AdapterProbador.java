@@ -10,15 +10,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import es.aivm.sgpm.ChosenProduct;
 import es.aivm.sgpm.R;
-import es.aivm.sgpm.RopaDelProbador;
-import es.aivm.sgpm.model.DataModel;
+import es.aivm.sgpm.ProbadorPersonal;
 import es.aivm.sgpm.model.ProbadorModel;
 
 public class AdapterProbador extends RecyclerView.Adapter<AdapterProbador.ViewHolderProbador> {
@@ -49,7 +46,7 @@ public class AdapterProbador extends RecyclerView.Adapter<AdapterProbador.ViewHo
     @Override
     public ViewHolderProbador onCreateViewHolder(ViewGroup parent, int i) {
 
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_probador_en_uso, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_probadores_activos_personal, parent, false);
         ViewHolderProbador vh = new ViewHolderProbador(v);
         return vh;
     }
@@ -63,7 +60,7 @@ public class AdapterProbador extends RecyclerView.Adapter<AdapterProbador.ViewHo
         holder.row.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            Intent intent = new Intent(v.getContext(), RopaDelProbador.class);
+            Intent intent = new Intent(v.getContext(), ProbadorPersonal.class);
             intent.putExtra("name", item.getName());
             context.startActivity(intent);
             }

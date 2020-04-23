@@ -27,7 +27,7 @@ public class DataModel {
       "Alain Aspect", "David Baltimore", "Allen Bard", "Timothy Berners-Lee", "Dennis Bray", "Elon Musk", "Jeff Bezos",
       "Mark Zuckerberg", "Tim Cook", "Sundar Pichai"
     };
-    // Promociones es la lista de descuentos a las que opta el usuario fidelizado.
+    // PromocionesCliente es la lista de descuentos a las que opta el usuario fidelizado.
     // El usuario no fidelizado no opta a ellas. No debe de aparecerle esa pantalla.
     public List<PromocionModel> promociones = new ArrayList<>();
 

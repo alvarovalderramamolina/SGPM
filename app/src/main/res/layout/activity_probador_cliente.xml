@@ -6,9 +6,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".FittingRoom">
+    tools:context=".ProbadorCliente">
     <include
-        layout="@layout/header_toolbar"
+        layout="@layout/cabecera"
         android:id="@+id/toolbar_products"
         />
     <TextView

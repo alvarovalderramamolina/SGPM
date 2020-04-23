@@ -4,12 +4,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class SolicitudProbador extends AppCompatActivity {
+public class Agradecimiento extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_solicitud_probador);
+        setContentView(R.layout.activity_agradecimiento);
         hideNavigationBar();
     }
     private void hideNavigationBar() {
