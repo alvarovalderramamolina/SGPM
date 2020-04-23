@@ -49,8 +49,6 @@ public class InicioSesion extends AppCompatActivity {
                 }else{
                     Toast.makeText(context, "Todos los campos deben estar rellenos.", Toast.LENGTH_SHORT).show();
                 }
-
-
             }
         });
     }
