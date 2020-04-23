@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white">
     <include
-        layout="@layout/header_toolbar_without_shopping_cart"
+        layout="@layout/cabecera_sin_cesta"
         />
     <LinearLayout
         android:layout_width="wrap_content"

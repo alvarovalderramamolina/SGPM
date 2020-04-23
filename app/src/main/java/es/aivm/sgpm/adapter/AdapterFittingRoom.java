@@ -13,9 +13,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-import es.aivm.sgpm.FittingRoom;
+import es.aivm.sgpm.ProbadorCliente;
 import es.aivm.sgpm.R;
-import es.aivm.sgpm.ShoppingBasket;
 import es.aivm.sgpm.dialog.DialogPago;
 import es.aivm.sgpm.model.ItemProduct;
 
@@ -44,7 +43,7 @@ public class AdapterFittingRoom extends RecyclerView.Adapter<AdapterFittingRoom.
     @Override
     public ViewHolderProduct onCreateViewHolder(ViewGroup parent, int i) {
 
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.fitting_room_item, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_probador_cliente, parent, false);
         ViewHolderProduct vh = new ViewHolderProduct(v);
         return vh;
     }
@@ -82,7 +81,7 @@ public class AdapterFittingRoom extends RecyclerView.Adapter<AdapterFittingRoom.
 
         holder.papelera.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                DialogPago cdd = new DialogPago(((FittingRoom)context), "EliminarProductoProbador","¿Estás seguro que quieres eliminar este producto del probador?");
+                DialogPago cdd = new DialogPago(((ProbadorCliente)context), "EliminarProductoProbador","¿Estás seguro que quieres eliminar este producto del probador?");
                 cdd.position = position;
                 cdd.show();
             }

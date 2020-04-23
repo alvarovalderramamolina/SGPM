@@ -2,7 +2,6 @@ package es.aivm.sgpm.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -17,7 +16,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import es.aivm.sgpm.ChosenProduct;
+import es.aivm.sgpm.Producto;
 import es.aivm.sgpm.R;
 import es.aivm.sgpm.model.DataModel;
 import es.aivm.sgpm.model.ItemProduct;
@@ -50,7 +49,7 @@ public class AdapterProduct extends RecyclerView.Adapter<AdapterProduct.ViewHold
     @Override
     public ViewHolderProduct onCreateViewHolder(ViewGroup parent, int i) {
 
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_item, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_productos_categoria, parent, false);
         ViewHolderProduct vh = new ViewHolderProduct(v);
         return vh;
     }
@@ -77,7 +76,7 @@ public class AdapterProduct extends RecyclerView.Adapter<AdapterProduct.ViewHold
                 DataModel.currentProduct=item;
 
                 if (DataModel.currentProduct.isDisponible()) {
-                    Intent intent = new Intent(v.getContext(), ChosenProduct.class);
+                    Intent intent = new Intent(v.getContext(), Producto.class);
 
                     context.startActivity(intent);
                 } else {

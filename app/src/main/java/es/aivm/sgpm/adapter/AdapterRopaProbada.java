@@ -6,7 +6,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,7 +14,6 @@ import java.util.List;
 
 import es.aivm.sgpm.R;
 import es.aivm.sgpm.model.ItemProduct;
-import es.aivm.sgpm.model.ItemsProbador;
 
 public class AdapterRopaProbada extends RecyclerView.Adapter<AdapterRopaProbada.ViewHolderProduct> {
 
@@ -41,7 +39,7 @@ public class AdapterRopaProbada extends RecyclerView.Adapter<AdapterRopaProbada.
     }
     @Override
     public ViewHolderProduct onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_probador, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_probador_personal, parent, false);
         ViewHolderProduct vh = new ViewHolderProduct(v);
         return vh;
     }

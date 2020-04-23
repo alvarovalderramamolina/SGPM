@@ -1,25 +1,23 @@
 package es.aivm.sgpm;
 
 import android.content.Intent;
-import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 
 import es.aivm.sgpm.model.DataModel;
 import es.aivm.sgpm.model.ProbadorModel;
 import es.aivm.sgpm.model.UserModel;
 
-public class MainActivity extends AppCompatActivity {
+public class Main extends AppCompatActivity {
 
 
     private void setListeners() {
         final Button clienteButton = findViewById(R.id.zonaClientesButton);
         clienteButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent (getApplicationContext(), InitSesion.class);
+                Intent intent = new Intent (getApplicationContext(), InicioSesion.class);
                 intent.putExtra("usuario", "cliente");
                 startActivity(intent);
             }
@@ -51,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 DataModel.database.usuarios.add(u);
                 DataModel.database.crearProbador(DataModel.database.usuarios.size()-1);
-                Intent intent = new Intent (getApplicationContext(), Category.class);
+                Intent intent = new Intent (getApplicationContext(), Categorias.class);
                 startActivity(intent);
             }
         });
@@ -59,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         final Button adminButton = findViewById(R.id.accesoPersonalButton);
         adminButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent (getApplicationContext(), InitSesion.class);
+                Intent intent = new Intent (getApplicationContext(), InicioSesion.class);
                 intent.putExtra("usuario", "personal");
                 startActivity(intent);
             }

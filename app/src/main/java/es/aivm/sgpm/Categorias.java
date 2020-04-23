@@ -1,39 +1,33 @@
 package es.aivm.sgpm;
 
 import android.content.Intent;
-import android.content.res.Resources;
-import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewManager;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import es.aivm.sgpm.model.DataModel;
 import es.aivm.sgpm.model.UserModel;
 
 import static es.aivm.sgpm.model.DataModel.currentUser;
 
-public class Category extends AppCompatActivity implements View.OnClickListener{
+public class Categorias extends AppCompatActivity implements View.OnClickListener{
 
     static boolean first = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_category);
+        setContentView(R.layout.activity_categorias);
 
         hideNavigationBar();
 
         final ImageButton apagar = findViewById(R.id.boton_salir);
         apagar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                Intent intent = new Intent(getApplicationContext(), Main.class);
                 startActivity(intent);
             }
         });
@@ -45,7 +39,7 @@ public class Category extends AppCompatActivity implements View.OnClickListener{
         cestaButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),ShoppingBasket.class);
+                Intent intent = new Intent(getApplicationContext(), CestaCliente.class);
                 startActivity(intent);
             }
         });
@@ -53,7 +47,7 @@ public class Category extends AppCompatActivity implements View.OnClickListener{
         probadorButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),FittingRoom.class);
+                Intent intent = new Intent(getApplicationContext(), ProbadorCliente.class);
                 startActivity(intent);
             }
         });
@@ -93,10 +87,9 @@ public class Category extends AppCompatActivity implements View.OnClickListener{
                         View.SYSTEM_UI_FLAG_LAYOUT_STABLE
         );
     }
-
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent (getApplicationContext(), Products.class);
+        Intent intent = new Intent (getApplicationContext(), ProductosCategoria.class);
         switch (v.getId()){
             case R.id.button10:
                 intent.putExtra("category","Ofertas");
@@ -118,5 +111,17 @@ public class Category extends AppCompatActivity implements View.OnClickListener{
                 break;
         }
         startActivity(intent);
+    }
+    @Override
+    public void onResume(){
+        super.onResume();
+        UserModel usu = DataModel.currentUser;
+
+        TextView contadorCesta = (TextView) findViewById(R.id.contador_cesta);
+        contadorCesta.setText(usu.getCesta().size()+"");
+
+        TextView contadorProbador = findViewById(R.id.contador_probador);
+        contadorProbador.setText(usu.getProbador().size()+"");
+
     }
 }

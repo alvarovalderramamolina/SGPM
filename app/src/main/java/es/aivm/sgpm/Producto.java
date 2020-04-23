@@ -18,7 +18,7 @@ import es.aivm.sgpm.model.UserModel;
 
 import static es.aivm.sgpm.model.DataModel.currentUser;
 
-public class ChosenProduct extends AppCompatActivity {
+public class Producto extends AppCompatActivity {
 
     private ItemProduct.Talla talla;
     private ItemProduct.Color color;
@@ -26,7 +26,9 @@ public class ChosenProduct extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chosen_product);
+        setContentView(R.layout.activity_producto);
+
+
         final ImageView image = (ImageView) findViewById(R.id.imagen);
         image.setImageDrawable(DataModel.currentProduct.getImagen());
 
@@ -65,7 +67,7 @@ public class ChosenProduct extends AppCompatActivity {
         final ImageButton apagar = findViewById(R.id.boton_salir);
         apagar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                Intent intent = new Intent(getApplicationContext(), Main.class);
                 startActivity(intent);
             }
         });
@@ -75,7 +77,7 @@ public class ChosenProduct extends AppCompatActivity {
         cestaButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),ShoppingBasket.class);
+                Intent intent = new Intent(getApplicationContext(), CestaCliente.class);
                 startActivity(intent);
             }
         });
@@ -83,7 +85,7 @@ public class ChosenProduct extends AppCompatActivity {
         probadorButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),FittingRoom.class);
+                Intent intent = new Intent(getApplicationContext(), ProbadorCliente.class);
                 startActivity(intent);
             }
         });
@@ -289,6 +291,19 @@ public class ChosenProduct extends AppCompatActivity {
                         View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION |
                         View.SYSTEM_UI_FLAG_LAYOUT_STABLE
         );
+
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        UserModel usu = DataModel.currentUser;
+
+        TextView contadorCesta = (TextView) findViewById(R.id.contador_cesta);
+        contadorCesta.setText(usu.getCesta().size()+"");
+
+        TextView contadorProbador = findViewById(R.id.contador_probador);
+        contadorProbador.setText(usu.getProbador().size()+"");
 
     }
 }

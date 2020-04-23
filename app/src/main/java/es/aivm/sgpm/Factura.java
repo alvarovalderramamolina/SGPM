@@ -10,17 +10,17 @@ import android.widget.TextView;
 import es.aivm.sgpm.model.DataModel;
 import es.aivm.sgpm.model.UserModel;
 
-public class Bill extends AppCompatActivity {
+public class Factura extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bill);
+        setContentView(R.layout.activity_factura);
         ImageButton cestaButton = findViewById(R.id.boton_cesta);
         cestaButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),ShoppingBasket.class);
+                Intent intent = new Intent(getApplicationContext(), CestaCliente.class);
                 startActivity(intent);
             }
         });
@@ -36,7 +36,7 @@ public class Bill extends AppCompatActivity {
         final ImageButton apagar = findViewById(R.id.boton_salir);
         apagar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                Intent intent = new Intent(getApplicationContext(), Main.class);
                 startActivity(intent);
             }
         });
@@ -45,7 +45,7 @@ public class Bill extends AppCompatActivity {
         probadorButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),RopaDelProbador.class);
+                Intent intent = new Intent(getApplicationContext(), ProbadorPersonal.class);
                 startActivity(intent);
             }
         });

@@ -2,23 +2,18 @@ package es.aivm.sgpm.dialog;
 
 import android.app.Activity;
 import android.app.Dialog;
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
 
-import org.w3c.dom.Text;
-
-import es.aivm.sgpm.Bill;
-import es.aivm.sgpm.FittingRoom;
+import es.aivm.sgpm.Factura;
+import es.aivm.sgpm.ProbadorCliente;
 import es.aivm.sgpm.R;
-import es.aivm.sgpm.ShoppingBasket;
+import es.aivm.sgpm.CestaCliente;
 import es.aivm.sgpm.model.DataModel;
 
 public class DialogPago extends Dialog implements android.view.View.OnClickListener {
@@ -42,7 +37,7 @@ public class DialogPago extends Dialog implements android.view.View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.dialog);
+        setContentView(R.layout.dialogo_confirmacion);
         yes = (Button) findViewById(R.id.continuar);
         no = (Button) findViewById(R.id.cancelar);
         title = (TextView) findViewById(R.id.my_dialog_text);
@@ -57,15 +52,15 @@ public class DialogPago extends Dialog implements android.view.View.OnClickListe
         switch (v.getId()) {
             case R.id.continuar:
                 if (actionType.equals("GenerarFactura")) {
-                    Intent intent = new Intent (c.getApplicationContext(), Bill.class);
+                    Intent intent = new Intent (c.getApplicationContext(), Factura.class);
                     c.startActivity(intent);
                 } else if (actionType.equals("EliminarProductoCesta")) {
                     DataModel.currentUser.removeProductFromCesta(position);
-                    Intent intent = new Intent (c.getApplicationContext(), ShoppingBasket.class);
+                    Intent intent = new Intent (c.getApplicationContext(), CestaCliente.class);
                     c.startActivity(intent);
                 } else if (actionType.equals("EliminarProductoProbador")) {
                     DataModel.currentUser.removeProductFromProbador(position);
-                    Intent intent = new Intent (c.getApplicationContext(), FittingRoom.class);
+                    Intent intent = new Intent (c.getApplicationContext(), ProbadorCliente.class);
                     c.startActivity(intent);
                 }
                 break;

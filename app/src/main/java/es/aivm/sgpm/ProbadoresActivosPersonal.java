@@ -1,30 +1,23 @@
 package es.aivm.sgpm;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
-import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayout;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewManager;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 
 import es.aivm.sgpm.adapter.AdapterProbador;
-import es.aivm.sgpm.adapter.AdapterProduct;
 import es.aivm.sgpm.model.DataModel;
-import es.aivm.sgpm.model.ItemProduct;
 import es.aivm.sgpm.model.ProbadorModel;
 
-public class ProbadoresUso extends AppCompatActivity {
+public class ProbadoresActivosPersonal extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private AdapterProbador mAdapter;
     private GridLayoutManager gridLayoutManager;
@@ -32,7 +25,7 @@ public class ProbadoresUso extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_probadores_uso);
+        setContentView(R.layout.activity_probadores_activos_personal);
         
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view_probadores);
         gridLayoutManager= new GridLayoutManager(getApplicationContext(),4);
@@ -64,7 +57,7 @@ public class ProbadoresUso extends AppCompatActivity {
         volverButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                Intent intent = new Intent(getApplicationContext(), Main.class);
                 startActivity(intent);
             }
         });

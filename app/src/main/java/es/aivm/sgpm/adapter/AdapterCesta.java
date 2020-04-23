@@ -1,7 +1,6 @@
 package es.aivm.sgpm.adapter;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,19 +8,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RatingBar;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import es.aivm.sgpm.R;
-import es.aivm.sgpm.ShoppingBasket;
+import es.aivm.sgpm.CestaCliente;
 import es.aivm.sgpm.dialog.DialogPago;
 import es.aivm.sgpm.model.ItemProduct;
-
-import static es.aivm.sgpm.model.ItemProduct.Color.*;
 
 public class AdapterCesta extends RecyclerView.Adapter<AdapterCesta.ViewHolderProduct> {
     private List mDataset;
@@ -48,7 +43,7 @@ public class AdapterCesta extends RecyclerView.Adapter<AdapterCesta.ViewHolderPr
     @Override
     public ViewHolderProduct onCreateViewHolder(ViewGroup parent, int i) {
 
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_cesta, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_cesta_cliente, parent, false);
         ViewHolderProduct vh = new ViewHolderProduct(v);
         return vh;
     }
@@ -87,7 +82,7 @@ public class AdapterCesta extends RecyclerView.Adapter<AdapterCesta.ViewHolderPr
 
         holder.papelera.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                DialogPago cdd = new DialogPago(((ShoppingBasket)context), "EliminarProductoCesta","¿Estás seguro que quieres eliminar este producto de la cesta?");
+                DialogPago cdd = new DialogPago(((CestaCliente)context), "EliminarProductoCesta","¿Estás seguro que quieres eliminar este producto de la cesta?");
                 cdd.position = position;
                 cdd.show();
             }

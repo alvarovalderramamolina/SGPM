@@ -13,14 +13,14 @@ import android.widget.Toast;
 import es.aivm.sgpm.model.DataModel;
 import es.aivm.sgpm.model.UserModel;
 
-public class InitSesion extends AppCompatActivity {
+public class InicioSesion extends AppCompatActivity {
 
     private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_init_sesion);
+        setContentView(R.layout.activity_iniciar_sesion);
 
         this.context = getApplicationContext();
 
@@ -66,14 +66,14 @@ public class InitSesion extends AppCompatActivity {
             if(u != null) {
                 DataModel.currentUser = u;
 
-                Intent intent = new Intent (getApplicationContext(), Category.class);
+                Intent intent = new Intent (getApplicationContext(), Categorias.class);
                 startActivity(intent);
             }
         } else if (tipoUsuario.equals("personal")) {
             boolean isAdmin = DataModel.database.logInAdmin(emailValue, pwValue);
 
             if(isAdmin) {
-                Intent intent = new Intent (getApplicationContext(), ProbadoresUso.class);
+                Intent intent = new Intent (getApplicationContext(), ProbadoresActivosPersonal.class);
                 startActivity(intent);
             }
         }
