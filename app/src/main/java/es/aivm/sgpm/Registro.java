@@ -19,7 +19,7 @@ public class Registro extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nuevo_registro);
+        setContentView(R.layout.activity_registro);
 
         this.context = getApplicationContext();
 
@@ -54,7 +54,7 @@ public class Registro extends AppCompatActivity {
 
                         Toast.makeText(context, "Usuario creado correctamente.", Toast.LENGTH_SHORT).show();
 
-                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), Main.class);
                         startActivity(intent);
                     } else {
                         Toast.makeText(context, "Todos los campos deben estar rellenos.", Toast.LENGTH_SHORT).show();

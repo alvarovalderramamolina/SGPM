@@ -8,8 +8,8 @@ public class UserModel {
     private String email;
     private String password;
 
-    private List<ItemProduct> cesta;
-    private List<ItemProduct> probador;
+    private List<ProductModel> cesta;
+    private List<ProductModel> probador;
 
     private int puntos;
     private int puntosUsados;
@@ -54,17 +54,23 @@ public class UserModel {
         puntos += 100;
     }
 
-    public void addProductToCesta(ItemProduct product) {
-        if (this.cesta.size() < 10)
+    public boolean addProductToCesta(ProductModel product) {
+        if (this.cesta.size() < 10){
             this.cesta.add(product);
+            return true;
+        }
+        return false;
     }
     public void removeProductFromCesta(int index) {
         if (0 <= index && index <= 10)
             this.cesta.remove(index);
     }
-    public void addProductToProbador(ItemProduct product) {
-        if (this.cesta.size() < 10)
-            this.cesta.add(product);
+    public boolean addProductToProbador(ProductModel product) {
+        if (this.probador.size() < 10){
+            this.probador.add(product);
+            return true;
+        }
+        return false;
     }
     public void removeProductFromProbador(int index) {
         if (0 <= index && index <= 10)
@@ -102,10 +108,10 @@ public class UserModel {
     public int getPuntosUsados() {
         return puntosUsados;
     }
-    public List<ItemProduct> getCesta() {
+    public List<ProductModel> getCesta() {
         return cesta;
     }
-    public List<ItemProduct> getProbador() {
+    public List<ProductModel> getProbador() {
         return probador;
     }
     public List<PromocionModel> getPromocionesActivadas() {

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+        layout="@layout/cabecera"
+        android:id="@+id/gridLayout"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="50dp"
+        android:paddingHorizontal="50dp"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/icono_promociones" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Promociones"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="25dp"
+                android:textColor="@color/black"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="25dp"
+                    >
+                    <ImageView
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/promo1"
+                        />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_marginHorizontal="25dp"
+                        android:layout_marginTop="10dp"
+                        >
+                        <LinearLayout
+                            android:layout_width="650dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            >
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="30% OFF"
+                                android:textSize="30sp"
+                                android:textColor="@color/black"
+                                />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Up to 90% OFF Fashio, Electronics &amp; More - Amazon Daily Deals "
+                                android:textSize="20sp"
+                                android:textColor="@color/black"
+                                android:layout_marginVertical="15dp"
+                                />
+                        </LinearLayout>
+
+                        <ImageButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/boton_activar_promocion"
+                            android:background="@android:color/transparent"
+                            android:layout_gravity="end"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="175dp"
+                android:layout_marginTop="25dp"
+                android:columnCount="1"
+                android:rowCount="3"
+                android:layout_marginLeft="25dp"
+                >
+                <TextView
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:text="Puntos acumulados"
+                    android:textSize="25sp"
+                    android:textColor="@color/solidBlue"
+                    android:textStyle="normal"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="1"
+                    android:layout_column="0"
+                    android:text="110"
+                    android:textSize="40sp"
+                    android:textColor="@color/solidBlue"
+                    android:textStyle="normal"/>
+                <ImageButton
+                    android:layout_row="2"
+                    android:layout_column="0"
+                    android:layout_width="225dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/boton_usar_puntos"
+                    android:background="@android:color/transparent"
+                    android:layout_rowWeight="2"
+                    />
+            </GridLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CestaCliente">
+    <include
+        layout="@layout/cabecera"
+        android:id="@+id/toolbar_products"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="50dp"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        >
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="Cesta de compra"
+            android:layout_marginBottom="25dp"
+            />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view_cesta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+    <ImageButton
+        android:id="@+id/boton_finalizar_compra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/boton_finalizar_compra"
+        android:layout_marginBottom="25dp"
+        android:background="@android:color/transparent"
+        />
+
+</LinearLayout>
