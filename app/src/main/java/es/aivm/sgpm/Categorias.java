@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewManager;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import es.aivm.sgpm.model.DataModel;
@@ -69,12 +70,26 @@ public class Categorias extends AppCompatActivity implements View.OnClickListene
         TextView jerseysButton = findViewById(R.id.button2);
         TextView pantalonesButton = findViewById(R.id.button);
 
+        ImageView ofertasImage = findViewById(R.id.imageView8);
+        ImageView accesoriosImage = findViewById(R.id.imageView9);
+        ImageView zapatosImage = findViewById(R.id.imageView10);
+        ImageView abrigosImage = findViewById(R.id.imageView11);
+        ImageView jerseysImage = findViewById(R.id.imageView12);
+        ImageView pantalonesImage = findViewById(R.id.imageView13);
+
         ofertasButton.setOnClickListener(this);
         zapatosButton.setOnClickListener(this);
         accesoriosButton.setOnClickListener(this);
         abrigosButton.setOnClickListener(this);
         jerseysButton.setOnClickListener(this);
         pantalonesButton.setOnClickListener(this);
+
+        ofertasImage.setOnClickListener(this);
+        accesoriosImage.setOnClickListener(this);
+        zapatosImage.setOnClickListener(this);
+        abrigosImage.setOnClickListener(this);
+        jerseysImage.setOnClickListener(this);
+        pantalonesImage.setOnClickListener(this);
 
     }
     private void hideNavigationBar() {
@@ -90,26 +105,20 @@ public class Categorias extends AppCompatActivity implements View.OnClickListene
     @Override
     public void onClick(View v) {
         Intent intent = new Intent (getApplicationContext(), ProductosCategoria.class);
-        switch (v.getId()){
-            case R.id.button10:
-                intent.putExtra("category","Ofertas");
-                break;
-            case R.id.button9:
-                intent.putExtra("category","Accesorios");
-                break;
-            case R.id.button8:
-                intent.putExtra("category","Zapatos");
-                break;
-            case R.id.button7:
-                intent.putExtra("category","Abrigos");
-                break;
-            case R.id.button2:
-                intent.putExtra("category","Jerseys");
-                break;
-            case R.id.button:
-                intent.putExtra("category","Pantalones");
-                break;
+        if(v.getId() == R.id.button10 || v.getId() == R.id.imageView13){
+            intent.putExtra("category","Ofertas");
+        }else if(v.getId() == R.id.button9 || v.getId() == R.id.imageView12){
+            intent.putExtra("category","Accesorios");
+        }else if(v.getId() == R.id.button8 || v.getId() == R.id.imageView11){
+            intent.putExtra("category","Zapatos");
+        }else if(v.getId() == R.id.button7 || v.getId() == R.id.imageView10){
+            intent.putExtra("category","Abrigos");
+        }else if(v.getId() == R.id.button2 || v.getId() == R.id.imageView9){
+            intent.putExtra("category","Jerseys");
+        }else if(v.getId() == R.id.button || v.getId() == R.id.imageView8){
+            intent.putExtra("category","Pantalones");
         }
+
         startActivity(intent);
     }
     @Override
