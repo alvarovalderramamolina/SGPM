@@ -76,6 +76,4 @@ public class Dialogo extends Dialog implements android.view.View.OnClickListener
         }
         dismiss();
     }
-
-
 }

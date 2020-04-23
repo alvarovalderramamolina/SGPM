@@ -61,41 +61,11 @@
             android:text="27/02/2020"
             android:layout_gravity="end"
             />
-        <LinearLayout
-            android:id="@+id/itemROW"
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view_factura"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingVertical="20dp"
-                >
-                <TextView
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    android:textSize="28sp"
-                    android:textStyle="normal"
-                    android:textColor="@color/black"
-                    android:text="Sudadera Leisure Time Giants 2019 · Talla XL · Color Gris"
-                    android:layout_weight="1"
-                    />
-                <TextView
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    android:textSize="28sp"
-                    android:textStyle="normal"
-                    android:textColor="@color/black"
-                    android:text="39,90€"
-                    android:textAlignment="textEnd"
-                    />
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="5dp"
-                android:background="@drawable/border"/>
-        </LinearLayout>
+            />
 
         <LinearLayout
             android:layout_width="wrap_content"
