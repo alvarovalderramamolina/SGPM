@@ -20,6 +20,7 @@ public class ProbadorCliente extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private AdapterProbadorCliente mAdapter;
     private LinearLayoutManager mLayoutManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
