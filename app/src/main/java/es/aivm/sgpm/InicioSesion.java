@@ -10,6 +10,9 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import java.security.AccessControlException;
+
+import es.aivm.sgpm.exception.AccesLoginException;
 import es.aivm.sgpm.model.DataModel;
 import es.aivm.sgpm.model.UserModel;
 
@@ -45,7 +48,11 @@ public class InicioSesion extends AppCompatActivity {
                 String pwValue = pw.getText().toString();
 
                 if(!emailValue.equals("") && !pwValue.equals("")){
-                    changeTheActivityByTypeUser(emailValue, pwValue);
+                    try {
+                        changeTheActivityByTypeUser(emailValue, pwValue);
+                    } catch (AccesLoginException e) {
+                        Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
                 }else{
                     Toast.makeText(context, "Todos los campos deben estar rellenos.", Toast.LENGTH_SHORT).show();
                 }
@@ -55,7 +62,7 @@ public class InicioSesion extends AppCompatActivity {
         });
     }
 
-    private void changeTheActivityByTypeUser(String emailValue, String pwValue){
+    private void changeTheActivityByTypeUser(String emailValue, String pwValue) throws AccesLoginException {
 
         final Intent intentOrigen = getIntent();
         String tipoUsuario = intentOrigen.getStringExtra("usuario");
@@ -68,6 +75,8 @@ public class InicioSesion extends AppCompatActivity {
 
                 Intent intent = new Intent (getApplicationContext(), Categorias.class);
                 startActivity(intent);
+            }else{
+                throw new AccesLoginException();
             }
         } else if (tipoUsuario.equals("personal")) {
             boolean isAdmin = DataModel.database.logInAdmin(emailValue, pwValue);
@@ -75,6 +84,8 @@ public class InicioSesion extends AppCompatActivity {
             if(isAdmin) {
                 Intent intent = new Intent (getApplicationContext(), ProbadoresActivosPersonal.class);
                 startActivity(intent);
+            }else{
+                throw new AccesLoginException();
             }
         }
     }
