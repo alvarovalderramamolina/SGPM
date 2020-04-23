@@ -1,6 +1,8 @@
 package es.aivm.sgpm.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.databinding.ObservableArrayList;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -16,7 +18,9 @@ import java.util.List;
 import es.aivm.sgpm.ProbadorCliente;
 import es.aivm.sgpm.R;
 import es.aivm.sgpm.dialog.Dialogo;
+import es.aivm.sgpm.model.DataModel;
 import es.aivm.sgpm.model.ProductModel;
+import es.aivm.sgpm.model.UserModel;
 
 public class AdapterProbadorCliente extends RecyclerView.Adapter<AdapterProbadorCliente.ViewHolderProduct> {
     private List mDataset;
@@ -78,7 +82,6 @@ public class AdapterProbadorCliente extends RecyclerView.Adapter<AdapterProbador
 
         }
 
-
         holder.papelera.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Dialogo cdd = new Dialogo(((ProbadorCliente)context), "EliminarProductoProbador","¿Estás seguro que quieres eliminar este producto del probador?");
@@ -86,7 +89,12 @@ public class AdapterProbadorCliente extends RecyclerView.Adapter<AdapterProbador
                 cdd.show();
             }
         });
-
+        holder.aniadirCesta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DataModel.currentUser.addProductToCesta(item);
+            }
+        });
         /*holder.mTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -110,6 +118,7 @@ public class AdapterProbadorCliente extends RecyclerView.Adapter<AdapterProbador
         protected TextView color;
         protected ImageButton papelera;
         protected ImageView colorImagen;
+        protected ImageButton aniadirCesta;
 
 
         public ViewHolderProduct(View v) {
@@ -122,6 +131,7 @@ public class AdapterProbadorCliente extends RecyclerView.Adapter<AdapterProbador
             color = (TextView) v.findViewById(R.id.color_texto);
             colorImagen = (ImageView) v.findViewById(R.id.color_cuadrado);
             papelera= (ImageButton) v.findViewById(R.id.papelera);
+            aniadirCesta = (ImageButton) v.findViewById(R.id.add_item_cesta);
 
         }
     }

@@ -80,6 +80,15 @@ public class ProbadorCliente extends AppCompatActivity {
 
         for (ProductModel item : DataModel.currentUser.getProbador() )
             mAdapter.add(item);
+
+        ImageButton camara = (ImageButton) findViewById(R.id.boton_camara);
+        camara.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),Photo.class);
+                startActivity(intent);
+            }
+        });
     }
     private void hideNavigationBar() {
         this.getWindow().getDecorView().setSystemUiVisibility(
