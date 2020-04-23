@@ -11,11 +11,15 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import es.aivm.sgpm.adapter.AdapterProbadorPersonal;
 import es.aivm.sgpm.model.DataModel;
 import es.aivm.sgpm.model.ProductModel;
 import es.aivm.sgpm.model.ProbadorModel;
+import es.aivm.sgpm.model.UserModel;
 
 public class ProbadorPersonal extends AppCompatActivity {
     private RecyclerView mRecyclerView;
@@ -34,13 +38,14 @@ public class ProbadorPersonal extends AppCompatActivity {
 
         mAdapter = new AdapterProbadorPersonal(this);
         mRecyclerView.setAdapter(mAdapter);
+        UserModel usu = DataModel.currentUser;
 
         final Intent intent = getIntent();
         String probadorNombre = intent.getStringExtra("name");
 
         System.out.println("------------------- PROBADORES: " + DataModel.database.probadores.size());
 
-        for (ProbadorModel probador : DataModel.database.probadores) {
+       for (ProbadorModel probador : DataModel.database.probadores) {
 
             System.out.println("------------------- PROBADOR NAME \"" + probador.getName() +"\"");
             System.out.println("------------------- PROBADOR NAME INTENT \"" + probadorNombre +"\"");
@@ -54,6 +59,37 @@ public class ProbadorPersonal extends AppCompatActivity {
             }
         }
 
+        final ImageButton cestaButton= findViewById(R.id.imageButton_cesta);
+        final ImageButton probadorButton= findViewById(R.id.imageButton_probador);
+
+       cestaButton.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               for (ProductModel item : DataModel.currentUser.getProbador())
+                   mAdapter.remove(item);
+               for(ProductModel item : DataModel.currentUser.getCesta()){
+                   mAdapter.add(item);
+               }
+               cestaButton.setImageResource(R.drawable.boton_cesta_activo);
+               probadorButton.setImageResource(R.drawable.boton_probador);
+           }
+       });
+
+       probadorButton.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               for (ProductModel item : DataModel.currentUser.getCesta())
+                   mAdapter.remove(item);
+               for(ProductModel item : DataModel.currentUser.getProbador()){
+                   mAdapter.add(item);
+               }
+               probadorButton.setImageResource(R.drawable.boton_probador_activo);
+               cestaButton.setImageResource(R.drawable.boton_cesta);
+           }
+       });
+
+        TextView t = (TextView) findViewById(R.id.nombre_probador_dentro);
+        t.setText(probadorNombre);
 
         View v1 = (View) findViewById(R.id.iconos_cestas_probador);
         v1.setVisibility(View.INVISIBLE);
@@ -84,7 +120,6 @@ public class ProbadorPersonal extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
         hideNavigationBar();
     }
 
@@ -98,4 +133,5 @@ public class ProbadorPersonal extends AppCompatActivity {
                         View.SYSTEM_UI_FLAG_LAYOUT_STABLE
         );
     }
+
 }

@@ -12,10 +12,12 @@ import android.view.ViewManager;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import es.aivm.sgpm.adapter.AdapterProbadoresActivosPersonal;
 import es.aivm.sgpm.model.DataModel;
 import es.aivm.sgpm.model.ProbadorModel;
+import es.aivm.sgpm.model.UserModel;
 
 public class ProbadoresActivosPersonal extends AppCompatActivity {
     private RecyclerView mRecyclerView;
@@ -37,6 +39,7 @@ public class ProbadoresActivosPersonal extends AppCompatActivity {
             System.out.println(item.getName());
             mAdapter.add(item);
         }
+
 
         View v = (View) findViewById(R.id.boton_volver);
         ((ViewManager)v.getParent()).removeView(v);
@@ -61,7 +64,7 @@ public class ProbadoresActivosPersonal extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        
+
         hideNavigationBar();
 
     }
@@ -76,4 +79,5 @@ public class ProbadoresActivosPersonal extends AppCompatActivity {
                         View.SYSTEM_UI_FLAG_LAYOUT_STABLE
         );
     }
+
 }
