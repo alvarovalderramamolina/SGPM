@@ -44,6 +44,7 @@
             />
         <activity android:name=".SolicitudProbadorPersonal" />
         <activity android:name=".SolicitudFacturaPersonal" />
+
         <activity android:name=".Categorias"/>
         <activity android:name=".ProbadorPersonal"/>
         <activity android:name=".ProbadoresActivosPersonal"/>
@@ -62,7 +63,5 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-
     </application>
-
 </manifest>
