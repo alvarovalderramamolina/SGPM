@@ -44,7 +44,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/icono_camara"
-            android:layout_marginLeft="300dp"/>
+            android:layout_marginLeft="300dp"
+            />
     </LinearLayout>
 
 </LinearLayout>

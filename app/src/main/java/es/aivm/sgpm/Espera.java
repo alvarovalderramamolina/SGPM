@@ -42,7 +42,7 @@ public class Espera extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-
+                finish();
             }
         }.start();
 

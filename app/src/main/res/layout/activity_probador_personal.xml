@@ -10,7 +10,8 @@
 
     <include
         android:id="@+id/gridLayout"
-        layout="@layout/cabecera" />
+        layout="@layout/cabecera"
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -34,28 +35,28 @@
                 android:layout_weight="1"/>
             <GridLayout
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent">
-
+                android:layout_height="match_parent"
+                >
                 <ImageButton
                     android:id="@+id/imageButton_probador"
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
                     android:background="@android:color/transparent"
-                    android:src="@drawable/boton_probador">
-                </ImageButton>
+                    android:src="@drawable/boton_probador"
+                    />
                 <ImageButton
                     android:id="@+id/imageButton_cesta"
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
                     android:background="@android:color/transparent"
-                    android:src="@drawable/boton_cesta_activo"></ImageButton>
-
-
+                    android:src="@drawable/boton_cesta_activo"
+                    />
             </GridLayout>
         </LinearLayout>
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_view_probador"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            />
     </LinearLayout>
 </android.widget.LinearLayout>

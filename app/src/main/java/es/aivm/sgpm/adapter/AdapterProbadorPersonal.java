@@ -77,7 +77,7 @@ public class AdapterProbadorPersonal extends RecyclerView.Adapter<AdapterProbado
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mDataset.size();
     }
     public static class ViewHolderProduct extends RecyclerView.ViewHolder {
 

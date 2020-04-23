@@ -32,6 +32,7 @@
         <activity android:name=".CestaCliente"/>
         <activity android:name=".Espera" />
         <activity android:name=".Photo" />
+        <activity android:name=".Factura" />
         <activity
             android:name=".MetodoPagoTarjeta"
             android:windowSoftInputMode="stateHidden"
