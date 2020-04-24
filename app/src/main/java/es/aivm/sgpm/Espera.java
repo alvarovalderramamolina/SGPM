@@ -1,5 +1,6 @@
 package es.aivm.sgpm;
 
+import android.content.Intent;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,7 +26,10 @@ public class Espera extends AppCompatActivity {
         videoWeb.loadData(video.getVideoUrl(),"text/html","utf-8");
 
         final TextView countText = (TextView) findViewById(R.id.timer);
-        new CountDownTimer(90000,1000){
+        final Intent intentOrigen = getIntent();
+        int minutosOrigen = intentOrigen.getIntExtra("timer",60);
+
+        new CountDownTimer(1000*minutosOrigen,1000){
 
             @Override
             public void onTick(long millisUntilFinished) {
@@ -42,7 +46,9 @@ public class Espera extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                finish();
+
+                Intent intent = new Intent(getApplicationContext(),ProbadorCliente.class);
+                startActivity(intent);
             }
         }.start();
 
