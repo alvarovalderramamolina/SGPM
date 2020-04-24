@@ -32,7 +32,7 @@
                 android:textSize="35sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
-                android:text="Factura (€)"
+                android:text="Nombre del probador"
                 />
             <GridLayout
                 android:layout_width="wrap_content"
