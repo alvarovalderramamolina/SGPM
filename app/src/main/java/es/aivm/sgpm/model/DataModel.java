@@ -40,7 +40,7 @@ public class DataModel {
 
     public static DataModel database;
     public static UserModel currentUser;
-
+    public static ProbadorModel currentProbador;
     public static ProductModel currentProduct;
 
     public DataModel(Context context) {
@@ -61,6 +61,7 @@ public class DataModel {
             if(u.getEmail().equals(email) && u.getPassword().equals(password)) {
                 u.logIn();
                 crearProbador(i);
+                currentProbador = probadores.get(probadores.size()-1);
                 return u;
             }
         }

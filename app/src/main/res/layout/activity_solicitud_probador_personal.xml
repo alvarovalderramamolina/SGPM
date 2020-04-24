@@ -15,16 +15,17 @@
         android:src="@drawable/icono_notificacion"
         android:layout_marginTop="30dp"/>
     <TextView
+        android:id="@+id/texto_solicitud"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:textSize="40sp"
         android:text="Probador3 quiere probrar"
         android:textColor="#FFFFFFFF"
         android:gravity="center"/>
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view_solicitudProbadorPersonal"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="50dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"></android.support.v7.widget.RecyclerView>
 
@@ -52,7 +53,7 @@
             android:layout_marginRight="20dp"
             android:hint="60"
             android:textSize="50sp"
-            android:textColor="@color/solidGrey"
+            android:textColor="@color/solidBlue"
             android:gravity="center"
             android:layout_weight="3"/>
         <ImageButton

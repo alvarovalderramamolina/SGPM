@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import es.aivm.sgpm.adapter.AdapterProbadorCliente;
@@ -36,6 +37,8 @@ public class SolicitudProbadorPersonal extends AppCompatActivity {
 
             mAdapter.add(item);}
 
+        final TextView titulo = findViewById(R.id.texto_solicitud);
+        titulo.setText(DataModel.currentProbador.getName() + " quiere probar");
 
         final EditText minutos = findViewById(R.id.tiempo_para_llevarle);
         ImageButton minutosButton =  findViewById(R.id.boton_introducir_tiempo);

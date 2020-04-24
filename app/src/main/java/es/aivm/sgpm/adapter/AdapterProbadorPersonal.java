@@ -13,7 +13,10 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import es.aivm.sgpm.ProbadorPersonal;
 import es.aivm.sgpm.R;
+import es.aivm.sgpm.SolicitudFacturaPersonal;
+import es.aivm.sgpm.SolicitudProbadorPersonal;
 import es.aivm.sgpm.model.ProductModel;
 
 public class AdapterProbadorPersonal extends RecyclerView.Adapter<AdapterProbadorPersonal.ViewHolderProduct> {
@@ -50,17 +53,20 @@ public class AdapterProbadorPersonal extends RecyclerView.Adapter<AdapterProbado
         final ProductModel item = (ProductModel) mDataset.get(position);
         holder.productImage.setImageDrawable(item.getImagen());
         holder.name.setText(item.getNombre());
-        holder.name.setTextColor(Color.argb(255, 255, 255, 255));
         holder.brand.setText(item.getMarca());
-        holder.brand.setTextColor(Color.argb(255, 255, 255, 255));
         holder.price.setText(item.getPrecio() + "€");
-        holder.price.setTextColor(Color.argb(255, 255, 255, 255));
         holder.color.setText(item.getColor().toString());
-        holder.color.setTextColor(Color.argb(255, 255, 255, 255));
         holder.talla.setText(item.getTalla().toString());
-        holder.talla.setTextColor(Color.argb(255, 255, 255, 255));
-        holder.textoTalla.setTextColor(Color.argb(255, 255, 255, 255));
-        holder.textoColor.setTextColor(Color.argb(255, 255, 255, 255));
+
+        if((context instanceof SolicitudProbadorPersonal) || (context instanceof SolicitudFacturaPersonal)) {
+            holder.name.setTextColor(Color.argb(255, 255, 255, 255));
+            holder.brand.setTextColor(Color.argb(255, 255, 255, 255));
+            holder.price.setTextColor(Color.argb(255, 255, 255, 255));
+            holder.color.setTextColor(Color.argb(255, 255, 255, 255));
+            holder.talla.setTextColor(Color.argb(255, 255, 255, 255));
+            holder.textoTalla.setTextColor(Color.argb(255, 255, 255, 255));
+            holder.textoColor.setTextColor(Color.argb(255, 255, 255, 255));
+        }
 
         switch (item.getColor()) {
             case AZUL:

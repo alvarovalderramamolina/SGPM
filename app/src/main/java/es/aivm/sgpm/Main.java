@@ -49,6 +49,7 @@ public class Main extends AppCompatActivity {
                 }
                 DataModel.database.usuarios.add(u);
                 DataModel.database.crearProbador(DataModel.database.usuarios.size()-1);
+                DataModel.currentProbador = DataModel.database.probadores.get(DataModel.database.probadores.size()-1);
                 Intent intent = new Intent (getApplicationContext(), Categorias.class);
                 startActivity(intent);
             }
