@@ -8,6 +8,11 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <supports-screens
         android:largeScreens="true"
         android:normalScreens="false"
@@ -22,33 +27,42 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ShoppingBasket"/>
-        <activity android:name=".Waiting" />
+        <activity android:name=".Producto"></activity>
+        <activity android:name=".ProbadorCliente"/>
+        <activity android:name=".CestaCliente"/>
+        <activity android:name=".Espera" />
         <activity android:name=".Photo" />
+        <activity android:name=".Factura" />
         <activity
-            android:name=".CardPayment"
-            android:windowSoftInputMode="stateHidden" />
-        <activity android:name=".Gratitude" />
-        <activity android:name=".Products" />
-        <activity android:name=".Bill"/>
-        <activity android:name=".SolicitudProbador" />
+            android:name=".MetodoPagoTarjeta"
+            android:windowSoftInputMode="stateHidden"
+            />
+        <activity android:name=".Agradecimiento" />
+        <activity
+            android:name=".ProductosCategoria"
+            android:windowSoftInputMode="stateHidden"
+            />
+        <activity android:name=".SolicitudProbadorPersonal" />
         <activity android:name=".SolicitudFacturaPersonal" />
-        <activity android:name=".Category" />
-        <activity android:name=".RopaDelProbador"></activity>
-        <activity android:name=".ProbadoresUso" />
+        <activity android:name=".Categorias"/>
+        <activity android:name=".ProbadorPersonal"/>
+        <activity android:name=".ProbadoresActivosPersonal"/>
         <activity
             android:name=".Registro"
-            android:windowSoftInputMode="stateHidden" />
+            android:windowSoftInputMode="stateHidden"
+            />
         <activity
-            android:name=".InitSesion"
-            android:windowSoftInputMode="stateHidden" />
-        <activity android:name=".MainActivity">
+            android:name=".InicioSesion"
+            android:windowSoftInputMode="stateHidden"
+            />
+        <activity android:name=".Main">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
 
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

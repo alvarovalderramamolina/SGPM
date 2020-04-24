@@ -17,6 +17,9 @@ public class DataModel {
      */
     private Context context;
 
+    public static boolean first = true;
+    public static boolean firstInvitee = true;
+
     public List<UserModel> usuarios = new ArrayList<>();
     public List<UserModel> admins = new ArrayList<>();
     public List<ProbadorModel> probadores = new ArrayList<ProbadorModel>();
@@ -24,19 +27,21 @@ public class DataModel {
       "Alain Aspect", "David Baltimore", "Allen Bard", "Timothy Berners-Lee", "Dennis Bray", "Elon Musk", "Jeff Bezos",
       "Mark Zuckerberg", "Tim Cook", "Sundar Pichai"
     };
-    // Promociones es la lista de descuentos a las que opta el usuario fidelizado.
+    // PromocionesCliente es la lista de descuentos a las que opta el usuario fidelizado.
     // El usuario no fidelizado no opta a ellas. No debe de aparecerle esa pantalla.
     public List<PromocionModel> promociones = new ArrayList<>();
 
-    public List<ItemProduct> pantalones = new ArrayList<ItemProduct>();
-    public List<ItemProduct> jerseys = new ArrayList<ItemProduct>();
-    public List<ItemProduct> abrigos = new ArrayList<ItemProduct>();
-    public List<ItemProduct> calzado = new ArrayList<ItemProduct>();
-    public List<ItemProduct> accesorios = new ArrayList<ItemProduct>();
-    public List<ItemProduct> ofertas = new ArrayList<ItemProduct>();
+    public List<ProductModel> pantalones = new ArrayList<ProductModel>();
+    public List<ProductModel> jerseys = new ArrayList<ProductModel>();
+    public List<ProductModel> abrigos = new ArrayList<ProductModel>();
+    public List<ProductModel> calzado = new ArrayList<ProductModel>();
+    public List<ProductModel> accesorios = new ArrayList<ProductModel>();
+    public List<ProductModel> ofertas = new ArrayList<ProductModel>();
 
     public static DataModel database;
     public static UserModel currentUser;
+
+    public static ProductModel currentProduct;
 
     public DataModel(Context context) {
         this.context = context;
@@ -44,16 +49,6 @@ public class DataModel {
         initProducts();
         initUsuarios();
         initPromociones();
-        crearProbador(0);
-        crearProbador(1);
-        crearProbador(2);
-        crearProbador(3);
-        crearProbador(4);
-
-
-
-
-
     }
 
     public void signUp(String name, String email, String password) {
@@ -84,7 +79,7 @@ public class DataModel {
     }
     public HashMap<String, Double> generarFactura(UserModel usuario) {
         HashMap<String, Double> factura = new HashMap<>();
-        List<ItemProduct> cesta = usuario.getCesta();
+        List<ProductModel> cesta = usuario.getCesta();
         List<PromocionModel> promocionesActivadas = usuario.getPromocionesActivadas();
         int puntos = usuario.getPuntosUsados();
         double total = 0, discount = 0;
@@ -117,7 +112,7 @@ public class DataModel {
      * Funciones auxiliares: No cambiar el alcance de estas funciones
      *
      */
-    private void crearProbador(int i) {
+    public void crearProbador(int i) {
         String nombreImagen = "probador" + i;
         System.out.println(nombreImagen);
         final int resourceId = context.
@@ -140,36 +135,36 @@ public class DataModel {
         promociones.add(promoBadDays);
     }
     private void initProducts() {
-        ItemProduct levisSkinny = new ItemProduct(0, "Chino de hombre regular", "Calvin Klein", 5, 300, 89.99, true, context.getResources().getDrawable(R.drawable.skinny_jeans));
-        ItemProduct chandalJeans = new ItemProduct(1, "Chandal de hombre regular", "Calvin Klein", 2, 234, 99.99, true, context.getResources().getDrawable(R.drawable.chandal_jeans));
-        ItemProduct chinoSupreme = new ItemProduct(2, "Chino supreme flex de hombre", "Dockers", 3, 643, 69.99, true, context.getResources().getDrawable(R.drawable.chino_supreme));
-        ItemProduct chinoAlpha = new ItemProduct(3, "Chino alpha original khaki de hombre", "Dockers", 3, 211, 32.99, true, context.getResources().getDrawable(R.drawable.chino_alpha));
-        ItemProduct cargo_de_hombre = new ItemProduct(4, "Pantalon cargo de hombre", "G-Star Raw", 5, 300, 99.99, true, context.getResources().getDrawable(R.drawable.cargo_jeans));
-        ItemProduct merakijerseys = new ItemProduct(5, "Jersey de algodón con cremallera", "MERAKI", 5, 421, 25.23, false, context.getResources().getDrawable(R.drawable.meraki_jersey));
-        ItemProduct goodthreadsjerseys = new ItemProduct(6, "Sudadera hombre", "Goodthreads", 4, 470, 26.49, true, context.getResources().getDrawable(R.drawable.goodthreads_jersey));
-        ItemProduct jackjonesjerseys = new ItemProduct(7, "Jjebasic Knit V-Neck Noos", "Jack & Jones", 5, 2047, 69.99, true, context.getResources().getDrawable(R.drawable.jackandjones));
-        ItemProduct levisjerseys = new ItemProduct(8, "Housemark Graphic tee", "Levi's", 4, 1240, 15.99, true, context.getResources().getDrawable(R.drawable.housemark_levi));
-        ItemProduct tazziojerseys = new ItemProduct(9, "Chaqueta de punto para hombre", "Tazzio", 3, 153, 26.90, true, context.getResources().getDrawable(R.drawable.tazzio_jersey));
-        ItemProduct findabrigos = new ItemProduct(10, "Marca Amazon - find. Abrigo Hombre", "find.", 5, 167, 60.90, true, context.getResources().getDrawable(R.drawable.find_chaqueta));
-        ItemProduct mirecooabrigos = new ItemProduct(11, "Abrigo de lana para hombre", "Mirecoo", 2, 205, 112.69, true, context.getResources().getDrawable(R.drawable.mirecoo_chaqueta));
-        ItemProduct hellyabrigos = new ItemProduct(12, "Crew Midlayer - Chaqueta Impermeable con Capucha", "Helly Hansen", 3, 636, 92.33, true, context.getResources().getDrawable(R.drawable.helly_hansen));
-        ItemProduct blackabrigos = new ItemProduct(13, "Chaqueta de Plumas para Hombre", "Black Crevice", 3, 260, 40.21, true, context.getResources().getDrawable(R.drawable.black_clarive));
-        ItemProduct bolfabrigos = new ItemProduct(14, "BOLF Hombre Chaqueta de Invierno", "BOLF", 5, 367, 45.95, true, context.getResources().getDrawable(R.drawable.bolf_chaqueta));
-        ItemProduct adidascalzado = new ItemProduct(15, "Runfalcon, Zapatillas de Running para Hombre", "Adidas", 5, 300, 89.99, true, context.getResources().getDrawable(R.drawable.adidas_calzado));
-        ItemProduct columbiacalzado = new ItemProduct(16, "Fairbanks Omni-Heat Bota de invierno para hombre", "Columbia", 2, 234, 99.99, true, context.getResources().getDrawable(R.drawable.columbia_calzado));
-        ItemProduct pumacalzado = new ItemProduct(17, "St Runner V2 NL, Zapatillas de Cross Unisex Adulto", "Puma", 3, 643, 69.99, true, context.getResources().getDrawable(R.drawable.puma_calzado));
-        ItemProduct salomoncalzado = new ItemProduct(18, "Alphacross, Zapatillas de Trail Running para Hombre", "Salomon", 3, 211, 32.99, true, context.getResources().getDrawable(R.drawable.salomon_calzado));
-        ItemProduct clarkscalzado = new ItemProduct(19, "Cotrell Stride, Zapatos de Cordones Derby para Hombre", "Clarks", 5, 300, 59.99, true, context.getResources().getDrawable(R.drawable.clarks_calzadi));
-        ItemProduct levisSkinnyaccesorios = new ItemProduct(20, "Sonnenbrille Mason (FT0445)", "Tom Ford", 4, 55, 193.80, true, context.getResources().getDrawable(R.drawable.tom_ford_accesorio));
-        ItemProduct chandalJeansaccesorios = new ItemProduct(21, "Cartera Carbon, Metallic-Grey ", "I-CLIP", 2, 8590, 40.00, true, context.getResources().getDrawable(R.drawable.i_clip_accesorio));
-        ItemProduct chinoSupremeaccesorios = new ItemProduct(22, "Marró Cartera para hombre Estilo plegable ", "MPTECK", 5, 428, 9.99, true, context.getResources().getDrawable(R.drawable.mpteck_accesorios));
-        ItemProduct chinoAlphaaccesorios = new ItemProduct(23, "Accesorios Bolso Bandolera, 22 cm, Azul", "Converse", 3, 518, 24.90, true, context.getResources().getDrawable(R.drawable.converse_accesorio));
-        ItemProduct cargo_de_hombreaccesorios = new ItemProduct(24, "Cinturón para Hombre", "Tommy Hilfiger", 2, 150, 34.41, true, context.getResources().getDrawable(R.drawable.tommy_accesorio));
-        ItemProduct levisSkinnyofertas = new ItemProduct(25, "Camiseta Hombre", "CARE OF by PUMA", 4, 102, 20.00, false, context.getResources().getDrawable(R.drawable.puma_oferta));
-        ItemProduct chandalJeansofertas = new ItemProduct(26, "Hombre Camisa Manga Larga ", "Kayhan", 5, 3194, 19.99, false, context.getResources().getDrawable(R.drawable.kayhan_oferta));
-        ItemProduct chinoSupremeofertas = new ItemProduct(27, "The Original tee Camiseta para Hombre", "Levi's", 5, 9, 12.50, false, context.getResources().getDrawable(R.drawable.levi_oferta));
-        ItemProduct chinoAlphaofertas = new ItemProduct(28, "Fitted Boxer (Pack de 12) para Hombre", "FM London", 3, 211, 29.99, true, context.getResources().getDrawable(R.drawable.fm_london_oferta));
-        ItemProduct cargo_de_hombreofertas = new ItemProduct(29, "Jogging para Hombre", "MERISH", 5, 300, 19.90, true, context.getResources().getDrawable(R.drawable.merish_oferta));
+        ProductModel levisSkinny = new ProductModel(0, "Chino de hombre regular", "Calvin Klein", 5, 300, 89.99, true, context.getResources().getDrawable(R.drawable.skinny_jeans));
+        ProductModel chandalJeans = new ProductModel(1, "Chandal de hombre regular", "Calvin Klein", 2, 234, 99.99, true, context.getResources().getDrawable(R.drawable.chandal_jeans));
+        ProductModel chinoSupreme = new ProductModel(2, "Chino supreme flex de hombre", "Dockers", 3, 643, 69.99, true, context.getResources().getDrawable(R.drawable.chino_supreme));
+        ProductModel chinoAlpha = new ProductModel(3, "Chino alpha original khaki de hombre", "Dockers", 3, 211, 32.99, true, context.getResources().getDrawable(R.drawable.chino_alpha));
+        ProductModel cargo_de_hombre = new ProductModel(4, "Pantalon cargo de hombre", "G-Star Raw", 5, 300, 99.99, true, context.getResources().getDrawable(R.drawable.cargo_jeans));
+        ProductModel merakijerseys = new ProductModel(5, "Jersey de algodón con cremallera", "MERAKI", 5, 421, 25.23, false, context.getResources().getDrawable(R.drawable.meraki_jersey));
+        ProductModel goodthreadsjerseys = new ProductModel(6, "Sudadera hombre", "Goodthreads", 4, 470, 26.49, true, context.getResources().getDrawable(R.drawable.goodthreads_jersey));
+        ProductModel jackjonesjerseys = new ProductModel(7, "Jjebasic Knit V-Neck Noos", "Jack & Jones", 5, 2047, 69.99, true, context.getResources().getDrawable(R.drawable.jackandjones));
+        ProductModel levisjerseys = new ProductModel(8, "Housemark Graphic tee", "Levi's", 4, 1240, 15.99, true, context.getResources().getDrawable(R.drawable.housemark_levi));
+        ProductModel tazziojerseys = new ProductModel(9, "Chaqueta de punto para hombre", "Tazzio", 3, 153, 26.90, true, context.getResources().getDrawable(R.drawable.tazzio_jersey));
+        ProductModel findabrigos = new ProductModel(10, "Marca Amazon - find. Abrigo Hombre", "find.", 5, 167, 60.90, true, context.getResources().getDrawable(R.drawable.find_chaqueta));
+        ProductModel mirecooabrigos = new ProductModel(11, "Abrigo de lana para hombre", "Mirecoo", 2, 205, 112.69, true, context.getResources().getDrawable(R.drawable.mirecoo_chaqueta));
+        ProductModel hellyabrigos = new ProductModel(12, "Crew Midlayer - Chaqueta Impermeable con Capucha", "Helly Hansen", 3, 636, 92.33, true, context.getResources().getDrawable(R.drawable.helly_hansen));
+        ProductModel blackabrigos = new ProductModel(13, "Chaqueta de Plumas para Hombre", "Black Crevice", 3, 260, 40.21, true, context.getResources().getDrawable(R.drawable.black_clarive));
+        ProductModel bolfabrigos = new ProductModel(14, "BOLF Hombre Chaqueta de Invierno", "BOLF", 5, 367, 45.95, true, context.getResources().getDrawable(R.drawable.bolf_chaqueta));
+        ProductModel adidascalzado = new ProductModel(15, "Runfalcon, Zapatillas de Running para Hombre", "Adidas", 5, 300, 89.99, true, context.getResources().getDrawable(R.drawable.adidas_calzado));
+        ProductModel columbiacalzado = new ProductModel(16, "Fairbanks Omni-Heat Bota de invierno para hombre", "Columbia", 2, 234, 99.99, true, context.getResources().getDrawable(R.drawable.columbia_calzado));
+        ProductModel pumacalzado = new ProductModel(17, "St Runner V2 NL, Zapatillas de Cross Unisex Adulto", "Puma", 3, 643, 69.99, true, context.getResources().getDrawable(R.drawable.puma_calzado));
+        ProductModel salomoncalzado = new ProductModel(18, "Alphacross, Zapatillas de Trail Running para Hombre", "Salomon", 3, 211, 32.99, true, context.getResources().getDrawable(R.drawable.salomon_calzado));
+        ProductModel clarkscalzado = new ProductModel(19, "Cotrell Stride, Zapatos de Cordones Derby para Hombre", "Clarks", 5, 300, 59.99, true, context.getResources().getDrawable(R.drawable.clarks_calzadi));
+        ProductModel levisSkinnyaccesorios = new ProductModel(20, "Sonnenbrille Mason (FT0445)", "Tom Ford", 4, 55, 193.80, true, context.getResources().getDrawable(R.drawable.tom_ford_accesorio));
+        ProductModel chandalJeansaccesorios = new ProductModel(21, "Cartera Carbon, Metallic-Grey ", "I-CLIP", 2, 8590, 40.00, true, context.getResources().getDrawable(R.drawable.i_clip_accesorio));
+        ProductModel chinoSupremeaccesorios = new ProductModel(22, "Marró Cartera para hombre Estilo plegable ", "MPTECK", 5, 428, 9.99, true, context.getResources().getDrawable(R.drawable.mpteck_accesorios));
+        ProductModel chinoAlphaaccesorios = new ProductModel(23, "Accesorios Bolso Bandolera, 22 cm, Azul", "Converse", 3, 518, 24.90, true, context.getResources().getDrawable(R.drawable.converse_accesorio));
+        ProductModel cargo_de_hombreaccesorios = new ProductModel(24, "Cinturón para Hombre", "Tommy Hilfiger", 2, 150, 34.41, true, context.getResources().getDrawable(R.drawable.tommy_accesorio));
+        ProductModel levisSkinnyofertas = new ProductModel(25, "Camiseta Hombre", "CARE OF by PUMA", 4, 102, 20.00, false, context.getResources().getDrawable(R.drawable.puma_oferta));
+        ProductModel chandalJeansofertas = new ProductModel(26, "Hombre Camisa Manga Larga ", "Kayhan", 5, 3194, 19.99, false, context.getResources().getDrawable(R.drawable.kayhan_oferta));
+        ProductModel chinoSupremeofertas = new ProductModel(27, "The Original tee Camiseta para Hombre", "Levi's", 5, 9, 12.50, false, context.getResources().getDrawable(R.drawable.levi_oferta));
+        ProductModel chinoAlphaofertas = new ProductModel(28, "Fitted Boxer (Pack de 12) para Hombre", "FM London", 3, 211, 29.99, true, context.getResources().getDrawable(R.drawable.fm_london_oferta));
+        ProductModel cargo_de_hombreofertas = new ProductModel(29, "Jogging para Hombre", "MERISH", 5, 300, 19.90, true, context.getResources().getDrawable(R.drawable.merish_oferta));
 
         pantalones.add(levisSkinny);
         pantalones.add(chandalJeans);
