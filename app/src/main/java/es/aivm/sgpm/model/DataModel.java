@@ -202,7 +202,7 @@ public class DataModel {
         UserModel v = new UserModel("Álvaro", "aivm@alumnos.upm.es", "abc456");
         UserModel w = new UserModel("Khalid", "kAlfozan@alumnos.upm.es", "abc789");
         UserModel x = new UserModel("Alonso", "a.dinavarro@alumnos.upm.es", "abc101");
-        UserModel y = new UserModel("El Jefazo", "jefe@alumnos.upm.es", "tencuidado");
+        UserModel y = new UserModel("El Jefazo", "root", "root");
         UserModel t = new UserModel("Alonso", "a.dinavarro@alumnos.upm.es", "abc101");
 
 
