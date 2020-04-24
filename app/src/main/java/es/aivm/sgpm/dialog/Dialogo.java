@@ -70,7 +70,7 @@ public class Dialogo extends Dialog implements android.view.View.OnClickListener
                     c.startActivity(intent);
                 } else if (actionType.equals("EliminarProductoCesta")) {
                     DataModel.currentUser.removeProductFromCesta(position);
-                    Intent intent = new Intent (c.getApplicationContext(), CestaCliente.class);
+                    Intent intent = new Intent (c.getApplicationContext(), CestaCliente.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                     c.startActivity(intent);
                 } else if (actionType.equals("EliminarProductoProbador")) {
                     DataModel.currentUser.removeProductFromProbador(position);

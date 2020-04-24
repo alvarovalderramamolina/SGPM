@@ -95,13 +95,27 @@ public class CestaCliente extends AppCompatActivity {
     @Override
     public void onResume(){
         super.onResume();
+
         UserModel usu = DataModel.currentUser;
+
+        System.out.println("ON RESUME CESTA "+mAdapter.getItemCount()+" cesta "+usu.getCesta().size());
+
 
         TextView contadorCesta = (TextView) findViewById(R.id.contador_cesta);
         contadorCesta.setText(usu.getCesta().size()+"");
 
         TextView contadorProbador = findViewById(R.id.contador_probador);
         contadorProbador.setText(usu.getProbador().size()+"");
+
+        if(mAdapter.getItemCount() < usu.getCesta().size()) {
+            mRecyclerView.setAdapter(mAdapter);
+        }else if (mAdapter.getItemCount() > usu.getCesta().size()){
+            mAdapter.removeAll();
+            mAdapter.addAll(usu.getCesta());
+            mRecyclerView.setAdapter(mAdapter);
+        }
+
+
 
     }
 }
