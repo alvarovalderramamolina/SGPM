@@ -13,6 +13,7 @@ import android.widget.TextView;
 import es.aivm.sgpm.Espera;
 import es.aivm.sgpm.Factura;
 import es.aivm.sgpm.ProbadorCliente;
+import es.aivm.sgpm.PromocionesCliente;
 import es.aivm.sgpm.R;
 import es.aivm.sgpm.CestaCliente;
 import es.aivm.sgpm.model.DataModel;
@@ -53,8 +54,14 @@ public class Dialogo extends Dialog implements android.view.View.OnClickListener
         switch (v.getId()) {
             case R.id.continuar:
                 if (actionType.equals("GenerarFactura")) {
-                    Intent intent = new Intent (c.getApplicationContext(), Factura.class);
-                    c.startActivity(intent);
+                    if(DataModel.currentUser.isGuest()){
+                        Intent intent = new Intent (c.getApplicationContext(), Factura.class);
+                        c.startActivity(intent);
+                    }
+                    else {
+                        Intent intent = new Intent (c.getApplicationContext(), PromocionesCliente.class);
+                        c.startActivity(intent);
+                    }
                 } else if (actionType.equals("PedirProductos")) {
                     Intent intent = new Intent(c.getApplicationContext(), Espera.class);
                     c.startActivity(intent);

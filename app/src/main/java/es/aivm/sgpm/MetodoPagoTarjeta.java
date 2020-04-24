@@ -34,17 +34,4 @@ public class MetodoPagoTarjeta extends AppCompatActivity {
         });
 
     }
-
-    @Override
-    public void onResume(){
-        super.onResume();
-        UserModel usu = DataModel.currentUser;
-
-        TextView contadorCesta = (TextView) findViewById(R.id.contador_cesta);
-        contadorCesta.setText(usu.getCesta().size()+"");
-
-        TextView contadorProbador = findViewById(R.id.contador_probador);
-        contadorProbador.setText(usu.getProbador().size()+"");
-
-    }
 }
