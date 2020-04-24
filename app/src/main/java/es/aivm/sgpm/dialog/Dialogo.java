@@ -13,10 +13,12 @@ import android.widget.TextView;
 import es.aivm.sgpm.Espera;
 import es.aivm.sgpm.Factura;
 import es.aivm.sgpm.ProbadorCliente;
+import es.aivm.sgpm.Producto;
 import es.aivm.sgpm.PromocionesCliente;
 import es.aivm.sgpm.R;
 import es.aivm.sgpm.CestaCliente;
 import es.aivm.sgpm.model.DataModel;
+import es.aivm.sgpm.model.ProductModel;
 
 public class Dialogo extends Dialog implements android.view.View.OnClickListener {
     public Activity c;
@@ -73,6 +75,25 @@ public class Dialogo extends Dialog implements android.view.View.OnClickListener
                     DataModel.currentUser.removeProductFromProbador(position);
                     Intent intent = new Intent (c.getApplicationContext(), ProbadorCliente.class);
                     c.startActivity(intent);
+                } else if (actionType.equals("AñadirProductoProbador")) {
+                    try {
+                        ProductModel copy = (ProductModel) DataModel.currentProduct.clone();
+                        DataModel.currentUser.addProductToProbador(copy);
+                        c.recreate();
+                    } catch (CloneNotSupportedException e) {
+                        e.printStackTrace();
+                    }
+                    dismiss();
+                } else if (actionType.equals("AñadirProductoCesta")) {
+                    try {
+                        ProductModel copy = (ProductModel) DataModel.currentProduct.clone();
+                        DataModel.currentUser.addProductToCesta(copy);
+                        c.recreate();
+                    } catch (CloneNotSupportedException e) {
+                        e.printStackTrace();
+                    }
+
+                    dismiss();
                 }
                 break;
             case R.id.cancelar:

@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import es.aivm.sgpm.dialog.Dialogo;
 import es.aivm.sgpm.model.DataModel;
 import es.aivm.sgpm.model.ProductModel;
 import es.aivm.sgpm.model.UserModel;
@@ -252,14 +253,9 @@ public class Producto extends AppCompatActivity {
             public void onClick(View v) {
                 DataModel.currentProduct.setColor(color);
                 DataModel.currentProduct.setTalla(talla);
-                try {
-                    ProductModel copy = (ProductModel) DataModel.currentProduct.clone();
-                    if(DataModel.currentUser.addProductToProbador(copy))
-                        contadorProbador.setText(usu.getProbador().size()+"");
 
-                } catch (Exception e) {
-                    System.out.println(e);
-                }
+                Dialogo cdd = new Dialogo(Producto.this, "AñadirProductoProbador","¿Estás seguro que quieres añadir este producto para probar más tarde?");
+                cdd.show();
 
             }
         });
@@ -270,14 +266,9 @@ public class Producto extends AppCompatActivity {
             public void onClick(View v) {
                 DataModel.currentProduct.setColor(color);
                 DataModel.currentProduct.setTalla(talla);
-                try {
-                    ProductModel copy = (ProductModel) DataModel.currentProduct.clone();
-                    if(DataModel.currentUser.addProductToCesta(copy))
-                        contadorCesta.setText(usu.getCesta().size()+"");
 
-                } catch (Exception e) {
-                    System.out.println(e);
-                }
+                Dialogo cdd = new Dialogo(Producto.this, "AñadirProductoCesta","¿Estás seguro que quieres añadir este producto a la cesta?");
+                cdd.show();
             }
         });
 
