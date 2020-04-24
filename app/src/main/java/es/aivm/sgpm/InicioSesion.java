@@ -53,7 +53,7 @@ public class InicioSesion extends AppCompatActivity {
                     } catch (AccesLoginException e) {
                         Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
-                }else{
+                } else {
                     Toast.makeText(context, "Todos los campos deben estar rellenos.", Toast.LENGTH_SHORT).show();
                 }
             }
