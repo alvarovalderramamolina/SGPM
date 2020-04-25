@@ -31,11 +31,15 @@
         <activity android:name=".ProbadorCliente"/>
         <activity android:name=".CestaCliente"/>
         <activity android:name=".Espera" />
+        <activity android:name=".MetodoPagoPaypal"
+            android:configChanges="screenSize|orientation"
+            android:windowSoftInputMode="stateHidden"/>
         <activity android:name=".Photo" />
         <activity android:name=".Factura" />
         <activity
             android:name=".MetodoPagoTarjeta"
-            android:windowSoftInputMode="stateHidden"
+
+
             />
         <activity android:name=".Agradecimiento" />
         <activity
@@ -44,9 +48,11 @@
             />
         <activity android:name=".SolicitudProbadorPersonal" />
         <activity android:name=".SolicitudFacturaPersonal" />
+
         <activity android:name=".Categorias"/>
         <activity android:name=".ProbadorPersonal"/>
         <activity android:name=".ProbadoresActivosPersonal"/>
+        <activity android:name=".PromocionesCliente"/>
         <activity
             android:name=".Registro"
             android:windowSoftInputMode="stateHidden"
@@ -62,7 +68,5 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-
     </application>
-
 </manifest>

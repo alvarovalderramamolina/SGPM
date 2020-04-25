@@ -2,7 +2,6 @@ package es.aivm.sgpm.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.databinding.ObservableArrayList;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -16,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import es.aivm.sgpm.ProbadorCliente;
+import es.aivm.sgpm.Producto;
 import es.aivm.sgpm.R;
 import es.aivm.sgpm.dialog.Dialogo;
 import es.aivm.sgpm.model.DataModel;
@@ -25,6 +25,7 @@ import es.aivm.sgpm.model.UserModel;
 public class AdapterProbadorCliente extends RecyclerView.Adapter<AdapterProbadorCliente.ViewHolderProduct> {
     private List mDataset;
     private Context context;
+    RecyclerView mRecyclerView;
 
     public AdapterProbadorCliente(Context c) {
         this.context = c;
@@ -42,6 +43,13 @@ public class AdapterProbadorCliente extends RecyclerView.Adapter<AdapterProbador
             mDataset.remove(position);
             notifyItemRemoved(position);
         }
+    }
+
+    @Override
+    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
+        super.onAttachedToRecyclerView(recyclerView);
+
+        mRecyclerView = recyclerView;
     }
 
     @Override
@@ -89,12 +97,15 @@ public class AdapterProbadorCliente extends RecyclerView.Adapter<AdapterProbador
                 cdd.show();
             }
         });
+
         holder.aniadirCesta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DataModel.currentUser.addProductToCesta(item);
+                Dialogo cdd = new Dialogo(((ProbadorCliente)context), "AñadirProductoCesta","¿Estás seguro que quieres añadir este producto a la cesta?");
+                cdd.show();
             }
         });
+
         /*holder.mTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

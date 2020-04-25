@@ -83,6 +83,7 @@
                 android:textColor="@color/solidRed"/>
         </LinearLayout>
         <EditText
+            android:id="@+id/num_tarjeta"
             android:layout_width="183dp"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
@@ -126,12 +127,14 @@
             android:orientation="horizontal"
             android:layout_gravity="left">
             <EditText
+                android:id="@+id/caducidad"
                 android:layout_width="199dp"
                 android:layout_height="wrap_content"
                 android:hint="MM / YY"
                 android:background="@color/white"
                 android:layout_marginRight="79dp"/>
             <EditText
+                android:id="@+id/cod_seguridad"
                 android:layout_width="261dp"
                 android:layout_height="wrap_content"
                 android:hint="CVC"
@@ -144,6 +147,7 @@
     </LinearLayout>
 
     <ImageButton
+        android:id="@+id/pagar_tarjeta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"

@@ -2,6 +2,7 @@ package es.aivm.sgpm.adapter;
 
 import android.content.Context;
 
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +13,10 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import es.aivm.sgpm.ProbadorPersonal;
 import es.aivm.sgpm.R;
+import es.aivm.sgpm.SolicitudFacturaPersonal;
+import es.aivm.sgpm.SolicitudProbadorPersonal;
 import es.aivm.sgpm.model.ProductModel;
 
 public class AdapterProbadorPersonal extends RecyclerView.Adapter<AdapterProbadorPersonal.ViewHolderProduct> {
@@ -54,6 +58,16 @@ public class AdapterProbadorPersonal extends RecyclerView.Adapter<AdapterProbado
         holder.color.setText(item.getColor().toString());
         holder.talla.setText(item.getTalla().toString());
 
+        if((context instanceof SolicitudProbadorPersonal) || (context instanceof SolicitudFacturaPersonal)) {
+            holder.name.setTextColor(Color.argb(255, 255, 255, 255));
+            holder.brand.setTextColor(Color.argb(255, 255, 255, 255));
+            holder.price.setTextColor(Color.argb(255, 255, 255, 255));
+            holder.color.setTextColor(Color.argb(255, 255, 255, 255));
+            holder.talla.setTextColor(Color.argb(255, 255, 255, 255));
+            holder.textoTalla.setTextColor(Color.argb(255, 255, 255, 255));
+            holder.textoColor.setTextColor(Color.argb(255, 255, 255, 255));
+        }
+
         switch (item.getColor()) {
             case AZUL:
                 holder.colorImagen.setBackground(context.getResources().getDrawable(R.color.solidBlue));
@@ -73,6 +87,8 @@ public class AdapterProbadorPersonal extends RecyclerView.Adapter<AdapterProbado
 
         }
 
+
+
     }
 
     @Override
@@ -87,6 +103,8 @@ public class AdapterProbadorPersonal extends RecyclerView.Adapter<AdapterProbado
         protected TextView price;
         protected TextView talla;
         protected TextView color;
+        protected TextView textoColor;
+        protected TextView textoTalla;
         protected ImageView colorImagen;
 
         public ViewHolderProduct(View v) {
@@ -98,6 +116,8 @@ public class AdapterProbadorPersonal extends RecyclerView.Adapter<AdapterProbado
             talla = (TextView) v.findViewById(R.id.talla_prenda);
             color = (TextView) v.findViewById(R.id.color_texto);
             colorImagen = (ImageView) v.findViewById(R.id.color_cuadrado);
+            textoColor= v.findViewById(R.id.texto_color);
+            textoTalla= v.findViewById(R.id.texto_talla);
 
         }
     }

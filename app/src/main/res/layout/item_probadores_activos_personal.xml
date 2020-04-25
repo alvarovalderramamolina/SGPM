@@ -2,23 +2,29 @@
 <LinearLayout
     android:id="@+id/probador_layout"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+    android:layout_width="250dp"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:layout_marginLeft="50dp">
-
+    android:layout_marginBottom="25dp"
+    android:layout_marginRight="50dp"
+    >
         <ImageView
             android:id="@+id/foto_probador"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/probador1"/>
+            android:layout_width="fill_parent"
+            android:layout_height="250dp"
+            android:src="@drawable/probador5"
+            android:background="@color/solidBlue"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            />
         <TextView
             android:id="@+id/nombre_probador"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Probador: "
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:gravity="center"/>
-
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textSize="28sp"
+            android:textStyle="normal"
+            android:textColor="@color/black"
+            android:text="Pantalones"
+            android:clickable="true"
+            />
 </LinearLayout>

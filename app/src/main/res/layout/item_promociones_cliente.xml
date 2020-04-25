@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/item_promociones"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="25dp">
+        <ImageView
+            android:id="@+id/imagen_promocion"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/promo1"
+    />
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginHorizontal="25dp"
+    android:layout_marginTop="10dp"
+    >
+    <LinearLayout
+        android:layout_width="650dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        >
+        <TextView
+            android:id="@+id/texto_titulo_promocion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="30% OFF"
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:id="@+id/texto_descripcion_promocion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Up to 90% OFF Fashio, Electronics &amp; More - Amazon Daily Deals "
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_marginVertical="15dp"
+            />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/boton_activar_promocion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/boton_activar_promocion"
+        android:background="@android:color/transparent"
+        android:layout_gravity="end"
+        />
+</LinearLayout>
+</LinearLayout>
+
+</LinearLayout>

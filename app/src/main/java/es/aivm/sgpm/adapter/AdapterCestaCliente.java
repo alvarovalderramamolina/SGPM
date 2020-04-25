@@ -40,6 +40,14 @@ public class AdapterCestaCliente extends RecyclerView.Adapter<AdapterCestaClient
         }
     }
 
+    public void removeAll(){
+        mDataset.removeAll(mDataset);
+    }
+
+    public void addAll(List data){
+        mDataset.addAll(data);
+    }
+
     @Override
     public ViewHolderProduct onCreateViewHolder(ViewGroup parent, int i) {
 
@@ -85,6 +93,7 @@ public class AdapterCestaCliente extends RecyclerView.Adapter<AdapterCestaClient
                 Dialogo cdd = new Dialogo(((CestaCliente)context), "EliminarProductoCesta","¿Estás seguro que quieres eliminar este producto de la cesta?");
                 cdd.position = position;
                 cdd.show();
+
             }
         });
 

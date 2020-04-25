@@ -54,7 +54,8 @@
                     android:layout_marginRight="15dp"
                     android:isIndicator="true"
                     android:numStars="5"
-                    android:rating="4" />
+                    android:rating="4"
+                    android:theme="@style/RatingBar"/>
 
                 <TextView
                     android:id="@+id/rating_amount_item"

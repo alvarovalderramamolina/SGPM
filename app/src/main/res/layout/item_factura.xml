@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/itemROW"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="20dp"
+        >
+        <TextView
+            android:id="@+id/product_label"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textSize="28sp"
+            android:textStyle="normal"
+            android:textColor="@color/black"
+            android:text="Sudadera Leisure Time Giants 2019 · Talla XL · Color Gris"
+            android:layout_weight="1"
+            />
+        <TextView
+            android:id="@+id/product_price"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textSize="28sp"
+            android:textStyle="normal"
+            android:textColor="@color/black"
+            android:text="39,90€"
+            android:textAlignment="textEnd"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@drawable/border"/>
+</LinearLayout>

@@ -53,7 +53,8 @@
                     android:layout_height="wrap_content"
                     android:numStars="5"
                     android:rating="4"
-                    android:isIndicator="true"/>
+                    android:isIndicator="true"
+                    android:theme="@style/RatingBar"/>
                 <TextView
                     android:id="@+id/rating_amount_item"
                     android:layout_width="wrap_content"

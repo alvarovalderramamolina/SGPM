@@ -40,7 +40,7 @@ public class DataModel {
 
     public static DataModel database;
     public static UserModel currentUser;
-
+    public static ProbadorModel currentProbador;
     public static ProductModel currentProduct;
 
     public DataModel(Context context) {
@@ -61,6 +61,7 @@ public class DataModel {
             if(u.getEmail().equals(email) && u.getPassword().equals(password)) {
                 u.logIn();
                 crearProbador(i);
+                currentProbador = probadores.get(probadores.size()-1);
                 return u;
             }
         }
@@ -198,11 +199,11 @@ public class DataModel {
         ofertas.add(cargo_de_hombreofertas);
     }
     private void initUsuarios() {
-        UserModel u = new UserModel("Mohammed", "m.makhfi@alumnos.upm.es", "abc123");
+        UserModel u = new UserModel("a", "a", "a");
         UserModel v = new UserModel("Álvaro", "aivm@alumnos.upm.es", "abc456");
         UserModel w = new UserModel("Khalid", "kAlfozan@alumnos.upm.es", "abc789");
         UserModel x = new UserModel("Alonso", "a.dinavarro@alumnos.upm.es", "abc101");
-        UserModel y = new UserModel("El Jefazo", "jefe@alumnos.upm.es", "tencuidado");
+        UserModel y = new UserModel("El Jefazo", "root", "root");
         UserModel t = new UserModel("Alonso", "a.dinavarro@alumnos.upm.es", "abc101");
 
 
