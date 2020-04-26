@@ -1,9 +1,8 @@
 package es.aivm.sgpm;
 
 import android.content.Intent;
-import android.media.Image;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -12,7 +11,6 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import es.aivm.sgpm.adapter.AdapterProbadorCliente;
 import es.aivm.sgpm.adapter.AdapterProbadorPersonal;
 import es.aivm.sgpm.model.DataModel;
 import es.aivm.sgpm.model.ProductModel;

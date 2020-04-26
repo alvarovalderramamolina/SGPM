@@ -46,7 +46,6 @@
             android:name=".ProductosCategoria"
             android:windowSoftInputMode="stateHidden"
             />
-        <activity android:name=".SolicitudProbadorPersonal" />
         <activity android:name=".SolicitudFacturaPersonal" />
 
         <activity android:name=".Categorias"/>

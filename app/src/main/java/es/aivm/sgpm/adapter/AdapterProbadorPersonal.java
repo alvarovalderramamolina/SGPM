@@ -16,7 +16,7 @@ import java.util.List;
 import es.aivm.sgpm.ProbadorPersonal;
 import es.aivm.sgpm.R;
 import es.aivm.sgpm.SolicitudFacturaPersonal;
-import es.aivm.sgpm.SolicitudProbadorPersonal;
+
 import es.aivm.sgpm.model.ProductModel;
 
 public class AdapterProbadorPersonal extends RecyclerView.Adapter<AdapterProbadorPersonal.ViewHolderProduct> {
@@ -44,6 +44,7 @@ public class AdapterProbadorPersonal extends RecyclerView.Adapter<AdapterProbado
     @Override
     public ViewHolderProduct onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_probador_personal, parent, false);
+        v.setScrollBarSize(20);
         ViewHolderProduct vh = new ViewHolderProduct(v);
         return vh;
     }
@@ -58,7 +59,7 @@ public class AdapterProbadorPersonal extends RecyclerView.Adapter<AdapterProbado
         holder.color.setText(item.getColor().toString());
         holder.talla.setText(item.getTalla().toString());
 
-        if((context instanceof SolicitudProbadorPersonal) || (context instanceof SolicitudFacturaPersonal)) {
+        if((context instanceof SolicitudFacturaPersonal) || (context instanceof SolicitudFacturaPersonal)) {
             holder.name.setTextColor(Color.argb(255, 255, 255, 255));
             holder.brand.setTextColor(Color.argb(255, 255, 255, 255));
             holder.price.setTextColor(Color.argb(255, 255, 255, 255));
