@@ -17,7 +17,7 @@ import es.aivm.sgpm.Producto;
 import es.aivm.sgpm.PromocionesCliente;
 import es.aivm.sgpm.R;
 import es.aivm.sgpm.CestaCliente;
-import es.aivm.sgpm.SolicitudProbadorPersonal;
+import es.aivm.sgpm.SolicitudFacturaPersonal;
 import es.aivm.sgpm.model.DataModel;
 import es.aivm.sgpm.model.ProductModel;
 
@@ -58,7 +58,7 @@ public class Dialogo extends Dialog implements android.view.View.OnClickListener
             case R.id.continuar:
                 if (actionType.equals("GenerarFactura")) {
                     if(DataModel.currentUser.isGuest()){
-                        Intent intent = new Intent (c.getApplicationContext(), Factura.class);
+                        Intent intent = new Intent (c.getApplicationContext(), SolicitudFacturaPersonal.class);
                         c.startActivity(intent);
                     }
                     else {
@@ -66,7 +66,7 @@ public class Dialogo extends Dialog implements android.view.View.OnClickListener
                         c.startActivity(intent);
                     }
                 } else if (actionType.equals("PedirProductos")) {
-                    Intent intent = new Intent(c.getApplicationContext(), SolicitudProbadorPersonal.class);
+                    Intent intent = new Intent(c.getApplicationContext(), SolicitudFacturaPersonal.class);
                     c.startActivity(intent);
                 } else if (actionType.equals("EliminarProductoCesta")) {
                     DataModel.currentUser.removeProductFromCesta(position);

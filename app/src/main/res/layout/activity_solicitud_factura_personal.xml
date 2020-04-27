@@ -10,11 +10,14 @@
 
     <ImageView
         android:id="@+id/imagenCampana"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
         android:src="@drawable/icono_notificacion"
-        android:layout_marginTop="30dp"/>
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"/>
     <TextView
+        android:id="@+id/texto_factura_personal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="40sp"
@@ -22,20 +25,24 @@
         android:textColor="#FFFFFFFF"
         android:gravity="center"/>
     <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:id="@+id/recycler_view_factura_personal"
+        android:layout_width="wrap_content"
+        android:layout_height="400dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp">
 
     </android.support.v7.widget.RecyclerView>
 
     <Button
+        android:id="@+id/enviar_factura"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:background="@color/solidOrange"
         android:text="Enviar factura"
-        android:layout_marginTop="200dp"
         android:layout_gravity="center_horizontal"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
-        android:textAllCaps="false" />
+        android:textAllCaps="false"
+        android:layout_marginTop="30dp"/>
 
 </android.widget.LinearLayout>
