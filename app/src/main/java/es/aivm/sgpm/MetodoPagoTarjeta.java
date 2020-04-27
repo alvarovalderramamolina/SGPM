@@ -18,8 +18,7 @@ public class MetodoPagoTarjeta extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_metodo_pago_tarjeta);
-
-
+        hideNavigationBar();
         final ImageButton atras = findViewById(R.id.boton_volver);
         atras.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -57,5 +56,15 @@ public class MetodoPagoTarjeta extends AppCompatActivity {
             }
         });
 
+    }
+    private void hideNavigationBar() {
+        this.getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_FULLSCREEN |
+                        View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
+                        View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY |
+                        View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
+                        View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION |
+                        View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+        );
     }
 }
