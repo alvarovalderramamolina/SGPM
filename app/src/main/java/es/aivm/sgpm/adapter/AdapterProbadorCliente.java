@@ -45,6 +45,14 @@ public class AdapterProbadorCliente extends RecyclerView.Adapter<AdapterProbador
         }
     }
 
+    public void removeAll(){
+        mDataset.removeAll(mDataset);
+    }
+
+    public void addAll(List data){
+        mDataset.addAll(data);
+    }
+
     @Override
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
         super.onAttachedToRecyclerView(recyclerView);

@@ -113,5 +113,13 @@ public class ProbadorCliente extends AppCompatActivity {
         TextView contadorProbador = findViewById(R.id.contador_probador);
         contadorProbador.setText(usu.getProbador().size()+"");
 
+        if(mAdapter.getItemCount() < usu.getProbador().size()) {
+            mRecyclerView.setAdapter(mAdapter);
+        }else if (mAdapter.getItemCount() > usu.getProbador().size()){
+            mAdapter.removeAll();
+            mAdapter.addAll(usu.getProbador());
+            mRecyclerView.setAdapter(mAdapter);
+        }
+
     }
 }
