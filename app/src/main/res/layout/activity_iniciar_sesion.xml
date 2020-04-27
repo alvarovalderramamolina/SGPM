@@ -58,7 +58,8 @@
                 android:textSize="35sp"
                 android:drawablePadding="25dp"
                 android:paddingLeft="20dp"
-                android:layout_marginBottom="20dp"/>
+                android:layout_marginBottom="20dp"
+                android:drawableLeft="@drawable/icon_email"/>
 
             <EditText
                 android:id="@+id/passwordInput"
@@ -74,7 +75,8 @@
                 android:textSize="35sp"
                 android:drawablePadding="25dp"
                 android:paddingLeft="20dp"
-                android:layout_marginBottom="20dp"/>
+                android:layout_marginBottom="20dp"
+                android:drawableLeft="@drawable/lock_icon"/>
 
 
             <Button
