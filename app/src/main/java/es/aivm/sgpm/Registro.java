@@ -33,6 +33,8 @@ public class Registro extends AppCompatActivity {
         final EditText pw = findViewById(R.id.passwordInput);
         final ImageButton atras = findViewById(R.id.backButton);
 
+        hideNavigationBar();
+
         atras.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 finish();
@@ -62,5 +64,15 @@ public class Registro extends AppCompatActivity {
                 }
             }
         });
+    }
+    private void hideNavigationBar() {
+        this.getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_FULLSCREEN |
+                        View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
+                        View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY |
+                        View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
+                        View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION |
+                        View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+        );
     }
 }
