@@ -20,7 +20,7 @@ public class Espera extends AppCompatActivity {
         setContentView(R.layout.activity_espera);
         hideNavigationBar();
         WebView videoWeb = (WebView) findViewById(R.id.videoWebView);
-        VideoEspera video = new VideoEspera("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/EXcHlh8qFVg\" frameborder=\"0\" allowfullscreen></iframe>");
+        VideoEspera video = new VideoEspera("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/zsuxRGLIjss\" frameborder=\"0\" allowfullscreen></iframe>");
         videoWeb.getSettings().setJavaScriptEnabled(true);
         videoWeb.setWebChromeClient(new WebChromeClient());
         videoWeb.loadData(video.getVideoUrl(),"text/html","utf-8");

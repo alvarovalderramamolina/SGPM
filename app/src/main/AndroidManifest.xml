@@ -59,6 +59,9 @@
             android:name=".ProductosCategoria"
             android:windowSoftInputMode="stateHidden"
             />
+        <activity android:name=".SolicitudProbadorPersonal"
+            android:configChanges="screenSize|orientation"
+            android:windowSoftInputMode="stateHidden"/>
         <activity android:name=".SolicitudFacturaPersonal"
             android:configChanges="screenSize|orientation"
             android:windowSoftInputMode="stateHidden"/>
